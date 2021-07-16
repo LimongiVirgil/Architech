@@ -1,0 +1,94 @@
+@mixin fontface ($name, $woff2, $woff, $style, $weight) {
+  @font-face {
+    font-family: $name;
+    src: url($woff2) format("woff2"), url($woff) format("woff");
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+
+@include fontface ('Avenir Next', '../assets/fonts/Avenir-Next-Light/metropolis-medium-webfont.woff2', '../assets/fonts/Avenir-Next-Light/metropolis-medium-webfont.woff', 'normal', 600);
+@include fontface ('Avenir Next', '../assets/fonts/Avenir-Next-Light/metropolis-regular-webfont.woff2', '../assets/fonts/Avenir-Next-Light/metropolis-regular-webfont.woff', 'normal', 'normal');
+@include fontface ('Avenir Next', '../assets/fonts/Avenir-Next-Light/metropolis-semibold-webfont.woff2', '../assets/fonts/Avenir-Next-Light/metropolis-semibold-webfont.woff', 'normal', 'bold');
+
+$main-font: 'Avenir Next';
+
+:root {font-size: 16px}
+
+@function pxToRem($value) {
+   @return ($value / 16) + rem;
+}
+
+@mixin card-title {
+  font-size: pxToRem(23px);
+  line-height: 120%;
+  font-weight: bold;
+}
+
+@mixin important-text-information {
+  font-size: pxToRem(16px);
+  line-height: 120%;
+  font-weight: bold;
+}
+
+@mixin important-detailed-information {
+  font-size: pxToRem(13px);
+  line-height: 120%;
+  font-weight: bold;
+}
+
+@mixin detailed-information-title {
+  font-size: pxToRem(11px);
+  line-height: 120%;
+  font-weight: bold;
+  color: $gray-base;
+}
+
+@mixin statistic-name {
+  font-size: pxToRem(23px);
+  line-height: 120%;
+  font-weight: 600;
+}
+
+@mixin text-information {
+  font-size: pxToRem(16px);
+  line-height: 120%;
+  font-weight: 600;
+}
+
+@mixin detailed-information {
+  font-size: pxToRem(13px);
+  line-height: 120%;
+  font-weight: 600;
+}
+
+// Dropdown/table
+@mixin important-disclosure-information {
+  font-size: pxToRem(11px);
+  line-height: 120%;
+  font-weight: 600;
+}
+
+@mixin table-information {
+  font-size: pxToRem(16px);
+  line-height: 120%;
+  font-weight: normal;
+}
+
+@mixin menu-link {
+  font-size: pxToRem(16px);
+  line-height: 120%;
+  font-weight: normal;
+}
+
+@mixin description {
+  font-size: pxToRem(13px);
+  line-height: 120%;
+  font-weight: normal;
+}
+
+@mixin disclosure-information {
+  font-size: pxToRem(11px);
+  line-height: 120%;
+  font-weight: normal;
+}
