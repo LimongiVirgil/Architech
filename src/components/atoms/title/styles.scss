@@ -1,0 +1,9 @@
+@import '../../../styles/main.scss';
+
+.card-title {
+	@include card-title
+}
+
+.detailed-information-title {
+	@include detailed-information-title
+}

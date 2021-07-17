@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @mixin fontface ($name, $woff2, $woff, $style, $weight) {
   @font-face {
     font-family: $name;
@@ -16,79 +18,79 @@ $main-font: 'Avenir Next';
 :root {font-size: 16px}
 
 @function pxToRem($value) {
-   @return ($value / 16) + rem;
+  @return math.div($value, 16) + rem;
 }
 
 @mixin card-title {
-  font-size: pxToRem(23px);
+  font-size: pxToRem(23);
   line-height: 120%;
   font-weight: bold;
 }
 
 @mixin important-text-information {
-  font-size: pxToRem(16px);
+  font-size: pxToRem(16);
   line-height: 120%;
   font-weight: bold;
 }
 
 @mixin important-detailed-information {
-  font-size: pxToRem(13px);
+  font-size: pxToRem(13);
   line-height: 120%;
   font-weight: bold;
 }
 
 @mixin detailed-information-title {
-  font-size: pxToRem(11px);
+  font-size: pxToRem(11);
   line-height: 120%;
   font-weight: bold;
   color: $gray-base;
 }
 
 @mixin statistic-name {
-  font-size: pxToRem(23px);
+  font-size: pxToRem(23);
   line-height: 120%;
   font-weight: 600;
 }
 
 @mixin text-information {
-  font-size: pxToRem(16px);
+  font-size: pxToRem(16);
   line-height: 120%;
   font-weight: 600;
 }
 
 @mixin detailed-information {
-  font-size: pxToRem(13px);
+  font-size: pxToRem(13);
   line-height: 120%;
   font-weight: 600;
 }
 
 // Dropdown/table
 @mixin important-disclosure-information {
-  font-size: pxToRem(11px);
+  font-size: pxToRem(11);
   line-height: 120%;
   font-weight: 600;
 }
 
 @mixin table-information {
-  font-size: pxToRem(16px);
+  font-size: pxToRem(16);
   line-height: 120%;
   font-weight: normal;
 }
 
 @mixin menu-link {
-  font-size: pxToRem(16px);
+  font-size: pxToRem(16);
   line-height: 120%;
   font-weight: normal;
 }
 
 @mixin description {
-  font-size: pxToRem(13px);
+  font-size: pxToRem(13);
   line-height: 120%;
   font-weight: normal;
 }
 
 @mixin disclosure-information {
-  font-size: pxToRem(11px);
+  font-size: pxToRem(11);
   line-height: 120%;
   font-weight: normal;
 }
