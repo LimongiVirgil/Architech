@@ -7,13 +7,12 @@
 @import "./typography";
 @import "./spaces";
 
-//components
-
-//organisms
-@import "./../components/organisms/DropDownIncidentsTypes/dropdownIncidentsTypese.scss";
-
 //Components
-@import '../components/atoms/title/title.scss';
+@import "../components/atoms/title/title.scss";
+@import "../components/atoms/tagsIncidents/tagsIncidents.scss";
+@import "../components/atoms/dateIncidents/dateIncidents.scss";
+@import "../components/atoms/localisationIncidents/localisationnIncidents.scss";
+@import "./../components/organisms/DropDownIncidentsTypes/dropdownIncidentsTypese.scss";
 
 html {
   font-family: $main-font;

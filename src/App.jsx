@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import DropDownIncidentsTypes from './components/organisms/DropDownIncidentsTypes/DropdownIncidentsTypes'
+import DropDownIncidentsTypes from './components/organisms/dropDownIncidentsTypes/DropdownIncidentsTypes'
 import Title from './components/atoms/title/title'
 
 function App() {
