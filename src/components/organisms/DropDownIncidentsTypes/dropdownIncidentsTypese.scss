@@ -1,0 +1,49 @@
+.dropdownIncidents {
+  width: 32em;
+
+  .dropdownHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: $xx-small-space;
+    border-bottom: solid 2px $gray-lighter;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        @include text-information;
+        color: $secondary-utility-color;
+      }
+
+      p {
+        @include disclosure-information;
+        padding-left: $large-space;
+      }
+    }
+
+    .dropdownButton {
+      @include disclosure-information;
+      color: $primary-dark-color;
+      border: none;
+    }
+  }
+
+  .listIncidents {
+    width: 100%;
+    padding: 0 $x-small-space 0 $x-small-space;
+    .incidents {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px $gray-low;
+      padding: $large-space;
+
+      .tagStatus {
+        border: solid 1px $secondary-utility-color;
+        border-radius: 2px;
+        padding: $xx-small-space $x-small-space;
+      }
+    }
+  }
+}

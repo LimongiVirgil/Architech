@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import DropDownIncidentsTypes from './components/organisms/DropDownIncidentsTypes/DropdownIncidentsTypes'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +36,7 @@ function App() {
           </a>
         </p>
       </header>
+      <DropDownIncidentsTypes />
     </div>
   )
 }
