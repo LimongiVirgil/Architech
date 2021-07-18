@@ -4,7 +4,7 @@ import IssueInformation from '../../molecules/issueInformation/issueInformation'
 
 const CommingIssue = () => {
 	return (
-		<div>
+		<div className="commingIssue">
 			<Title text="2 évènements à venir" cssClass="card-title"/>
 			<IssueInformation />
 		</div>

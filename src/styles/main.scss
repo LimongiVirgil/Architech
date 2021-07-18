@@ -5,6 +5,9 @@
 @import './reset';
 @import './colors';
 @import './typography';
+@import './spaces';
+@import './radius';
+@import './shadow';
 
 //// Components Styles ////
 
@@ -17,6 +20,7 @@
 @import '../components/molecules/issueInformation/issueInformation.scss';
 
 //Organismes
+@import '../components/organismes/commingIssue/commingIssue.scss';
 
 ////////
 
