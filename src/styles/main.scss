@@ -12,6 +12,9 @@
 //organisms
 @import "./../components/organisms/DropDownIncidentsTypes/dropdownIncidentsTypese.scss";
 
+//Components
+@import '../components/atoms/title/title.scss';
+
 html {
   font-family: $main-font;
 }
