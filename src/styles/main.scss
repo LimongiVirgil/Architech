@@ -6,8 +6,19 @@
 @import './colors';
 @import './typography';
 
-//Components
+//// Components Styles ////
+
+// Atoms
 @import '../components/atoms/title/title.scss';
+@import '../components/atoms/issueMessage/issueMessage.scss';
+@import '../components/atoms/issueDate/issueDate.scss';
+
+// Molecules
+@import '../components/molecules/issueInformation/issueInformation.scss';
+
+//Organismes
+
+////////
 
 html {
   font-family: $main-font;

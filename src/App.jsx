@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Title from './components/atoms/title/title'
+import CommingIssue from './components/organismes/commingIssue/commingIssue'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>Hello Vite + React!</p>
-        <Title cssClass="detailed-information-title" text="Hello World"/>
+        <CommingIssue />
         <p>
           <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}
