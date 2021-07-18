@@ -1,10 +1,9 @@
 import React from "react";
-import './styles.scss';
 
 const Title = ({text, cssClass}) => {
 
 	return (
-		<p className={cssClass}>{text}</p>
+		<p className={`title-component ${cssClass}`}>{text}</p>
 	)
 }
 

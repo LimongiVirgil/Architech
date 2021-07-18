@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Title from './components/atoms/title'
+import Title from './components/atoms/title/title'
 
 function App() {
   const [count, setCount] = useState(0)
