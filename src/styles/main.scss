@@ -6,6 +6,9 @@
 @import './colors';
 @import './typography';
 
+//Components
+@import '../components/atoms/title/title.scss';
+
 html {
   font-family: $main-font;
 }
