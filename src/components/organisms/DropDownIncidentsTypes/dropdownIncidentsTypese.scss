@@ -18,7 +18,7 @@
       }
 
       p {
-        @include disclosure-information;
+        @include important-disclosure-information;
         padding-left: $large-space;
       }
     }
@@ -27,6 +27,15 @@
       @include disclosure-information;
       color: $primary-dark-color;
       border: none;
+    }
+  }
+
+  .detailedInformations {
+    width: 83%;
+    display: flex;
+    justify-content: space-around;
+    span {
+      @include detailed-information-title;
     }
   }
 
@@ -39,10 +48,10 @@
       border-bottom: solid 1px $gray-low;
       padding: $large-space;
 
-      .tagStatus {
-        border: solid 1px $secondary-utility-color;
-        border-radius: 2px;
-        padding: $xx-small-space $x-small-space;
+      div {
+        width: 11.375em;
+        display: flex;
+        justify-content: flex-end;
       }
     }
   }

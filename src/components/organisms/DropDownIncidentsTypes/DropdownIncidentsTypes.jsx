@@ -1,5 +1,5 @@
 import React, { useRef ,useState  } from 'react'
-import ListIncidentsTypes from './../../molecules/ListIncidentsTypes/ListIncidentsTypes';
+import ListIncidentsTypes from '../../molecules/listIncidentsTypes/ListIncidentsTypes';
 import { Menu, Transition } from '@headlessui/react'
 
 const DropDownIncidentsTypes = () => {
@@ -15,6 +15,12 @@ return (
             <Menu.Button className="dropdownButton">
               Ouvrir le volet
             </Menu.Button>
+          </div>
+
+          <div className="detailedInformations">
+            <span> Date de relevé </span> 
+            <span> Localisation </span> 
+            <span> Statut </span>
           </div>
 
           <Transition

@@ -1,0 +1,6 @@
+.tag-status {
+  @include important-disclosure-information;
+  border: solid 1px $secondary-utility-color;
+  border-radius: 2px;
+  padding: $xx-small-space $x-small-space;
+}
