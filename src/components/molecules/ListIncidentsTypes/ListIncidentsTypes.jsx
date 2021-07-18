@@ -5,12 +5,12 @@ import DateIncidents from './../../atoms/dateIncidents/DateIncidents';
 import LocalisationIncidents from "./../../atoms/localisationIncidents/LocalisationIncidents";
 
 
-const ListIncidentsTypes = () =>{
+const ListIncidentsTypes = ({ incidents }) =>{
 
 return(
   <Menu.Items
   static
-  className="listIncidents relative focus:outline-none"
+  className="list-incidents relative focus:outline-none"
 >
   <div>
     <Menu.Item>
@@ -19,38 +19,9 @@ return(
           className="incidents"
         >
           <DateIncidents cssClass="date-incidents" text="Jeu 15 juil. à 15h45" />
-          <LocalisationIncidents cssClass="localisation-incidents" text="A103" />
+          <LocalisationIncidents cssClass="localisation-incidents" text={incidents.classroom_zone + incidents.classroom_floor} />
           <div className="tagContainer">
-            <TagsIncidents cssClass="tag-status" text="Nouvel incident" />
-          </div>
-        </div>
-    </Menu.Item>
-  </div>
-  <div>
-    <Menu.Item>
-      
-        <div
-          className="incidents"
-        >
-          <DateIncidents cssClass="date-incidents" text="Jeu 15 juil. à 14h45" />
-          <LocalisationIncidents cssClass="localisation-incidents" text="A103" />
-          <div className="tagContainer">
-            <TagsIncidents cssClass="tag-status" text="en cours de traitement" />
-          </div>
-        </div>
-    </Menu.Item>
-  </div>
-  
-  <div>
-    <Menu.Item>
-      
-        <div
-          className="incidents"
-        >
-          <DateIncidents cssClass="date-incidents" text="Jeu 15 juil. à 13h45" />
-          <LocalisationIncidents cssClass="localisation-incidents" text="A103" />
-          <div className="tagContainer">
-            <TagsIncidents cssClass="tag-status" text="Intervention prévue" />
+            <TagsIncidents cssClass="tag-status" text={incidents.incident_status  } />
           </div>
         </div>
     </Menu.Item>

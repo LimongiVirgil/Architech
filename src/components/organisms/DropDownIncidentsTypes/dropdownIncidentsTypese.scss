@@ -1,7 +1,7 @@
-.dropdownIncidents {
+.dropdown-incidents {
   width: 32em;
 
-  .dropdownHeader {
+  .dropdown-header {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -19,27 +19,32 @@
 
       p {
         @include important-disclosure-information;
+        margin-top: $xx-small-space;
         padding-left: $large-space;
       }
     }
 
-    .dropdownButton {
+    .button-dropdown {
       @include disclosure-information;
       color: $primary-dark-color;
       border: none;
     }
   }
 
-  .detailedInformations {
-    width: 83%;
+  .detailed-informations {
+    width: 91%;
     display: flex;
-    justify-content: space-around;
+    justify-content: SPACE-BETWEEN;
+    margin-top: 10px;
     span {
       @include detailed-information-title;
     }
+    .statement-date {
+      padding-left: $x-large-space;
+    }
   }
 
-  .listIncidents {
+  .list-incidents {
     width: 100%;
     padding: 0 $x-small-space 0 $x-small-space;
     .incidents {
@@ -49,7 +54,7 @@
       padding: $large-space;
 
       div {
-        width: 11.375em;
+        width: 4.375em;
         display: flex;
         justify-content: flex-end;
       }
