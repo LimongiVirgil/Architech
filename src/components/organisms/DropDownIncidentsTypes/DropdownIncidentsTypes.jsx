@@ -29,9 +29,6 @@ const DropDownIncidentsTypes = ({ incidents, type }) => {
   //   }
   // }
 
-  console.log("MERDDDEEE");
-  console.log(incidents && incidents[type]);
-
   return (
     <>
       <Menu
