@@ -5,7 +5,9 @@ import IssueInformation from '../../molecules/issueInformation/issueInformation'
 const CommingIssue = () => {
 	return (
 		<div className="commingIssue">
-			<Title text="2 évènements à venir" cssClass="card-title"/>
+			<Title cssClass="card-title">
+				2 évènements à venir
+			</Title>
 			<IssueInformation />
 		</div>
 	)
