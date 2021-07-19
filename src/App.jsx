@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
-import Title from './components/atoms/title/title'
+import React, { useState } from "react";
+import Title from "./components/atoms/title/title";
+import { SingleBarChart } from "./components/atoms/SingleBarchart";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
       <header className="App-header">
         <p>Hello Vite + React!</p>
-        <Title cssClass="detailed-information-title" text="Hello World"/>
+        <SingleBarChart />
+        <Title cssClass="detailed-information-title" text="Hello World" />
         <p>
           <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}
@@ -26,7 +28,7 @@ function App() {
           >
             Learn React
           </a>
-          {' | '}
+          {" | "}
           <a
             className="App-link"
             href="https://vitejs.dev/guide/features.html"
@@ -38,7 +40,7 @@ function App() {
         </p>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
