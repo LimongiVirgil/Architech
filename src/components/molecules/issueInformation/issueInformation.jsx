@@ -15,7 +15,7 @@ const IssueInformation = () => {
 		<>
 			{issuesData && issuesData.map((issue, index) => (
 				<div key={index} className="messageContainer">
-					<IssueDate date={"2021-07-04 14:00:00.000000"} />
+					<IssueDate date={issue.intervention_datetime.date} />
 					<IssueMessage 
 						incidentType={issue.incident_type}
 						company={issue.intervention_company}
