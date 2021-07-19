@@ -6,7 +6,7 @@ const IssueInformation = () => {
 	const [issuesData, setIssuesData] = useState([])
 
 	useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/dashboard/futureEvent/1')
+    fetch('https://architech-hetic.herokuapp.com/api/dashboard/futureEvent/1')
       .then(response => response.json())
       .then(result => setIssuesData(result));
   }, [])

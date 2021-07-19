@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CommingIssue from './components/organismes/commingIssue/commingIssue'
+import {DropdownContainer} from './components/organisms/DropDownIncidentsTypes/DropdownContainer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,7 +38,7 @@ function App() {
           </a>
         </p>
       </header>
-      <DropDownIncidentsTypes />
+      <DropdownContainer />
     </div>
   )
 }
