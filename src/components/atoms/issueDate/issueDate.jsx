@@ -1,7 +1,8 @@
 import React from 'react';
 
-const IssueDate = ({date, size = "big"}) => {
-
+const IssueDate = ({date, size ="big"}) => {
+	console.log("issue date: ", date);
+	console.log("issue size: ", size);
 	// Gets the first index where a space occours
 	let splitedDate = date.indexOf(" ");
 	// Gets day (first part)
@@ -19,6 +20,7 @@ const IssueDate = ({date, size = "big"}) => {
 	//Format time
 	let formatedTime = dateTime.substring(0, 5); 
 
+	console.log(capitalizeDay)
 	return (
 		<p className={`${size} issueDate`}>
 			<span>{capitalizeDay}</span> à <span>{formatedTime}</span>

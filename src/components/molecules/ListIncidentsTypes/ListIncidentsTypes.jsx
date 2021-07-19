@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Menu } from '@headlessui/react'
 import TagsIncidents from './../../atoms/tagsIncidents/TagsIncidents';
-import DateIncidents from './../../atoms/dateIncidents/DateIncidents';
 import LocalisationIncidents from "./../../atoms/localisationIncidents/LocalisationIncidents";
+import IssueDate from "./../../atoms/issueDate/IssueDate";
 
 
-const ListIncidentsTypes = ({ incidents }) =>{
+const ListIncidentsTypes = () =>{
 
 return(
   <Menu.Items
@@ -14,14 +14,13 @@ return(
 >
   <div>
     <Menu.Item>
-      
         <div
           className="incidents"
         >
-          <DateIncidents cssClass="date-incidents" text="Jeu 15 juil. à 15h45" />
-          <LocalisationIncidents cssClass="localisation-incidents" text={incidents.classroom_zone + incidents.classroom_floor} />
+            <IssueDate size="small" date="2021-07-04 14:00:00.000000" />
+          <LocalisationIncidents cssClass="localisation-incidents" text={"mock"} />
           <div className="tagContainer">
-            <TagsIncidents cssClass="tag-status" text={incidents.incident_status  } />
+            <TagsIncidents cssClass="tag-status" text={"mock"} />
           </div>
         </div>
     </Menu.Item>
