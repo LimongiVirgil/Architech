@@ -1,9 +1,9 @@
 import React from "react";
 
-const Title = ({text, cssClass}) => {
+const Title = ({children, cssClass}) => {
 
 	return (
-		<p className={`title-component ${cssClass}`}>{text}</p>
+		<p className={`title-component ${cssClass}`}>{children}</p>
 	)
 }
 

@@ -21,10 +21,12 @@
 // Molecules
 @import "../components/molecules/issueInformation/issueInformation.scss";
 @import "../components/molecules/currentMonthChart/currentMonthChart.scss";
+@import '../components/molecules/establishmentContact/establishmentContact.scss';
 
 // Organismes
 @import "../components/organisms/commingIssue/commingIssue.scss";
 @import "../components/organisms/incidentsOfTheMonth/incidentsOfTheMonth.scss";
+@import '../components/organisms/establishmentInfo/establishmentInfo.scss';
 
 
 // Templates

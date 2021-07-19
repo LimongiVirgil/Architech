@@ -77,6 +77,18 @@ $main-font: 'Avenir Next';
   font-weight: 600;
 }
 
+@mixin contact-information {
+  font-size: pxToRem(19);
+  line-height: 120%;
+  font-weight: normal;
+}
+
+@mixin important-contact-information {
+  font-size: pxToRem(48);
+  line-height: 120%;
+  font-weight: bold;
+}
+
 // Dropdown/table
 @mixin important-disclosure-information {
   font-size: pxToRem(11);
