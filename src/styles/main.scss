@@ -8,11 +8,31 @@
 @import "./spaces";
 
 //Components
+@import "./reset";
+@import "./colors";
+@import "./typography";
+@import "./spaces";
+@import "./radius";
+@import "./shadow";
+
+//// Components Styles ////
+
+// Atoms
+@import "../components/atoms/title/title.scss";
+@import "../components/atoms/issueMessage/issueMessage.scss";
+@import "../components/atoms/issueDate/issueDate.scss";
 @import "../components/atoms/title/title.scss";
 @import "../components/atoms/tagsIncidents/tagsIncidents.scss";
 @import "../components/atoms/dateIncidents/dateIncidents.scss";
+
+// Molecules
+@import "../components/molecules/issueInformation/issueInformation.scss";
+
+//Organismes
+@import "../components/organismes/commingIssue/commingIssue.scss";
 @import "../components/atoms/localisationIncidents/localisationnIncidents.scss";
 @import "./../components/organisms/DropDownIncidentsTypes/dropdownIncidentsTypese.scss";
+////////
 
 html {
   font-family: $main-font;
