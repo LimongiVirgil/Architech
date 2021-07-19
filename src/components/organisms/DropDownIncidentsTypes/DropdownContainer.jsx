@@ -1,40 +1,45 @@
-import React, { useEffect ,useState  } from 'react'
-import axios from 'axios';
-import DropDownIncidentsTypes from './DropDownIncidentsTypes';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import DropDownIncidentsTypes from "./DropDownIncidentsTypes";
 
 export const DropdownContainer = () => {
-  const [incidentsTypeData, setIncidentsTypeData ] = useState([])
-  const SENSOR_TYPES  = ['high_humidity',
-    'heat_leak',
-    'defective_air_conditioning'
-  ]
+  const [incidentsTypeData, setIncidentsTypeData] = useState([]);
+  const SENSOR_TYPES = [
+    "high_humidity",
+    "heat_leak",
+    "defective_air_conditioning",
+  ];
 
   useEffect(() => {
-    getIncindentsType()
-  }, [])
+    getIncindentsType();
+  }, []);
 
-  const getIncindentsType =  async () => {
+  const getIncindentsType = async () => {
     try {
-      const response = await axios.get(`https://architech-hetic.herokuapp.com/api/dashboard/statsincidents/1`)
-      setIncidentsTypeData(response.data.incidents)
+      const response = await axios.get(
+        `https://architech-hetic.herokuapp.com/api/dashboard/statsincidents/1`
+      );
+      setIncidentsTypeData(response.data.incidents);
+    } catch (err) {
+      console.log(err);
     }
-    catch (err) {
-      console.log(err)
-    }
-  }
-  console.log(incidentsTypeData)
+  };
 
- 
-return (
+  return (
     <>
-        {
-            SENSOR_TYPES.map((sensorType, key) => 
-                <DropDownIncidentsTypes key={key} type={sensorType} incidents={incidentsTypeData} />
-                // <div key={key}>
-                //     {sensorType}
-                // </div>
-            )
-        }
+      {incidentsTypeData &&
+        SENSOR_TYPES.map(
+          (sensorType, key) => (
+            <DropDownIncidentsTypes
+              key={key}
+              type={sensorType}
+              incidents={incidentsTypeData}
+            />
+          )
+          // <div key={key}>
+          //     {sensorType}
+          // </div>
+        )}
     </>
-)
-}
+  );
+};
