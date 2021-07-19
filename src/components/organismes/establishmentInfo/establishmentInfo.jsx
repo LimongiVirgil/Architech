@@ -30,7 +30,7 @@ const EstablishmentInfo = () => {
 					<EstablishmentManagerContact
 						firstName={establishmentData.manager.first_name}
 						lastName={establishmentData.manager.last_name}
-						mail={establishmentData.manager.mail}
+						mail={establishmentData.manager.manager_mail}
 						phone={establishmentData.manager.phone_manager}
 						nbSensors={establishmentData.stats.number_sensors}
 					/>
