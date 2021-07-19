@@ -1,0 +1,12 @@
+.variation {
+  width: 100px;
+  text-align: center;
+  @include disclosure-information;
+
+  &__stat {
+    display: block;
+    margin-bottom: $x-small-space;
+    color: $gray-base;
+    @include side-stat;
+  }
+}

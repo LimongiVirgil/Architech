@@ -1,0 +1,18 @@
+.main-statistic {
+  display: flex;
+  align-items: center;
+
+  &__number {
+    @include main-stat;
+  }
+
+  &__description {
+    margin-left: $x-small-space;
+    @include description;
+  }
+
+  &__title {
+    display: block;
+    @include card-title;
+  }
+}
