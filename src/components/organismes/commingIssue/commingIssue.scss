@@ -1,0 +1,11 @@
+.commingIssue {
+	padding: $xx-large-space;
+	border: 1px solid $gray-lighter;
+	border-radius: $card-radius;
+	box-shadow: $outer-shadow;
+	background-color: $primary-utility-color;
+
+	.title-component {
+		margin-bottom: $large-space;
+	}
+}

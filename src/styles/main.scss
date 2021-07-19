@@ -5,9 +5,24 @@
 @import './reset';
 @import './colors';
 @import './typography';
+@import './spaces';
+@import './radius';
+@import './shadow';
 
-//Components
+//// Components Styles ////
+
+// Atoms
 @import '../components/atoms/title/title.scss';
+@import '../components/atoms/issueMessage/issueMessage.scss';
+@import '../components/atoms/issueDate/issueDate.scss';
+
+// Molecules
+@import '../components/molecules/issueInformation/issueInformation.scss';
+
+//Organismes
+@import '../components/organismes/commingIssue/commingIssue.scss';
+
+////////
 
 html {
   font-family: $main-font;
