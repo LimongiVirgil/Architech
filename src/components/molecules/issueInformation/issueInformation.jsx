@@ -3,7 +3,7 @@ import IssueMessage from '../../atoms/issueMessage/issueMessage'
 import IssueDate from '../../atoms/issueDate/issueDate'
 
 const IssueInformation = () => {
-	const [issuesData, setIssuesData] = useState([])
+	const [issuesData, setIssuesData] = useState(false)
 
 	useEffect(() => {
     fetch('https://architech-hetic.herokuapp.com/api/dashboard/futureEvent/1')
@@ -13,7 +13,7 @@ const IssueInformation = () => {
 
 	return (
 		<>
-			{issuesData.length && issuesData.map((issue, index) => (
+			{issuesData && issuesData.map((issue, index) => (
 				<div key={index} className="messageContainer">
 					<IssueDate date={issue.intervention_datetime.date} />
 					<IssueMessage 

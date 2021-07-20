@@ -26,8 +26,11 @@
 
 // Molecules
 @import "../components/molecules/issueInformation/issueInformation.scss";
+@import "../components/molecules/establishmentContact/establishmentContact.scss";
 
 //Organismes
+@import "../components/organismes/commingIssue/commingIssue.scss";
+@import "../components/organismes/establishmentInfo/establishmentInfo.scss";
 @import "../components/organismes/commingIssue/commingIssue.scss";
 @import "../components/atoms/localisationIncidents/localisationnIncidents.scss";
 @import "./../components/organisms/DropDownIncidentsTypes/dropdownIncidentsTypese.scss";

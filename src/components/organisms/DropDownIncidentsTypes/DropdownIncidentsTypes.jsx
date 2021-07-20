@@ -10,7 +10,6 @@ const incidentTitle = {
 
 const DropDownIncidentsTypes = ({ incidents, type }) => {
   const TYPE =  type; 
-  // console.log("incidents: ", incidents)
 
   return (
     <>
