@@ -9,25 +9,8 @@ const incidentTitle = {
 };
 
 const DropDownIncidentsTypes = ({ incidents, type }) => {
-  // const [incidentsTypeData, setIncidentsTypeData ] = useState([])
-  // const SENSOR_TYPE = [
-  //   'high_humidity',
-  //   'heat_leak',
-  //   'defective_air_conditioning'
-  // ]
-  // useEffect(() => {
-  //   getIncindentsType()
-  // }, [])
-
-  // const getIncindentsType =  async () => {
-  //   try {
-  //     const response = await axios.get(`https://architech-hetic.herokuapp.com/api/dashboard/statsincidents/1`)
-  //     setIncidentsTypeData(response.data.incidents)
-  //   }
-  //   catch (err) {
-  //     console.log(err)
-  //   }
-  // }
+  const TYPE =  type; 
+  // console.log("incidents: ", incidents)
 
   return (
     <>
@@ -68,7 +51,7 @@ const DropDownIncidentsTypes = ({ incidents, type }) => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <ListIncidentsTypes />
+                <ListIncidentsTypes type={TYPE} incidents={incidents} />
               </Transition.Child>
             </Transition>
           </>
