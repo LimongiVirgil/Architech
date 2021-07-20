@@ -1,11 +1,11 @@
-import React from "react";
-import ListIncidentsTypes from "../../molecules/listIncidentsTypes/ListIncidentsTypes";
-import { Menu, Transition } from "@headlessui/react";
+import React from 'react';
+import ListIncidentsTypes from '../../molecules/listIncidentsTypes/ListIncidentsTypes';
+import { Menu, Transition } from '@headlessui/react';
 
 const incidentTitle = {
-  high_humidity: "Haute humidité",
-  heat_leak: "Fuite de châleur",
-  defective_air_conditioning: "Air conditionnée",
+  high_humidity: 'Haute humidité',
+  heat_leak: 'Fuite de châleur',
+  defective_air_conditioning: 'Air conditionnée',
 };
 
 const DropDownIncidentsTypes = ({ incidents, type }) => {
