@@ -3,7 +3,7 @@ import IncidentsOfTheMonth from './components/organisms/incidentsOfTheMonth/inci
 import CommingIssue from './components/organisms/commingIssue/commingIssue'
 import EstablishmentInfo from './components/organisms/establishmentInfo/establishmentInfo'
 import { DropdownContainer } from './components/organisms/DropDownIncidentsTypes/DropdownContainer'
-
+import AnnualEvolutionBarChart from './components/molecules/annualEvolutionBarChartBlock/annualEvolutionBarChart';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       <CommingIssue />
       <EstablishmentInfo />
       <DropdownContainer />
+      <AnnualEvolutionBarChart/>
     </div>
   );
 }
