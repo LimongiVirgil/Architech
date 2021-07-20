@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Card = (props) => {
+const Card = ({children}) => {
   return (
-    <div className="card">{props.children}</div>
+    <div className="card">{children}</div>
   )
 }
 
