@@ -11,6 +11,7 @@ const tagTitle = {
 };
 
 const ListIncidentsTypes = ({ incidents, type }) => {
+
   
 return(
   <Menu.Items

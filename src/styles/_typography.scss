@@ -41,6 +41,12 @@ $main-font: "Avenir Next";
   @return math.div($value, 16) + rem;
 }
 
+@mixin main-stat {
+  font-size: pxToRem(69);
+  line-height: 120%;
+  font-weight: bold;
+}
+
 @mixin card-title {
   font-size: pxToRem(23);
   line-height: 120%;
@@ -51,6 +57,13 @@ $main-font: "Avenir Next";
   font-size: pxToRem(16);
   line-height: 120%;
   font-weight: bold;
+}
+
+@mixin side-stat {
+  font-size: pxToRem(16);
+  line-height: 120%;
+  font-weight: bold;
+  color: $gray-base;
 }
 
 @mixin important-detailed-information {

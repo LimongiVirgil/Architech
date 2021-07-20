@@ -1,0 +1,16 @@
+.current-month-chart {
+  display: flex;
+  min-height: 500px;
+
+  &__chart-wrapper {
+    position: relative;
+    width: 50%;
+  }
+
+  &__statistics-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: $xxx-large-space;
+  }
+}
