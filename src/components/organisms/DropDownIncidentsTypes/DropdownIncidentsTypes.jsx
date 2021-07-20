@@ -1,6 +1,6 @@
-import React from 'react';
-import ListIncidentsTypes from '../../molecules/ListIncidentsTypes/ListIncidentsTypes'; 
-import { Menu, Transition } from '@headlessui/react';
+import React from 'react'
+import ListIncidentsTypes from '../../molecules/ListIncidentsTypes/ListIncidentsTypes' 
+import { Menu, Transition } from '@headlessui/react'
 
 const incidentTitle = {
   high_humidity: 'Haute humidité',

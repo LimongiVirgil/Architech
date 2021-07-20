@@ -1,8 +1,8 @@
 import React from 'react'
 import { Menu } from '@headlessui/react'
-import TagsIncidents from './../../atoms/tagsIncidents/TagsIncidents';
-import LocalisationIncidents from './../../atoms/localisationIncidents/LocalisationIncidents';
-import IssueDate from './../../atoms/issueDate/IssueDate';
+import TagsIncidents from './../../atoms/tagsIncidents/TagsIncidents'
+import LocalisationIncidents from './../../atoms/localisationIncidents/LocalisationIncidents'
+import IssueDate from './../../atoms/issueDate/IssueDate'
 
 const tagTitle = {
   assign: 'Intervention programmée',
