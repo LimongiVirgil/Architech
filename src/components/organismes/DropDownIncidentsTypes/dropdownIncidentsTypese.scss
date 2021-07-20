@@ -1,11 +1,12 @@
 .dropdown-incidents {
-  width: 32em;
+  width: 100%;
 
   .dropdown-header {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-bottom: $xx-small-space;
+    padding-top: $small-space;
+    padding-bottom: $small-space;
     border-bottom: solid 2px $gray-lighter;
 
     div {
@@ -13,6 +14,7 @@
       justify-content: center;
       align-items: center;
       h3 {
+        padding-left: $x-small-space;
         @include text-information;
         color: $secondary-utility-color;
       }
@@ -26,37 +28,44 @@
 
     .button-dropdown {
       @include disclosure-information;
+      padding-right: $x-small-space;
       color: $primary-dark-color;
       border: none;
     }
   }
 
   .detailed-informations {
-    width: 91%;
     display: flex;
-    justify-content: SPACE-BETWEEN;
+    padding-left: $x-small-space;
     margin-top: 10px;
     span {
       @include detailed-information-title;
     }
     .statement-date {
-      padding-left: $x-large-space;
+      margin-right: $xxxx-large-space;
+    }
+    .localisation-incidents {
+      margin-right: $xxxx-large-space;
+    }
+    .status-incidents {
+      margin-left: $x-large-space;
     }
   }
 
   .list-incidents {
-    width: 100%;
-    padding: 0 $x-small-space 0 $x-small-space;
+    width: 61%;
     .incidents {
       display: flex;
-      justify-content: space-between;
       border-bottom: solid 1px $gray-low;
-      padding: $large-space;
+      padding-left: $x-small-space;
+      padding: $large-space $large-space $large-space $x-small-space;
 
-      div {
-        width: 4.375em;
-        display: flex;
-        justify-content: flex-end;
+      .issueDate {
+        margin-right: $xxxx-large-space;
+      }
+
+      .localisation-incidents {
+        margin-right: $xxxx-large-space;
       }
     }
   }

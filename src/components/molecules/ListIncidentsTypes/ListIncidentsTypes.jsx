@@ -26,9 +26,7 @@ return(
             cssClass="localisation-incidents" 
             text={`${item.classroom_zone} + ${item.classroom_floor}`} 
           />
-          <div className="tagContainer">
-            <TagsIncidents cssClass="tag-status" text={tagTitle[item.incident_status]} />
-          </div>
+            <TagsIncidents cssClass={`tag-status ${item.incident_status}`} text={tagTitle[item.incident_status]} />
         </div>
     </Menu.Item>
   ))}
