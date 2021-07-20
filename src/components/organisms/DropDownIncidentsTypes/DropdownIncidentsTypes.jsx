@@ -1,5 +1,5 @@
 import React from 'react';
-import ListIncidentsTypes from '../../molecules/listIncidentsTypes/ListIncidentsTypes';
+import ListIncidentsTypes from '../../molecules/ListIncidentsTypes/ListIncidentsTypes'; 
 import { Menu, Transition } from '@headlessui/react';
 
 const incidentTitle = {
