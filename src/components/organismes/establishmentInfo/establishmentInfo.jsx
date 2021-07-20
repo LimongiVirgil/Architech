@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import config from '../../../../env'
 import Title from '../../atoms/title/title'
 import EstablishmentManagerContact from '../../molecules/establishmentContact/establishmentManagerContact';
 import EstablishmentBuildingContact from '../../molecules/establishmentContact/establishmentBuildingContact';
@@ -7,7 +8,7 @@ const EstablishmentInfo = () => {
 	const [establishmentData, setEstablishmentData] = useState(false)
 
 	useEffect(() => {
-    fetch('https://architech-hetic.herokuapp.com/api/dashboard/infobuilding/1')
+    fetch(`${config.apiUrl}api/dashboard/infobuilding/1`)
       .then(response => response.json())
       .then(result => setEstablishmentData(result));
   }, [])
