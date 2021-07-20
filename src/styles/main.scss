@@ -18,25 +18,6 @@
 //// Components Styles ////
 
 // Atoms
-<<<<<<< HEAD
-@import "../components/atoms/title/title.scss";
-@import "../components/atoms/issueMessage/issueMessage.scss";
-@import "../components/atoms/issueDate/issueDate.scss";
-@import "../components/atoms/title/title.scss";
-@import "../components/atoms/tagsIncidents/tagsIncidents.scss";
-
-// Molecules
-@import "../components/molecules/issueInformation/issueInformation.scss";
-@import "../components/molecules/establishmentContact/establishmentContact.scss";
-
-//Organismes
-@import "../components/organismes/commingIssue/commingIssue.scss";
-@import "../components/organismes/establishmentInfo/establishmentInfo.scss";
-@import "../components/organismes/commingIssue/commingIssue.scss";
-@import "../components/atoms/localisationIncidents/localisationnIncidents.scss";
-@import "../components/organismes/DropDownIncidentsTypes/dropdownContainer.scss";
-@import "./../components/organismes/DropDownIncidentsTypes/dropdownIncidentsTypese.scss";
-=======
 @import '../components/atoms/title/title.scss';
 @import '../components/atoms/issueMessage/issueMessage.scss';
 @import '../components/atoms/issueDate/issueDate.scss';
@@ -59,7 +40,6 @@
 // Templates
 @import '../components/templates/card.scss';
 
->>>>>>> 1a2e71e2252825648014165a83dc68033ab75269
 ////////
 
 html {
