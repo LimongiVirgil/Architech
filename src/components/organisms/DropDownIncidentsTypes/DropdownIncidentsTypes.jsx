@@ -9,7 +9,6 @@ const incidentTitle = {
 };
 
 const DropDownIncidentsTypes = ({ incidents, type }) => {
-  const TYPE_INCIDENT =  type; 
 
   return (
     <>
@@ -21,13 +20,13 @@ const DropDownIncidentsTypes = ({ incidents, type }) => {
           <>
             <div className="dropdown-header">
               <div>
-                <h3>{incidentTitle[TYPE_INCIDENT]}</h3>
+                <h3>{incidentTitle[type]}</h3>
                 <p>
-                  {incidents[TYPE_INCIDENT] &&
+                  {incidents[type] &&
                     `${
-                      incidents[TYPE_INCIDENT].length > 1
-                        ? `${incidents[TYPE_INCIDENT].length} incidents`
-                        : `${incidents[TYPE_INCIDENT].length} incident`
+                      incidents[type].length > 1
+                        ? `${incidents[type].length} incidents`
+                        : `${incidents[type].length} incident`
                     }`}
                 </p>
               </div>
@@ -50,7 +49,7 @@ const DropDownIncidentsTypes = ({ incidents, type }) => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <ListIncidentsTypes type={TYPE_INCIDENT} incidents={incidents} />
+                <ListIncidentsTypes type={type} incidents={incidents} />
               </Transition.Child>
             </Transition>
           </>
