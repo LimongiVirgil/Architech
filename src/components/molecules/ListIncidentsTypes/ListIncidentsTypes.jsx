@@ -1,13 +1,13 @@
 import React from 'react'
 import { Menu } from '@headlessui/react'
 import TagsIncidents from './../../atoms/tagsIncidents/TagsIncidents';
-import LocalisationIncidents from "./../../atoms/localisationIncidents/LocalisationIncidents";
-import IssueDate from "./../../atoms/issueDate/IssueDate";
+import LocalisationIncidents from './../../atoms/localisationIncidents/LocalisationIncidents';
+import IssueDate from './../../atoms/issueDate/IssueDate';
 
 const tagTitle = {
-  assign: "Intervention programmée",
-  in_progress: "Nouvel incident",
-  finish: "Intervention termminée",
+  assign: 'Intervention programmée',
+  in_progress: 'Nouvel incident',
+  finish: 'Intervention termminée',
 };
 
 const ListIncidentsTypes = ({ incidents, type }) => {

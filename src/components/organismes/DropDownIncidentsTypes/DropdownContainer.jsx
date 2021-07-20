@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import DropDownIncidentsTypes from "./DropdownIncidentsTypes";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import DropDownIncidentsTypes from './DropdownIncidentsTypes';
 
 export const DropdownContainer = () => {
   const [dataTypeIncidents, setDataTypeIncidents] = useState([]);
   const SENSOR_TYPES = [
-    "high_humidity",
-    "heat_leak",
-    "defective_air_conditioning",
+    'high_humidity',
+    'heat_leak',
+    'defective_air_conditioning',
   ];
 
   useEffect(() => {
