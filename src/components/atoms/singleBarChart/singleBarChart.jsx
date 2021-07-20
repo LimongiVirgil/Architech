@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 
 const SingleBarChart = ({ chartData }) => {
+  const ctx = useRef(null);
+
   useEffect(() => {
     createChart();
   }, [chartData]);
 
   function createChart() {
     if (!chartData) return;
-    var ctx = document.getElementById("myChart");
 
     const data = {
       labels: [""],
@@ -31,7 +32,7 @@ const SingleBarChart = ({ chartData }) => {
       ],
     };
 
-    var myChart = new Chart(ctx, {
+    var myChart = new Chart(ctx.current, {
       type: "bar",
       data: data,
       options: {
@@ -54,7 +55,7 @@ const SingleBarChart = ({ chartData }) => {
   }
 
   return (
-    <canvas id="myChart"/>
+    <canvas ref={ctx}/>
   );
 };
 
