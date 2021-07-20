@@ -12,27 +12,29 @@ const tagTitle = {
 
 const ListIncidentsTypes = ({ incidents, type }) => {
 
-  
 return(
   <Menu.Items
-  static
-  className="list-incidents relative focus:outline-none"
->
-  <div>
-  {incidents[type].map((item, key) => (
-    <Menu.Item key={key}>
-        <div className="incidents">
-          <IssueDate size="small" date={item.incident_date} />
-          <LocalisationIncidents 
-            cssClass="localisation-incidents" 
-            text={`${item.classroom_zone} + ${item.classroom_floor}`} 
-          />
-            <TagsIncidents cssClass={`tag-status ${item.incident_status}`} text={tagTitle[item.incident_status]} />
-        </div>
-    </Menu.Item>
-  ))}
-  </div>
-</Menu.Items>
+    static
+    className="list-incidents relative focus:outline-none"
+  >
+    <div>
+      {incidents[type].map((item, key) => (
+        <Menu.Item key={key}>
+          <div className="incidents">
+            <IssueDate size="small" date={item.incident_date} />
+            <LocalisationIncidents 
+              cssClass="localisation-incidents" 
+              text={`${item.classroom_zone} + ${item.classroom_floor}`} 
+            />
+              <TagsIncidents 
+                cssClass={`tag-status ${item.incident_status}`} 
+                text={tagTitle[item.incident_status]} 
+              />
+          </div>
+        </Menu.Item>
+      ))}
+      </div>
+  </Menu.Items>
     )
 }
 
