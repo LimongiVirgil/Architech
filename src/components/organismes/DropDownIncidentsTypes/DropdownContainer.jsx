@@ -3,7 +3,7 @@ import axios from "axios";
 import DropDownIncidentsTypes from "./DropDownIncidentsTypes";
 
 export const DropdownContainer = () => {
-  const [incidentsTypeData, setIncidentsTypeData] = useState([]);
+  const [dataTypeIncidents, setDataTypeIncidents] = useState([]);
   const SENSOR_TYPES = [
     "high_humidity",
     "heat_leak",
@@ -19,24 +19,24 @@ export const DropdownContainer = () => {
       const response = await axios.get(
         `https://architech-hetic.herokuapp.com/api/dashboard/statsincidents/1`
       );
-      setIncidentsTypeData(response.data.incidents);
+      setDataTypeIncidents(response.data.incidents);
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <>
-      {incidentsTypeData &&
+    <div className="dropDownContainer">
+      {dataTypeIncidents &&
         SENSOR_TYPES.map(
           (sensorType, key) => (
             <DropDownIncidentsTypes
               key={key}
               type={sensorType}
-              incidents={incidentsTypeData}
+              incidents={dataTypeIncidents}
             />
           )
         )}
-    </>
+    </div>
   );
 };

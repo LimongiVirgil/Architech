@@ -1,6 +1,30 @@
-.tag-status {
-  @include important-disclosure-information;
-  border: solid 1px $secondary-utility-color;
-  border-radius: 2px;
-  padding: $xx-small-space $x-small-space;
+.tag-container {
+  display: flex;
+  width: 11.188em;
+  margin-left: $xxx-large-space;
+  .tag-status {
+    @include important-disclosure-information;
+    padding: $xx-small-space $x-small-space;
+
+    &.assign {
+      border: none;
+      border-radius: 1px;
+      color: $gray-darker;
+      background-color: $secondary-color;
+    }
+
+    &.in_progress {
+      background-color: $gray-light;
+      color: $secondary-utility-color;
+      border: solid 1px $gray-dark;
+      border-radius: 2px;
+    }
+
+    &.finish {
+      background-color: $gray-low;
+      color: $secondary-utility-color;
+      border: solid 1px $gray-darker;
+      border-radius: 2px;
+    }
+  }
 }
