@@ -17,6 +17,8 @@
 @import '../components/atoms/issueDate/issueDate.scss';
 @import '../components/atoms/variationStat/variationStat.scss';
 @import '../components/atoms/mainStat/mainStat.scss';
+@import '../components/atoms/tagsIncidents/tagsIncidents.scss';
+@import '../components/atoms/localisationIncidents/localisationnIncidents.scss';
 
 // Molecules
 @import '../components/molecules/issueInformation/issueInformation.scss';
@@ -24,10 +26,9 @@
 @import '../components/molecules/establishmentContact/establishmentContact.scss';
 
 // Organismes
-@import '../components/organisms/commingIssue/commingIssue.scss';
 @import '../components/organisms/incidentsOfTheMonth/incidentsOfTheMonth.scss';
 @import '../components/organisms/establishmentInfo/establishmentInfo.scss';
-
+@import '../components/organisms/DropDownIncidentsTypes/dropdownIncidentsTypese.scss';
 
 // Templates
 @import '../components/templates/card.scss';
