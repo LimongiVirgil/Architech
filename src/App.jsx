@@ -1,19 +1,16 @@
-import React, { useState } from 'react'
-import CommingIssue from './components/organismes/commingIssue/commingIssue'
-import EstablishmentInfo from './components/organismes/establishmentInfo/establishmentInfo'
+import React from "react";
+import IncidentsOfTheMonth from "./components/organisms/incidentsOfTheMonth/incidentsOfTheMonth";
+import CommingIssue from './components/organisms/commingIssue/commingIssue'
+import EstablishmentInfo from './components/organisms/establishmentInfo/establishmentInfo'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Hello Vite + React!</p>
-      </header>
+      <IncidentsOfTheMonth />
       <CommingIssue />
       <EstablishmentInfo />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
