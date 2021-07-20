@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-//Components
 @import './reset';
 @import './colors';
 @import './typography';
@@ -50,6 +49,6 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
