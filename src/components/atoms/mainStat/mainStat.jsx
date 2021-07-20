@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react"
 
 function mainStat({ amount }) {
-  const [incidentText, setIncidentText] = useState('incidents')
+  const [incidentText, setIncidentText] = useState('incident')
 
   useEffect(() => {
+    adjustTextPlural()
+  }, [amount])
+  
+  function adjustTextPlural () {
     let text = 'incident'
     if (amount > 1) text += 's'
     setIncidentText(text)
-  }, [amount])
+  }
   
   return (
     <div className="main-statistic">
