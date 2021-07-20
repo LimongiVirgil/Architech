@@ -36,9 +36,6 @@ export const DropdownContainer = () => {
               incidents={incidentsTypeData}
             />
           )
-          // <div key={key}>
-          //     {sensorType}
-          // </div>
         )}
     </>
   );
