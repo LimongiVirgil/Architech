@@ -2,35 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./reset";
-@import "./colors";
-@import "./typography";
-@import "./spaces";
-@import "./radius";
-@import "./shadow";
+@import './reset';
+@import './colors';
+@import './typography';
+@import './spaces';
+@import './radius';
+@import './shadow';
 
 //// Components Styles ////
 
 // Atoms
-@import "../components/atoms/title/title.scss";
-@import "../components/atoms/issueMessage/issueMessage.scss";
-@import "../components/atoms/issueDate/issueDate.scss";
+@import '../components/atoms/title/title.scss';
+@import '../components/atoms/issueMessage/issueMessage.scss';
+@import '../components/atoms/issueDate/issueDate.scss';
 @import '../components/atoms/variationStat/variationStat.scss';
 @import '../components/atoms/mainStat/mainStat.scss';
 
 // Molecules
-@import "../components/molecules/issueInformation/issueInformation.scss";
-@import "../components/molecules/currentMonthChart/currentMonthChart.scss";
+@import '../components/molecules/issueInformation/issueInformation.scss';
+@import '../components/molecules/currentMonthChart/currentMonthChart.scss';
 @import '../components/molecules/establishmentContact/establishmentContact.scss';
 
 // Organismes
-@import "../components/organisms/commingIssue/commingIssue.scss";
-@import "../components/organisms/incidentsOfTheMonth/incidentsOfTheMonth.scss";
+@import '../components/organisms/commingIssue/commingIssue.scss';
+@import '../components/organisms/incidentsOfTheMonth/incidentsOfTheMonth.scss';
 @import '../components/organisms/establishmentInfo/establishmentInfo.scss';
 
 
 // Templates
-@import "../components/templates/card.scss";
+@import '../components/templates/card.scss';
 
 ////////
 
@@ -40,14 +40,14 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
