@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ListIncidentsTypes from "../../molecules/listIncidentsTypes/ListIncidentsTypes";
 import { Menu, Transition } from "@headlessui/react";
 
