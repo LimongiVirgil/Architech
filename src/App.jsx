@@ -3,7 +3,8 @@ import IncidentsOfTheMonth from "./components/organisms/incidentsOfTheMonth/inci
 import CommingIssue from './components/organisms/commingIssue/commingIssue'
 import EstablishmentInfo from './components/organisms/establishmentInfo/establishmentInfo'
 import CommingIssue from './components/organismes/commingIssue/commingIssue'
-import { DropdownContainer } from './components/organisms/DropDownIncidentsTypes/DropdownContainer'
+import { DropdownContainer } from './components/toGoToOrganisms/DropdownContainer'
+
 
 function App() {
   return (
