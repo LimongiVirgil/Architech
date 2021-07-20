@@ -36,37 +36,23 @@
 
   .detailed-informations {
     display: flex;
+    width: 21em;
+    justify-content: space-between;
     padding-left: $x-small-space;
     margin-top: 10px;
     span {
       @include detailed-information-title;
     }
-    .statement-date {
-      margin-right: $xxxx-large-space;
-    }
-    .localisation-incidents {
-      margin-right: $xxxx-large-space;
-    }
-    .status-incidents {
-      margin-left: $x-large-space;
-    }
   }
 
   .list-incidents {
-    width: 61%;
     .incidents {
       display: flex;
+      justify-content: space-between;
+      width: 31.5em;
       border-bottom: solid 1px $gray-low;
       padding-left: $x-small-space;
       padding: $large-space $large-space $large-space $x-small-space;
-
-      .issueDate {
-        margin-right: $xxxx-large-space;
-      }
-
-      .localisation-incidents {
-        margin-right: $xxxx-large-space;
-      }
     }
   }
 }

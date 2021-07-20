@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import DropDownIncidentsTypes from "./DropDownIncidentsTypes";
+import DropDownIncidentsTypes from "./DropdownIncidentsTypes";
 
 export const DropdownContainer = () => {
   const [dataTypeIncidents, setDataTypeIncidents] = useState([]);
@@ -26,7 +26,7 @@ export const DropdownContainer = () => {
   };
 
   return (
-    <div className="dropDownContainer">
+    <div className="dropdownContainer">
       {dataTypeIncidents &&
         SENSOR_TYPES.map(
           (sensorType, key) => (

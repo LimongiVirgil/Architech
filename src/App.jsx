@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import CommingIssue from './components/organismes/commingIssue/commingIssue'
-import {DropdownContainer} from './components/organismes/DropDownIncidentsTypes/DropdownContainer'
+import { DropdownContainer } from './components/organismes/DropDownIncidentsTypes/DropdownContainer'
 import EstablishmentInfo from './components/organismes/establishmentInfo/establishmentInfo'
 
 function App() {
