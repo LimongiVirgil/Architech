@@ -1,7 +1,6 @@
 .tag-container {
   display: flex;
   width: 11.188em;
-  margin-left: $xxx-large-space;
   .tag-status {
     @include important-disclosure-information;
     padding: $xx-small-space $x-small-space;
