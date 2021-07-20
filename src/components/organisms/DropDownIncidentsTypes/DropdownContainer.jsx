@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import DropDownIncidentsTypes from '../organisms/DropDownIncidentsTypes/DropdownIncidentsTypes';
+import DropDownIncidentsTypes from './DropdownIncidentsTypes';
 
 export const DropdownContainer = () => {
   const [dataTypeIncidents, setDataTypeIncidents] = useState([]);
