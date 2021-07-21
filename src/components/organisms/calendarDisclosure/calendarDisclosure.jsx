@@ -1,5 +1,5 @@
-import React from 'react'
-import { Menu, Transition } from '@headlessui/react'
+import React, {useState} from 'react'
+import { Disclosure, Transition } from '@headlessui/react'
 import CalendarDetailsIssues from '../../molecules/calendarListIssues/calendarListIssues'
 import CalendarContactCard from '../../molecules/calendarContactCard/calendarContactCard';
 
@@ -9,27 +9,36 @@ const incidentTitle = {
   defective_air_conditioning: 'Air conditionnée',
 };
 
-const CalendarDisclosure = ({ type }) => {
+const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
 
+  const handleclick = () => {
+    setter({
+      ...initialState,
+      [type]: true
+    })
+  }
   return (
     <>
-      <Menu
+      <Disclosure
         as="div"
         className="disclosure-incidents relative inline-block text-left"
       >
-        {({ open }) => (
           <>
             <div className="disclosure-header">
               <div>
                 <h3>{incidentTitle[type]}</h3>
                 <p> 13 incidents </p>
               </div>
-              <Menu.Button className="button-disclosure">
-                {open ? "Fermer le détail" : "Voir les détail"}
-              </Menu.Button>
+              <div onClick={handleclick} >
+                <Disclosure.Button className="button-disclosure" >
+                  {isOpen ? "Fermer le détail" : "Voir les détail"}
+                </Disclosure.Button>
+              </div>
             </div>
 
-            <Transition show={open}>
+            <Transition 
+              show={isOpen}
+            >
               <Transition.Child
                 enter="transition ease-out duration-100"
                 enterFrom="transform opacity-0 scale-95"
@@ -43,8 +52,7 @@ const CalendarDisclosure = ({ type }) => {
               </Transition.Child>
             </Transition>
           </>
-        )}
-      </Menu>
+      </Disclosure>
     </>
   );
 };
