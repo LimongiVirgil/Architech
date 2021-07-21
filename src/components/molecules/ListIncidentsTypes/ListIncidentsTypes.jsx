@@ -11,7 +11,7 @@ const tagTitle = {
 };
 
 const ListIncidentsTypes = ({ incidents, type }) => {
-
+console.log(incidents)
 return(
   <Menu.Items
     static
@@ -24,7 +24,7 @@ return(
             <IssueDate size="small" date={item.incident_date} />
             <LocalisationIncidents 
               cssClass="localisation-incidents" 
-              text={`${item.classroom_zone} + ${item.classroom_floor}`} 
+              text={`${item.classroom_zone + item.classroom_floor}`} 
             />
               <TagsIncidents 
                 cssClass={`tag-status ${item.incident_status}`} 

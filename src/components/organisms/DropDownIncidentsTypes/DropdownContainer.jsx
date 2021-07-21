@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import DropDownIncidentsTypes from './DropdownIncidentsTypes'
 
-export const DropdownContainer = () => {
+const DropdownContainer = () => {
   const [dataTypeIncidents, setDataTypeIncidents] = useState([]);
   const SENSOR_TYPES = [
     'high_humidity',
@@ -40,3 +40,5 @@ export const DropdownContainer = () => {
     </div>
   );
 };
+
+export default DropdownContainer;

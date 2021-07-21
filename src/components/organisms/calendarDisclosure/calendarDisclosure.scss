@@ -1,0 +1,53 @@
+.disclosure-incidents {
+  width: 31em;
+  margin-bottom: $x-large-space;
+
+  .disclosure-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: $small-space;
+    padding-bottom: $small-space;
+    border-bottom: solid 2px $gray-lighter;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        padding-left: $x-small-space;
+        @include text-information;
+        color: $secondary-utility-color;
+      }
+
+      p {
+        @include important-disclosure-information;
+        margin-top: $xx-small-space;
+        padding-left: $large-space;
+      }
+    }
+
+    .button-disclosure {
+      @include disclosure-information;
+      padding-right: $x-small-space;
+      color: $primary-dark-color;
+      border: none;
+    }
+  }
+
+  .list-issues  {
+    .issues {
+      display: flex;
+      justify-content: space-between;
+      width: 12em;
+      border-bottom: solid 1px $gray-low;
+      padding-left: $x-small-space;
+      padding: $large-space $large-space $large-space $x-small-space;
+
+      .issues-report{
+        @include detailed-information;
+        color: $gray-darker;
+      }
+    }
+  }
+}
