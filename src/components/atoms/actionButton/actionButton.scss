@@ -1,0 +1,14 @@
+.action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $x-small-space $medium-space;
+  border: 1px solid $gray-lighter;
+  border-radius: $xxx-small-space;
+  box-shadow: $dropdown-shadow;
+  @include description;
+
+  &__icon {
+    margin-left: $x-small-space;
+  }
+}
