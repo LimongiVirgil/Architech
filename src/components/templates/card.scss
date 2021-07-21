@@ -4,4 +4,8 @@
   border-radius: $card-radius;
   box-shadow: $outer-shadow;
   background-color: $primary-utility-color;
+
+  &--scroll {
+    overflow-y: scroll;
+  }
 }

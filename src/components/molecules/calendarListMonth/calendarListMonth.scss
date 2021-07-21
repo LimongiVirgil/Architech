@@ -1,0 +1,9 @@
+.month-events {
+  &:not(:last-child) {
+    margin-bottom: $xxxx-large-space;
+  }
+
+  &__subtitle {
+    @include subtitle;
+  }
+}
