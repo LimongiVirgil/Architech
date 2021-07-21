@@ -1,0 +1,9 @@
+.event-calendar {
+  position: relative;
+
+  &__add-button {
+    position: absolute;
+    top: $xx-large-space;
+    right: $xx-large-space;
+  }
+}
