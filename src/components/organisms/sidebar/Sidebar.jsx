@@ -20,7 +20,7 @@ const Sidebar = () => {
             <NavLink to="/agenda">Agenda</NavLink>
           </li>
           <li>
-            <NavLink to="/settings"> Paramétres</NavLink>
+            <NavLink to="/settings"> Paramètres</NavLink>
           </li>
         </ul>
       </nav>
