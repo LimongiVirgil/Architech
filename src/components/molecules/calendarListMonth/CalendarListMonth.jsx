@@ -7,13 +7,20 @@ function CalendarListMonth({issues}) {
   const [numberIssues, setNumberIssues] = useState(0)
 
   useEffect(() => {
+    getIssueMonthName()
+    getNumberIssues()
+  }, [])
+
+  function getIssueMonthName() {
     const issueMonth = new Date(issues[0].intervention_datetime.date).toLocaleString('fr-FR', { month: 'long' })
     const issueMonthCapitalized = capitalizeFirstLetter(issueMonth)
     setMonth(issueMonthCapitalized)
+  }
 
+  function getNumberIssues() {
     const numberIssues = issues.length
     setNumberIssues(numberIssues)
-  }, [])
+  }
 
   function capitalizeFirstLetter(string) {
     return string[0].toUpperCase() + string.slice(1);
@@ -25,10 +32,10 @@ function CalendarListMonth({issues}) {
       {numberIssues && <p className="month-events__subtitle">{numberIssues} évènements à venir</p>}
 
       {issues && issues.map((issue, index) => (
-				<IssueInformation issue={issue} key={index}/>
-			))}
+        <IssueInformation issue={issue} key={index}/>
+      ))}
     </div>
   )
 }
 
-export default CalendarListMonth;
+export default CalendarListMonth

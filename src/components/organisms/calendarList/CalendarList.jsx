@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import Card from '../../templates/card'
 import CalendarListMonth from '../../molecules/calendarListMonth/CalendarListMonth'
 import ActionButton from '../../atoms/actionButton/ActionButton'
@@ -7,11 +8,22 @@ import CalendarIcon from '../../../assets/icons/calendar.svg'
 function CalendarList() {
   const [issuesByMonth, setIssuesByMonth] = useState(null)
 
-	useEffect(async () => {
-    const response = await fetch('https://architech-hetic.herokuapp.com/api/dashboard/futureEvent/1')
-    const issues = await response.json()
-    sortIssuesByMonth(issues)
+  useEffect(() => {
+    getIssuesByMonth()
   }, [])
+
+  async function getIssuesByMonth () {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}api/dashboard/futureEvent/1`)
+
+      if (!response || !response.data) return
+
+      const issues = response.data
+      sortIssuesByMonth(issues)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   function sortIssuesByMonth (issues) {
     const issuesByMonths = [] // [[issue], [issue], [issue]]
@@ -36,9 +48,9 @@ function CalendarList() {
       <ActionButton className="event-calendar__add-button" text="Prévoir un rendez-vous" icon={CalendarIcon}/>
       {issuesByMonth && issuesByMonth.map((issues, index) => (
         <CalendarListMonth key={index} issues={issues}/>
-			))}
+      ))}
     </Card>
   )
 }
 
-export default CalendarList;
+export default CalendarList

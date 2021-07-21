@@ -84,7 +84,7 @@ const annualEvolutionBarChart = () => {
 
   async function getAnnualEvolutionData() {
     try {
-      const response = await axios.get(`https://architech-hetic.herokuapp.com/api/dashboard/annualEvolution/1`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}api/dashboard/annualEvolution/1`);
       if (response && response.data) {
         const issues = response.data;
 

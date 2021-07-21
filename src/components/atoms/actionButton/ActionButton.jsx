@@ -6,7 +6,7 @@ function ActionButton({text, icon, className}) {
       {text}
       {icon && <img className="action-button__icon" src={icon}/>}
     </button>
-  );
+  )
 }
 
-export default ActionButton;
+export default ActionButton
