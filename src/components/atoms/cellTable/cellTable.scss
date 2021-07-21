@@ -1,0 +1,21 @@
+.sensorCell {
+	width: 100%;
+	background-color: $primary-utility-color;
+	cursor: pointer;
+
+	td {
+		@include table-information;
+		color: $secondary-utility-color;
+		text-align: center;
+		padding: $x-small-space 0;
+	}
+
+	&.gray {
+		background-color: $gray-low;
+	}
+
+	&:hover {
+		border: 1px solid $gray-dark;
+		border-radius: $regular-radius;
+	}
+}

@@ -1,0 +1,8 @@
+.sensorTable {
+	width: 100%;
+
+	th {
+		@include detailed-information-title;
+		padding: $medium-space 0;
+	}
+}
