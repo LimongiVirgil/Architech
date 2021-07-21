@@ -6,10 +6,14 @@ import SensorsHistoryLineChart from '../../atoms/sensorsHistoryLineChart/sensors
 const LiveSensorsData = () => {
 
 	return(
-		<Card>
-			<SensorsTable />
-			<SensorsHistoryLineChart nodeID="042101"/>
-		</Card>
+		<>
+			<Card>
+				<SensorsTable />
+			</Card>
+			<Card>
+				<SensorsHistoryLineChart nodeID="042101"/>
+			</Card>
+		</>
 	)
 }
 

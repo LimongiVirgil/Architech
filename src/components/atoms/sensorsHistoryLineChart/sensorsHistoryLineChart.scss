@@ -1,0 +1,43 @@
+.chartLine {
+	.headChart {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid $gray-lighter;
+		margin-bottom: $xxxx-large-space;
+	
+		.chartButtons {
+			display: flex;
+			justify-content: center;
+			
+			div {
+				cursor: pointer;
+				padding: $x-small-space;
+		
+				p {
+					@include table-information;
+					color: $gray-dark;
+				}
+		
+				&.active {
+					border-bottom: 4px solid $primary-dark-color;
+		
+					p {
+						@include text-information;
+						color: $primary-dark-color;
+					}
+				}
+		
+				&:nth-child(2) {
+					margin: 0 $xx-large-space;
+				}
+			}
+		}
+
+		span {
+			@include disclosure-information;
+			color: $secondary-utility-color;
+			padding: $x-small-space;
+			cursor: pointer;
+		}
+	}
+}

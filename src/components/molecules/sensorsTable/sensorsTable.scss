@@ -5,4 +5,8 @@
 		@include detailed-information-title;
 		padding: $medium-space 0;
 	}
+
+	.noDataFound {
+		text-align: center;
+	}
 }

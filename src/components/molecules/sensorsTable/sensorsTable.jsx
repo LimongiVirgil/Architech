@@ -31,10 +31,15 @@ const SensorsTable = () => {
 				</tr>
 			</thead>
 			<tbody>
-				{sensorsData &&
+				{sensorsData && typeof sensorsData[0] !== 'string' &&
 					sensorsData.map((node, index) => (
 						<CellTable node={node} key={index} cssClass={index % 2 === 0 ? '' : 'gray'}/>
 					))
+				}
+				{(!sensorsData || typeof sensorsData[0] === 'string') && 
+					<tr className="noDataFound">
+						<td colSpan="4">Aucune donnée trouvé</td>
+					</tr>
 				}
 			</tbody>
 		</table>
