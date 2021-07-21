@@ -3,7 +3,6 @@ import IssueMessage from '../../atoms/issueMessage/issueMessage'
 import IssueDate from '../../atoms/issueDate/issueDate'
 
 const IssueInformation = ({ issue }) => {
-
 	return (
 		<>
 		{issue && (

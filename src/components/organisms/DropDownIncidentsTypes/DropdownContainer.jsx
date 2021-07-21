@@ -18,7 +18,7 @@ export const DropdownContainer = () => {
   const getIncindentsType = async () => {
     try {
       const response = await axios.get(
-        `https://architech-hetic.herokuapp.com/api/dashboard/statsincidents/1`
+        `${import.meta.env.VITE_API_URL}api/dashboard/statsincidents/1`
       );
       setDataTypeIncidents(response.data.incidents);
     } catch (err) {

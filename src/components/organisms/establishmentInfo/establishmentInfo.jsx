@@ -7,7 +7,7 @@ const EstablishmentInfo = () => {
 	const [establishmentData, setEstablishmentData] = useState(false)
 
 	useEffect(() => {
-    fetch('https://architech-hetic.herokuapp.com/api/dashboard/infobuilding/1')
+    fetch(`${import.meta.env.VITE_API_URL}api/dashboard/infobuilding/1`)
       .then(response => response.json())
       .then(result => setEstablishmentData(result));
   }, [])
