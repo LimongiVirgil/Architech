@@ -21,7 +21,7 @@ function IncidentsOfTheMonth() {
 
   async function getChartData() {
     try {
-      const response = await fetch("https://architech-hetic.herokuapp.com/api/dashboard/statsincidents/1")
+      const response = await fetch(`${import.meta.env.VITE_API_URL}api/dashboard/statsincidents/1`)
 
       const statsIncidents = await response.json()
       const currentMonthIncidents = {}
