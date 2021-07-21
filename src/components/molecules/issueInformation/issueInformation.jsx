@@ -3,17 +3,17 @@ import IssueMessage from '../../atoms/issueMessage/issueMessage'
 import IssueDate from '../../atoms/issueDate/issueDate'
 
 const IssueInformation = () => {
-	const [issuesData, setIssuesData] = useState([])
+	const [issuesData, setIssuesData] = useState(false)
 
 	useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/dashboard/futureEvent/1')
+    fetch(`${import.meta.env.VITE_API_URL}api/dashboard/futureEvent/1`)
       .then(response => response.json())
       .then(result => setIssuesData(result));
   }, [])
 
 	return (
 		<>
-			{issuesData.length && issuesData.map((issue, index) => (
+			{issuesData && issuesData.map((issue, index) => (
 				<div key={index} className="messageContainer">
 					<IssueDate date={issue.intervention_datetime.date} />
 					<IssueMessage 

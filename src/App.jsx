@@ -1,44 +1,20 @@
-import React, { useState } from 'react'
-import CommingIssue from './components/organismes/commingIssue/commingIssue'
+import React from 'react'
+import IncidentsOfTheMonth from './components/organisms/incidentsOfTheMonth/incidentsOfTheMonth'
+import CommingIssue from './components/organisms/commingIssue/commingIssue'
+import EstablishmentInfo from './components/organisms/establishmentInfo/establishmentInfo'
+import { DropdownContainer } from './components/organisms/DropDownIncidentsTypes/DropdownContainer'
+import AnnualEvolutionBarChart from './components/molecules/annualEvolutionBarChartBlock/annualEvolutionBarChart';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Hello Vite + React!</p>
-        <CommingIssue />
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <IncidentsOfTheMonth />
+      <CommingIssue />
+      <EstablishmentInfo />
+      <DropdownContainer />
+      <AnnualEvolutionBarChart/>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
