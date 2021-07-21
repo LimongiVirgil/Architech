@@ -6,7 +6,7 @@ const IssueInformation = () => {
 	const [issuesData, setIssuesData] = useState(false)
 
 	useEffect(() => {
-    fetch('https://architech-hetic.herokuapp.com/api/dashboard/futureEvent/1')
+    fetch(`${import.meta.env.VITE_API_URL}api/dashboard/futureEvent/1`)
       .then(response => response.json())
       .then(result => setIssuesData(result));
   }, [])
