@@ -15,14 +15,23 @@
 @import '../components/atoms/title/title.scss';
 @import '../components/atoms/issueMessage/issueMessage.scss';
 @import '../components/atoms/issueDate/issueDate.scss';
+@import '../components/atoms/variationStat/variationStat.scss';
+@import '../components/atoms/mainStat/mainStat.scss';
+@import '../components/atoms/tagsIncidents/tagsIncidents.scss';
+@import '../components/atoms/localisationIncidents/localisationnIncidents.scss';
 
 // Molecules
 @import '../components/molecules/issueInformation/issueInformation.scss';
+@import '../components/molecules/currentMonthChart/currentMonthChart.scss';
 @import '../components/molecules/establishmentContact/establishmentContact.scss';
 
-//Organismes
-@import '../components/organismes/commingIssue/commingIssue.scss';
-@import '../components/organismes/establishmentInfo/establishmentInfo.scss';
+// Organismes
+@import '../components/organisms/incidentsOfTheMonth/incidentsOfTheMonth.scss';
+@import '../components/organisms/establishmentInfo/establishmentInfo.scss';
+@import '../components/organisms/DropDownIncidentsTypes/dropdownIncidentsTypese.scss';
+
+// Templates
+@import '../components/templates/card.scss';
 
 ////////
 
@@ -37,7 +46,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 code {
