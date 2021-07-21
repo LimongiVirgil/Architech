@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import config from '../../../../env'
 import Title from '../../atoms/title/title'
 import EstablishmentManagerContact from '../../molecules/establishmentContact/establishmentManagerContact';
 import EstablishmentBuildingContact from '../../molecules/establishmentContact/establishmentBuildingContact';
