@@ -1,0 +1,10 @@
+.new-intervention-form {
+
+  &__buttons {
+    margin-top: $xxxx-large-space;
+
+    :not(:last-child) {
+      margin-right: $large-space;
+    }
+  }
+}

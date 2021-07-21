@@ -1,0 +1,18 @@
+.modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background: $overlay-utility-color;
+  width: 100vw;
+  height: 100vh;
+
+  &__container {
+    max-width: 980px;
+    border-radius: $card-radius;
+    padding: $xxxxx-large-space $xxxxxx-large-space;
+    background: $primary-utility-color;
+  }
+}

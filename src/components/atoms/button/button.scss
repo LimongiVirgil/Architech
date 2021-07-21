@@ -1,0 +1,10 @@
+.button {
+  padding: $medium-space $xxx-large-space;
+  border-radius: $regular-radius;
+
+  &--primary {
+    background: $primary-dark-color;
+    color: $primary-utility-color;
+    font-weight: bold;
+  }
+}

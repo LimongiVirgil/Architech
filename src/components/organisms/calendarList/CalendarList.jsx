@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import Card from '../../templates/card'
+import Card from '../../templates/card/Card'
 import CalendarListMonth from '../../molecules/calendarListMonth/CalendarListMonth'
 import ActionButton from '../../atoms/actionButton/ActionButton'
 import CalendarIcon from '../../../assets/icons/calendar.svg'

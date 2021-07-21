@@ -1,0 +1,8 @@
+.input-label {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: $x-small-space;
+  }
+}
