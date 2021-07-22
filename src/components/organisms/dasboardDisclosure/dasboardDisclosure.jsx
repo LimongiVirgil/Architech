@@ -30,15 +30,12 @@ const DasboardDisclosure = () => {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}api/dashboard/statsincidents/1`
       );
-      console.log(response)
-      console.log("response data: ", response.data)
       setDataTypeIssues(response.data.incidents);
     } catch (err) {
       console.log(err);
     }
   };
-
-  console.log('dashboardDisclosure: ', dataTypeIssues)
+  
   return (
     <div>
       {dataTypeIssues &&

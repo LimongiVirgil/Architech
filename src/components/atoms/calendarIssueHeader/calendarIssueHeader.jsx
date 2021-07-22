@@ -16,12 +16,13 @@ const months = [
   "Décembre"
 ]
 
-const today = new Date();
-const day = String(today.getDate()).padStart(2, '0');
+const today = new Date()
+const day = String(today.getDate()).padStart(2, '0')
 const monthName = months[today.getMonth()] 
-const years = today.getFullYear();
+const years = today.getFullYear()
 
-const date = day + ' ' + monthName + ' ' + years;
+const date = day + ' ' + monthName + ' ' + years
+
   return (
     <div className={cssClass}>
       <p className="hearder-message">Aujourd'hui, <span>{date}</span> pas d'évènements prévus </p>

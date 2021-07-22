@@ -11,8 +11,6 @@ const tagTitle = {
 };
 
 const ListIssuesTypes = ({ incidents, type }) => {
-console.log('listIssue type: ', type)
-console.log('listIssue incidents ', incidents)
 return (
   <Disclosure.Panel
     static
