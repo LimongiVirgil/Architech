@@ -1,17 +1,17 @@
 .issueDate.big {
-	color: $secondary-utility-color;
-	@include table-information;
+  color: $secondary-utility-color;
+  @include table-information;
 
-	span {
-		@include important-detailed-information;
-	}
+  span {
+    @include important-detailed-information;
+  }
 }
 
 .issueDate.small {
-	color: $secondary-utility-color;
-	@include disclosure-information;
+  color: $secondary-utility-color;
+  @include disclosure-information;
 
-	span {
-		@include important-disclosure-information;
-	}
+  span {
+    @include important-disclosure-information;
+  }
 }

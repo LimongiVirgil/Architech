@@ -11,7 +11,7 @@ const Sidebar = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/home">Tableau de bord</NavLink>
+            <NavLink exact={true} to="/">Tableau de bord</NavLink>
           </li>
           <li>
             <NavLink to="/live-data">Surveillance des capteurs</NavLink>

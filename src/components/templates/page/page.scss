@@ -1,0 +1,6 @@
+.page {
+  width: calc(100vw - 250px);
+  min-height: 100vh;
+  padding: $large-space;
+  overflow-y: scroll;
+}

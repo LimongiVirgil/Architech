@@ -1,0 +1,29 @@
+.recap {
+  background: $gray-low;
+  padding: $xx-large-space;
+
+  &__title {
+    @include contact-information;
+    margin-bottom: $large-space;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: $large-space;
+  }
+}
+
+.recap-item {
+  &__title {
+    @include detailed-information-title;
+    margin-bottom: $x-small-space;
+  }
+
+  &__info {
+    @include text-information;
+  }
+
+  &__contact-info {
+    @include contact-info;
+    margin-top: $x-small-space;
+  }
+}
