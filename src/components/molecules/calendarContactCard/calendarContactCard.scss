@@ -1,4 +1,4 @@
-.calendarContactCard{
+.calendar-contact-card{
   display: flex;
   justify-content:center;
   align-items:center;
@@ -6,7 +6,7 @@
   padding: 0px $medium-space 0px $medium-space;
   border: 1px solid $gray-lighter;
 
-  .companyInfos{
+  .company-infos{
     width: 70%;
     border-right: 1px solid $gray-lighter;
     padding-top:$medium-space;
@@ -31,7 +31,7 @@
     }
   }
 
-  .interventionProgram{
+  .intervention-program{
     width:30%;
     display: flex;
     flex-direction: column;

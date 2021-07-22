@@ -11,7 +11,7 @@ const tagTitle = {
 };
 
 const ListIncidentsTypes = ({ incidents, type }) => {
-console.log(incidents)
+
 return(
   <Menu.Items
     static

@@ -24,7 +24,7 @@ const CalendarDetailsIssues = () => {
   return (
     <Card>
       <CalendarIssueHeader 
-        cssClass="issueHeaderAgenda"
+        cssClass="issue-header-agenda"
       />
       {
         Object.entries(disclosureIds).map(

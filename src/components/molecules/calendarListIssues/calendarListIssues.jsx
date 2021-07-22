@@ -7,14 +7,12 @@ const AgendaListIssues = () => {
     <Disclosure.Panel
       className="list-issues relative focus:outline-none"
     >
-      <div>
-        <div className="issues">
-          <LocalisationIncidents 
-            cssClass="localisation-incidents" 
-            text="A103" 
-          />
-          <span className="issues-report">2 incidents relevés</span>
-        </div>
+      <div className="issues">
+        <LocalisationIncidents 
+          cssClass="localisation-incidents" 
+          text="A103" 
+        />
+        <span className="issues-report">2 incidents relevés</span>
       </div>
     </Disclosure.Panel>
   )

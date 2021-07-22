@@ -1,7 +1,7 @@
-.issueHeaderAgenda {
+.issue-header-agenda {
   padding-left:$x-small-space;
   margin-bottom: $xx-large-space;
-  .headerMessage{
+  .hearder-message{
     @include text-information;
     color: $gray-darker;
     margin-bottom: $x-large-space;
@@ -14,7 +14,7 @@
     }
   }
 
-  .totalIssues{
+  .total-issues{
     @include detailed-information;
     color: $secondary-utility-color;
   }
