@@ -1,7 +1,7 @@
-.dropdown-incidents {
+.disclosure-issues  {
   width: 100%;
 
-  .dropdown-header {
+  .disclosure-header {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -26,7 +26,7 @@
       }
     }
 
-    .button-dropdown {
+    .button-disclosure {
       @include disclosure-information;
       padding-right: $x-small-space;
       color: $primary-dark-color;
@@ -45,10 +45,10 @@
     }
   }
 
-  .list-incidents {
-    .incidents {
-      display: flex;
-      justify-content: space-between;
+  .list-issues {
+    .issues {
+      display: grid;
+      grid-template-columns: 33% 30% 32%;
       width: 31.5em;
       border-bottom: solid 1px $gray-low;
       padding-left: $x-small-space;

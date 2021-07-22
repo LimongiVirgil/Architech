@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import CalendarDetailsIssues from '../organisms/calendarDetailsIssues/calendarDetailsIssues'
 import CalendarList from '../organisms/calendarList/CalendarList'
 import NewInterventionForm from '../organisms/newInterventionForm/NewInterventionForm'
 import Modal from '../templates/modal/Modal'
@@ -9,6 +10,7 @@ const Agenda = () => {
 
   return (
     <Page>
+      <CalendarDetailsIssues />
       <CalendarList/>
       <Modal showModal={showModal}>
         <NewInterventionForm cancelCallback={setShowModal} validateCallback={setShowModal}/>
