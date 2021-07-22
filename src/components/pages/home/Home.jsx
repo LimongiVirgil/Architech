@@ -2,8 +2,8 @@ import React from 'react'
 import IncidentsOfTheMonth from '../../organisms/incidentsOfTheMonth/incidentsOfTheMonth'
 import CommingIssue from '../../organisms/commingIssue/commingIssue'
 import EstablishmentInfo from '../../organisms/establishmentInfo/establishmentInfo'
-import DropdownContainer from '../../organisms/DropDownIncidentsTypes/DropdownContainer'
 import AnnualEvolutionBarChart from '../../organisms/annualEvolutionBarChartBlock/annualEvolutionBarChart'
+import DasboardDisclosure from '../../organisms/dasboardDisclosure/dasboardDisclosure'
 import Card from '../../templates/card/Card'
 import Page from '../../templates/page/Page'
 
@@ -12,7 +12,7 @@ const Home = () => {
     <Page className="home">
       <Card>
         <IncidentsOfTheMonth />
-        <DropdownContainer />
+        <DasboardDisclosure />
       </Card>
       <div className="card-container">
         <CommingIssue />
