@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import CellTable from '../../atoms/cellTable/cellTable'
+import axios from 'axios';
+import CellTable from '../../atoms/cellTable/cellTable';
 
 const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
   const [sensorsData, setSensorsData] = useState(false)
 
   const hydratation = (objectData) => {
-    var hydratedData = [];
+    const hydratedData = [];
 
     for (const [key, value] of Object.entries(objectData)) {
       hydratedData.push(value)
@@ -15,10 +16,19 @@ const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
   }
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}api/influx`)
-    .then(response => response.json())
-    .then(result => setSensorsData(hydratation(result)));
+    getSensors()
   }, [])
+
+  const getSensors = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}api/influx`
+      );
+      setSensorsData(hydratation(response.data));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <table className={`sensorTable ${graphOpened ? 'graphOpened' : ''} `}>

@@ -4,12 +4,16 @@ const CellTable = ({node, cssClass, handleClick, nodeID}) => {
   const cell = useRef()
 
   useEffect(() => {
-    if ( nodeID === node[0].node_id ) {
+    customSelectedSensor();
+  }, [nodeID])
+
+  const customSelectedSensor = () => {
+    if (nodeID === node[0].node_id) {
       cell.current.setAttribute('active', 'active');
     } else {
       cell.current.setAttribute('active', '');
     }
-  }, [nodeID])
+  }
 
   var classRoom = node[0].node_id.substring(node[0].node_id.length - 3)
   var heat = 0;

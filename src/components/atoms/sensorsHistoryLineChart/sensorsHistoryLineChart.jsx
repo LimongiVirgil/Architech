@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 
 const sensorsHistoryLineChart = ({ nodeID, graph }) => {
@@ -10,26 +11,38 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
   const [dataGraph, setDataGraph] = useState([])
 
   useEffect(() => {
-    Promise.all([
-      fetch(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Pression`),
-      fetch(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Humidité`),
-      fetch(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Temperature`)
-    ]).then((responses) => (
-      Promise.all(responses.map((response) => (
-        response.json()
-      )))
-    )).then(json => (
-      setDataSensors(json)
-    )).catch((error) => (
-      console.log(error)
-    ));
+    getSensorsDataByType();
   }, [nodeID]);
 
   useEffect(() => {
-    var time = [];
-    var humidityDataArray = [];
-    var heatDataArray = [];
-    var windDataArray = [];
+    sortGraphDatas();
+  }, [dataSensors])
+
+  useEffect(() => {
+    setDynamicDatasForGraph();
+  }, [graph, heatDataGraph, humidityDataGraph, windDataGraph])
+
+  const getSensorsDataByType = async () => {
+    Promise.all([
+      axios.get(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Pression`),
+      axios.get(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Humidité`),
+      axios.get(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Temperature`)
+    ]).then(responses => (
+      responses.map((response) => (
+        response.data
+      ))
+    )).then((result) => (
+      setDataSensors(result)
+    )).catch((error) => (
+      console.log(error)
+    ));
+  };
+
+  const sortGraphDatas = () => {
+    let time = [];
+    let humidityDataArray = [];
+    let heatDataArray = [];
+    let windDataArray = [];
 
     if (dataSensors[0]) {
       dataSensors[0][`${nodeID}`].map(item => {
@@ -51,7 +64,7 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
       setHeatDataGraph(heatDataArray)
       setWindDataGraph(windDataArray)
     }
-  }, [dataSensors])
+  }
 
   const dataGraphObject = {
     labels: timeXAxe,
@@ -64,7 +77,7 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
     }],
   };
 
-  useEffect(() => {
+  const setDynamicDatasForGraph = () => {
     if (graph === "Température") {
       dataGraphObject.datasets[0].data = heatDataGraph;
       dataGraphObject.datasets[0].backgroundColor = '#FF6384';
@@ -79,7 +92,7 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
       dataGraphObject.datasets[0].borderColor = 'rgba(255, 99, 132, 0.2)';
     }
     setDataGraph(dataGraphObject)
-  }, [graph, heatDataGraph, humidityDataGraph, windDataGraph])
+  }
 
   const options = {
     plugins: {
