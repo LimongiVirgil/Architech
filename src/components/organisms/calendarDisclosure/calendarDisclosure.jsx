@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Disclosure, Transition } from '@headlessui/react'
 import CalendarDetailsIssues from '../../molecules/calendarListIssues/calendarListIssues'
 import CalendarContactCard from '../../molecules/calendarContactCard/calendarContactCard';
@@ -11,7 +11,7 @@ const incidentTitle = {
 
 const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
 
-  const handleclick = () => {
+  const showDisclosure = () => {
     setter({
       ...initialState,
       [type]: true
@@ -29,7 +29,7 @@ const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
                 <h3>{incidentTitle[type]}</h3>
                 <p> 13 incidents </p>
               </div>
-              <div onClick={handleclick} >
+              <div onClick={showDisclosure} >
                 <Disclosure.Button className="button-disclosure" >
                   {isOpen ? "Fermer le détail" : "Voir les détail"}
                 </Disclosure.Button>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Card from '../../templates/card'
 import CalendarDisclosure from '../calendarDisclosure/calendarDisclosure'
 import CalendarIssueHeader from '../../atoms/calendarIssueHeader/calendarIssueHeader'
