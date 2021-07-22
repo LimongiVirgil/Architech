@@ -1,12 +1,12 @@
 .issue-header-agenda {
-  padding-left:$x-small-space;
+  padding-left: $x-small-space;
   margin-bottom: $xx-large-space;
-  .hearder-message{
+  .hearder-message {
     @include text-information;
     color: $gray-darker;
     margin-bottom: $x-large-space;
 
-    span{
+    span {
       @include text-information;
       color: $primary-dark-color;
       border-bottom: 2px solid  $primary-dark-color;
@@ -14,7 +14,7 @@
     }
   }
 
-  .total-issues{
+  .total-issues {
     @include detailed-information;
     color: $secondary-utility-color;
   }
