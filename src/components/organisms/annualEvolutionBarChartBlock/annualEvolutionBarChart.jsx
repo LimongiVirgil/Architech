@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 import Card from '../../templates/card/Card';
+import Title from '../../atoms/title/title';
 
 const annualEvolutionBarChart = () => {
   const months = {
@@ -170,6 +171,7 @@ const annualEvolutionBarChart = () => {
 
   return (
     <Card>
+      <Title cssClass="card-title">Évolution annuelle des incidents</Title>
       <Bar data={data} options={options} />
     </Card>
   )
