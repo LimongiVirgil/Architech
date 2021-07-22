@@ -32,7 +32,7 @@ return (
     ))}
     </div>
   </Disclosure.Panel>
-    )
+  )
 }
 
 export default ListIssuesTypes;
