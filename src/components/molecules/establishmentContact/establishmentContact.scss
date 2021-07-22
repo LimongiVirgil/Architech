@@ -21,8 +21,7 @@
 	}
 
 	.contact {
-		@include important-disclosure-information;
-		color: $primary-dark-color;
+		@include contact-info;
 	}
 
 	.importantData {

@@ -10,7 +10,8 @@
   height: 100vh;
 
   &__container {
-    max-width: 980px;
+    min-width: 850px;
+    max-width: 950px;
     border-radius: $card-radius;
     padding: $xxxxx-large-space $xxxxxx-large-space;
     background: $primary-utility-color;

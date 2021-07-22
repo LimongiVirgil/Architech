@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Card from '../../templates/card/Card'
 import CalendarListMonth from '../../molecules/calendarListMonth/CalendarListMonth'
-import ActionButton from '../../atoms/actionButton/ActionButton'
-import CalendarIcon from '../../../assets/icons/calendar.svg'
 
 function CalendarList() {
   const [issuesByMonth, setIssuesByMonth] = useState(null)
@@ -44,8 +42,7 @@ function CalendarList() {
   }
 
   return (
-    <Card className="event-calendar" scroll={true}>
-      <ActionButton className="event-calendar__add-button" text="Prévoir un rendez-vous" icon={CalendarIcon}/>
+    <Card scroll={true}>
       {issuesByMonth && issuesByMonth.map((issues, index) => (
         <CalendarListMonth key={index} issues={issues}/>
       ))}

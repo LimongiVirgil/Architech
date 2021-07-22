@@ -1,13 +1,17 @@
 
 import React from 'react'
 
-function Modal ({children}) {
-  return (
-    <div className="modal">
-      <div className="modal__container">
-        {children}
+function Modal ({children, showModal}) {
+  return ( 
+    <>
+    {showModal && (
+      <div className="modal">
+        <div className="modal__container">
+          {children}
+        </div>
       </div>
-    </div>
+    )}
+    </>
   )
 }
 
