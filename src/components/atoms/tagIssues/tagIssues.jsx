@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TagsIncidents = ({cssClass, text }) => {
+const TagsIssues = ({cssClass, text }) => {
 
 return(
   <div className="tag-container">
@@ -9,4 +9,4 @@ return(
   )
 }
 
-export default TagsIncidents;
+export default TagsIssues;
