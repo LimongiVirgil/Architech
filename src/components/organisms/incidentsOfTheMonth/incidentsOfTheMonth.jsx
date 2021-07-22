@@ -43,7 +43,7 @@ function IncidentsOfTheMonth() {
       else setVariationWithPrevMonth(formattedVariation)
 
       if (variation === 0) setVariationText('Stable depuis le mois précédent')
-      else if (variation > 1) setVariationText('En hausse depuis le mois précédent')
+      else if (variation > 0) setVariationText('En hausse depuis le mois précédent')
       else setVariationText('En baisse depuis le mois précédent')
 
       setChartData(currentMonthIncidents)

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-const Card = ({children}) => {
+const Card = ({children, className, scroll}) => {
   return (
-    <div className="card">{children}</div>
+    <div className={`card${className ? ' ' + className : ''}${scroll ? ' card--scroll': ''}`}>{children}</div>
   )
 }
 

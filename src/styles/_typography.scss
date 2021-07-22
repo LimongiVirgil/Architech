@@ -66,6 +66,12 @@ $main-font: "Avenir Next";
   color: $gray-base;
 }
 
+@mixin subtitle {
+  font-size: pxToRem(16);
+  line-height: 120%;
+  color: $gray-darker;
+}
+
 @mixin important-detailed-information {
   font-size: pxToRem(13);
   line-height: 120%;
