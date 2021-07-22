@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import DropDownIncidentsTypes from './DropdownIncidentsTypes'
-import Card from './../../templates/card'
 
 export const DropdownContainer = () => {
   const [dataTypeIncidents, setDataTypeIncidents] = useState([]);
@@ -27,7 +26,7 @@ export const DropdownContainer = () => {
   };
 
   return (
-    <Card>
+    <div>
       {dataTypeIncidents &&
         SENSOR_TYPES.map(
           (sensorType, key) => (
@@ -38,6 +37,6 @@ export const DropdownContainer = () => {
             />
           )
         )}
-    </Card>
+    </div>
   );
 };
