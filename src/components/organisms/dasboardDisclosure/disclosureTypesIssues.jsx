@@ -9,7 +9,6 @@ const incidentTitle = {
 };
 
 const DisclosureTypesIssues = ({ incidents, isOpen, type, setter, initialState }) => {
-  console.log(type)
   const showDisclosure = () => {
     setter({
       ...initialState,

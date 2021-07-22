@@ -6,7 +6,7 @@ const SENSOR_TYPES = [
   'high_humidity',
   'heat_leak',
   'defective_air_conditioning',
-];
+]
 
 const initialOpeningState = SENSOR_TYPES.reduce((accu, sensor) => ({
   ...accu,
@@ -14,7 +14,7 @@ const initialOpeningState = SENSOR_TYPES.reduce((accu, sensor) => ({
 }), {}) 
 
 const DasboardDisclosure = () => {
-  const [dataTypeIncidents, setDataTypeIncidents] = useState([]);
+  const [dataTypeIssues, setDataTypeIssues] = useState([]);
   const [disclosureIds, setDisclosureIds] = useState(initialOpeningState)
 
   const disclosureCallback = (value) => {
@@ -22,23 +22,23 @@ const DasboardDisclosure = () => {
   }
 
   useEffect(() => {
-    getIncindentsType();
-  }, []);
+    getIncindentsType()
+  }, [])
 
   const getIncindentsType = async () => {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}api/dashboard/statsincidents/1`
       );
-      setDataTypeIncidents(response.data.incidents);
+      setDataTypeIssues(response.data.incidents)
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
   };
 
   return (
     <div>
-      {dataTypeIncidents &&
+      {dataTypeIssues &&
         Object.entries(disclosureIds).map(
           ([key, value]) => (
             <DisclosureTypesIssues
@@ -47,7 +47,7 @@ const DasboardDisclosure = () => {
               isOpen={value}
               setter={disclosureCallback}
               initialState={initialOpeningState}
-              incidents={dataTypeIncidents}
+              incidents={dataTypeIssues}
             />
           )
         )}
@@ -55,4 +55,4 @@ const DasboardDisclosure = () => {
   );
 };
 
-export default DasboardDisclosure;
+export default DasboardDisclosure
