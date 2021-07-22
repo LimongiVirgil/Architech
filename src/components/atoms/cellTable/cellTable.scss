@@ -1,31 +1,31 @@
 .sensorCell {
-	width: 100%;
-	background-color: $primary-utility-color;
-	cursor: pointer;
+  width: 100%;
+  background-color: $primary-utility-color;
+  cursor: pointer;
 
-	td {
-		@include table-information;
-		color: $secondary-utility-color;
-		text-align: center;
-		padding: $x-small-space 0;
-	}
+  td {
+    @include table-information;
+    color: $secondary-utility-color;
+    text-align: center;
+    padding: $x-small-space 0;
+  }
 
-	&.gray {
-		background-color: $gray-low;
-	}
+  &.gray {
+    background-color: $gray-low;
+  }
 
-	&:hover {
-		border: 1px solid $gray-dark;
-		border-radius: $regular-radius;
-	}
+  &:hover {
+    border: 1px solid $gray-dark;
+    border-radius: $regular-radius;
+  }
 
-	&[active="active"] {
-		background-color: $gray-lighter;
-		border: 1px solid $gray-dark;
-		border-radius: $regular-radius;
+  &[active="active"] {
+    background-color: $gray-lighter;
+    border: 1px solid $gray-dark;
+    border-radius: $regular-radius;
 
-		td {
-			@include important-text-information;
-		}
-	}
+    td {
+      @include important-text-information;
+    }
+  }
 }
