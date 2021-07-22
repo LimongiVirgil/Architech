@@ -2,17 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import { Line } from 'react-chartjs-2';
 import Title from '../../atoms/title/title'
 
-const sensorsHistoryLineChart = ({nodeID}) => {
+const sensorsHistoryLineChart = ({nodeID, graph}) => {
 	const [dataSensors, setDataSensors] = useState(false)
 	const [timeXAxe, setTimeXAxe] = useState(false)
 	const [humidityDataGraph, setHumidityDataGraph] = useState(false)
 	const [heatDataGraph, setHeatDataGraph] = useState(false)
 	const [windDataGraph, setWindDataGraph] = useState(false)
-	const [whichGraph, setWhichGraph] = useState("Température")
-
-	const humidityButton = useRef();
-	const heatButton = useRef();
-	const windButton = useRef();
 
   useEffect(() => {
 		Promise.all([
@@ -23,12 +18,12 @@ const sensorsHistoryLineChart = ({nodeID}) => {
 			Promise.all(responses.map((response) => (
 				response.json()
 			)))
-		)).then(hydratedData => (
-			setDataSensors(hydratedData)
+		)).then(json => (
+			setDataSensors(json)
 		)).catch((error) => (
 			console.log(error)
 		));
-  }, []);
+  }, [nodeID]);
 
 	useEffect(() => {
 		var time = [];
@@ -108,41 +103,18 @@ const sensorsHistoryLineChart = ({nodeID}) => {
 				display: true,
 				title: {
 					display: true,
-					text: whichGraph,
+					text: graph,
 				}
 			}
 		}
 	};
 
-	const changeGraph = (name, currRef) => {
-		setWhichGraph(name);
-		heatButton.current.className = '';
-		humidityButton.current.className = '';
-		windButton.current.className = '';
-		currRef.className = "active";
-	}
-
   return (
-		<div className="chartLine">
-			<div className="headChart">
-				<Title cssClass="card-title">Salle {nodeID.substring(nodeID.length - 3)}</Title>
-				<div className="chartButtons">
-					<div ref={heatButton} className="active" onClick={() => changeGraph('Température', heatButton.current)}>
-						<p>Température</p>
-					</div>
-					<div ref={humidityButton} onClick={() => changeGraph('Humidité', humidityButton.current)}>
-						<p>Humidité</p>
-					</div>
-					<div ref={windButton} onClick={() => changeGraph('Vent', windButton.current)}>
-						<p>Vent</p>
-					</div>
-				</div>
-				<span>Fermer le volet</span>
-			</div>
-			{whichGraph === "Température" && <Line data={dataHeatGraph} options={options} />}
-			{whichGraph === "Humidité" && <Line data={dataHumidityGraph} options={options} />}
-			{whichGraph === "Vent" && <Line data={dataWindGraph} options={options} />}
-		</div>
+		<>
+			{graph === "Température" && <Line data={dataHeatGraph} options={options} />}
+			{graph === "Humidité" && <Line data={dataHumidityGraph} options={options} />}
+			{graph === "Vent" && <Line data={dataWindGraph} options={options} />}
+		</>
   );
 };
 

@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
-const CellTable = ({node, cssClass}) => {
+const CellTable = ({node, cssClass, handleClick, nodeID}) => {
+	const cell = useRef()
+
+	useEffect(() => {
+		if ( nodeID === node[0].node_id ) {
+			cell.current.setAttribute('active', 'active');
+		} else {
+			cell.current.setAttribute('active', '');
+		}
+	}, [nodeID])
+
 	var classRoom = node[0].node_id.substring(node[0].node_id.length - 3)
 	var heat = 0;
 	var humidity = 0;
@@ -17,7 +27,13 @@ const CellTable = ({node, cssClass}) => {
 	})
 
 	return (
-    <tr className={`sensorCell ${cssClass}`}>
+    <tr
+			ref={cell} 
+			className={`sensorCell${cssClass ? ' ' + cssClass : ''}`}
+			onClick={() => { 
+				handleClick(node[0].node_id); 
+			}}
+		>
       <td>{classRoom}</td>
 			<td>{heat}°</td>
 			<td>{humidity} %</td>

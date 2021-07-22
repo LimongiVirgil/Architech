@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../../templates/card'
 import SensorsTable from '../../molecules/sensorsTable/sensorsTable';
-import SensorsHistoryLineChart from '../../atoms/sensorsHistoryLineChart/sensorsHistoryLineChart';
+import LineChartCard from '../../molecules/lineChartCard/lineChartCard'
 
 const LiveSensorsData = () => {
+	const [node, setNode] = useState(false)
+	const [graphOpened, setGraphOpened] = useState(false)
+
+	const handleCellClick = (currNode) => {
+		setNode(currNode)
+		setGraphOpened(true)
+		//setNewGraph(!newGraph)
+	}
+
+	const handleCloseGraph = () => {
+		setGraphOpened(false)
+		setNode(false)
+	}
 
 	return(
 		<>
 			<Card>
-				<SensorsTable />
+				<SensorsTable handleClick={handleCellClick} graphOpened={graphOpened} nodeID={node}/>
 			</Card>
-			<Card>
-				<SensorsHistoryLineChart nodeID="042101"/>
-			</Card>
+			{node && graphOpened &&
+				<Card>
+					<LineChartCard nodeID={node} handleCloseGraph={handleCloseGraph}/>
+				</Card>
+			}
 		</>
 	)
 }
