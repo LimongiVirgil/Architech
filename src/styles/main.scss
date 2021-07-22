@@ -22,6 +22,7 @@
 @import '../components/molecules/currentMonthChart/currentMonthChart.scss';
 @import '../components/molecules/establishmentContact/establishmentContact.scss';
 @import '../components/molecules/calendarListMonth/calendarListMonth.scss';
+@import '../components/molecules/calendarContactCard/calendarContactCard.scss';
 
 // Organismes
 @import '../components/organisms/incidentsOfTheMonth/incidentsOfTheMonth.scss';
@@ -29,6 +30,7 @@
 @import '../components/organisms/DropDownIncidentsTypes/dropdownIncidentsTypese.scss';
 @import '../components/organisms/calendarList/calendarList.scss';
 @import '../components/organisms/sidebar/sidebar.scss';
+@import '../components/organisms/calendarDisclosure/calendarDisclosure.scss';
 
 // Templates
 @import '../components/templates/card.scss';

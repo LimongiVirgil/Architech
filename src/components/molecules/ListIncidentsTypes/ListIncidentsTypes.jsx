@@ -12,7 +12,7 @@ const tagTitle = {
 
 const ListIncidentsTypes = ({ incidents, type }) => {
 
-return(
+return (
   <Menu.Items
     static
     className="list-incidents relative focus:outline-none"
@@ -24,7 +24,7 @@ return(
             <IssueDate size="small" date={item.incident_date} />
             <LocalisationIncidents 
               cssClass="localisation-incidents" 
-              text={`${item.classroom_zone} + ${item.classroom_floor}`} 
+              text={item.classroom_zone + item.classroom_floor} 
             />
               <TagsIncidents 
                 cssClass={`tag-status ${item.incident_status}`} 

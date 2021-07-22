@@ -1,0 +1,47 @@
+.calendar-contact-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 31em;
+  padding: 0px $medium-space 0px $medium-space;
+  border: 1px solid $gray-lighter;
+
+  .company-infos {
+    width: 70%;
+    border-right: 1px solid $gray-lighter;
+    padding-top: $medium-space;
+    padding-bottom: $medium-space;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    span {
+      @include disclosure-information;
+      color: $secondary-utility-color;
+      margin-bottom: $medium-space;
+    }
+
+    h3 {
+      @include contact-information;
+      margin-bottom: $medium-space;
+    }
+
+    p {
+      @include important-disclosure-information;
+      color: $primary-dark-color;
+    }
+  }
+
+  .intervention-program {
+    width :30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p{
+      margin-top: $medium-space;
+      color: $secondary-utility-color;
+      @include important-disclosure-information;
+      text-align: center;
+    }
+  }
+}
