@@ -14,13 +14,13 @@ const Sidebar = () => {
             <NavLink exact={true} to="/">Tableau de bord</NavLink>
           </li>
           <li>
-            <NavLink to="/live-data">Surveillance des capteurs</NavLink>
+            <NavLink to="/monitoring">Surveillance en temps réel</NavLink>
           </li>
           <li>
             <NavLink to="/agenda">Agenda</NavLink>
           </li>
           <li>
-            <NavLink to="/settings"> Paramètres</NavLink>
+            <NavLink to="/settings">Paramètres</NavLink>
           </li>
         </ul>
       </nav>

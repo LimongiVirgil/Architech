@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Card from '../../templates/card'
+import Card from '../../templates/card/Card'
 import SensorsTable from '../../molecules/sensorsTable/sensorsTable';
 import LineChartCard from '../../molecules/lineChartCard/lineChartCard'
 
