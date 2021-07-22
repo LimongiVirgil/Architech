@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Disclosure, Transition } from '@headlessui/react'
 import CalendarDetailsIssues from '../../molecules/calendarListIssues/calendarListIssues'
 import CalendarContactCard from '../../molecules/calendarContactCard/calendarContactCard';
@@ -18,12 +18,12 @@ const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
     })
   }
   return (
-    <Fragment>
+    <>
       <Disclosure
         as="div"
         className="disclosure-incidents relative inline-block text-left"
       >
-          <Fragment>
+          <>
             <div className="disclosure-header">
               <div>
                 <h3>{incidentTitle[type]}</h3>
@@ -51,9 +51,9 @@ const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
                 <CalendarContactCard />
               </Transition.Child>
             </Transition>
-          </Fragment>
+          </>
       </Disclosure>
-    </Fragment>
+    </>
   );
 };
 

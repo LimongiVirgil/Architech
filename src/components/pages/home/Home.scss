@@ -1,0 +1,20 @@
+.home {
+  display: flex;
+  flex: auto;
+  justify-content: space-between;
+
+  .card {
+    flex: auto;
+  }
+  .card-container {
+    margin-left: $large-space;
+
+    & > div {
+      margin: $large-space 0;
+
+      &:first-child, &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}

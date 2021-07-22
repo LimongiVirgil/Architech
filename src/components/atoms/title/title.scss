@@ -1,9 +1,9 @@
 .title-component.card-title {
-	@include card-title;
-	margin-bottom: $large-space;
+  @include card-title;
+  margin-bottom: $large-space;
 }
 
 .title-component.detailed-information-title {
-	@include detailed-information-title;
-	margin-bottom: $medium-space;
+  @include detailed-information-title;
+  margin-bottom: $medium-space;
 }

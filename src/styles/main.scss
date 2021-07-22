@@ -40,6 +40,10 @@
 // Templates
 @import '../components/templates/card/card.scss';
 @import '../components/templates/modal/modal.scss';
+@import '../components/templates/page/page.scss';
+
+// Pages
+@import '../components/pages/home/Home.scss';
 
 ////////
 
@@ -50,24 +54,5 @@ html {
 .App {
   display: flex;
   background-color: $gray-low;
-}
-
-.home {
-  display: flex;
-  flex: auto;
-  padding: $large-space;
-  justify-content: space-between;
-  .card {
-    flex: auto;
-  }
-  .card-container {
-    margin-left: $large-space;
-    & > div {
-      margin: $large-space 0;
-
-      &:first-child, &:last-child {
-        margin: 0;
-      }
-    }
-  }
+  padding-left: 250px;
 }

@@ -4,7 +4,12 @@ import DatePicker from '../../atoms/datePicker/DatePicker'
 import Label from '../../atoms/label/Label'
 import InputText from '../../atoms/inputText/InputText'
 
-function InputAndLabel ({ inputType = 'text', label = '', id,  placeholder = '', className, fullWidth }) {
+function InputAndLabel ({ 
+  inputType = 'text', 
+  label = '', id,  
+  placeholder = '', 
+  className, 
+  fullWidth }) {
   return (
     <div className={`input-label${fullWidth ? '' : ' input-label--unstretched'}${className ? ' ' + className : ''}`}>
       <Label id={id} label={label}/>

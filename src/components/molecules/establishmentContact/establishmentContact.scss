@@ -1,42 +1,42 @@
 .establishmentContact {
-	display: flex;
+  display: flex;
   flex-direction: column;
 
-	p {
-		margin-bottom: $x-small-space;
-	}
+  p {
+    margin-bottom: $x-small-space;
+  }
 
-	.commonData {
-		margin-bottom: $xx-large-space;
-	}
+  .commonData {
+    margin-bottom: $xx-large-space;
+  }
 
-	.name {
-		@include important-disclosure-information;
-		color: $secondary-utility-color;
-	}
+  .name {
+    @include important-disclosure-information;
+    color: $secondary-utility-color;
+  }
 
-	.address {
-		@include disclosure-information;
-		color: $secondary-utility-color;
-	}
+  .address {
+    @include disclosure-information;
+    color: $secondary-utility-color;
+  }
 
-	.contact {
-		@include contact-info;
-	}
+  .contact {
+    @include contact-info;
+  }
 
-	.importantData {
-		margin-top: auto;
-		text-align: right;
+  .importantData {
+    margin-top: auto;
+    text-align: right;
 
-		p {
-			@include contact-information;
-			color: $gray-base;
-			margin-bottom: 0;
-		}
+    p {
+      @include contact-information;
+      color: $gray-base;
+      margin-bottom: 0;
+    }
 
-		p:first-child {
-			@include important-contact-information;
-			margin-bottom: $x-small-space;
-		}
-	}
+    p:first-child {
+      @include important-contact-information;
+      margin-bottom: $x-small-space;
+    }
+  }
 }

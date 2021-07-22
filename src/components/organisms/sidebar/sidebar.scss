@@ -1,8 +1,10 @@
 .sidebar {
+  position: fixed;
+  left: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 296px;
+  width: 250px;
   border-right: 1px solid $gray-lighter;
   padding: $xx-large-space $medium-space;
   background-color: $primary-utility-color;

@@ -1,6 +1,7 @@
 .button {
   padding: $medium-space $xxx-large-space;
   border-radius: $regular-radius;
+  border: none;
 
   &--primary {
     background: $primary-dark-color;

@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '../../atoms/button/Button'
 import InputAndLabel from '../../molecules/inputAndLabel/InputAndLabel'
-import Title from '../../atoms/title/Title'
+import Title from '../../atoms/title/title'
 import FormRecap from '../../molecules/formRecap/FormRecap'
 
 function NewInterventionForm ({cancelCallback, validateCallback}) {
