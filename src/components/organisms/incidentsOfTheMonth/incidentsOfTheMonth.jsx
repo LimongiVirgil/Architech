@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react"
-import { formatPercentage } from "../../../utils"
-import MonthlySensorChart from "../../molecules/currentMonthChart/currentMonthChart"
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { formatPercentage } from '../../../utils'
+import MonthlySensorChart from '../../molecules/currentMonthChart/currentMonthChart'
 import VariationStat from '../../atoms/variationStat/variationStat'
 import MainStat from '../../atoms/mainStat/mainStat'
 
 function IncidentsOfTheMonth() {
-  // fetched incident data = incidents of all time.
+  // api incident data = incidents of all time.
   // just keep incidents of the current month regardless of incidents status.
   // The date corresponds to de incident creation date.
 
@@ -20,9 +21,10 @@ function IncidentsOfTheMonth() {
 
   async function getChartData() {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}api/dashboard/statsincidents/1`)
-
-      const statsIncidents = await response.json()
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}api/dashboard/statsincidents/1`)
+      if (!response || !response.data) return
+      
+      const statsIncidents = response.data
       const currentMonthIncidents = {}
       const currentMonth = new Date().getMonth()
 

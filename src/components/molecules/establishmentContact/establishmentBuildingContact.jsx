@@ -1,5 +1,5 @@
-import React from 'react';
-import Title from '../../atoms/title/title';
+import React from 'react'
+import Title from '../../atoms/title/title'
 
 const EstablishmentBuildingContact = ({address, mail, phone, nbRooms}) => {
   return (

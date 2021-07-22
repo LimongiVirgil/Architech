@@ -1,7 +1,7 @@
 import React from 'react'
 import { Disclosure, Transition } from '@headlessui/react'
 import CalendarDetailsIssues from '../../molecules/calendarListIssues/calendarListIssues'
-import CalendarContactCard from '../../molecules/calendarContactCard/calendarContactCard';
+import CalendarContactCard from '../../molecules/calendarContactCard/calendarContactCard'
 
 const incidentTitle = {
   high_humidity: 'Humidité élevée',

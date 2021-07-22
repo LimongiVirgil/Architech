@@ -13,9 +13,7 @@ function CalendarList() {
   async function getIssuesByMonth () {
     try {
       const response = await axios.get(`${import.meta.env.VITE_API_URL}api/dashboard/futureEvent/1`)
-
       if (!response || !response.data) return
-
       const issues = response.data
       sortIssuesByMonth(issues)
     } catch (error) {

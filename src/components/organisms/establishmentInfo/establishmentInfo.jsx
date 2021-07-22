@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios'
 import Title from '../../atoms/title/title'
 import EstablishmentManagerContact from '../../molecules/establishmentContact/establishmentManagerContact';
 import EstablishmentBuildingContact from '../../molecules/establishmentContact/establishmentBuildingContact';
@@ -8,10 +9,18 @@ const EstablishmentInfo = () => {
   const [establishmentData, setEstablishmentData] = useState(false)
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}api/dashboard/infobuilding/1`)
-      .then(response => response.json())
-      .then(result => setEstablishmentData(result));
+    getEstablishmentData()
   }, [])
+
+  async function getEstablishmentData () {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}api/dashboard/infobuilding/1`)
+      if(!response || !response.data) return
+      setEstablishmentData(response.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <Card>

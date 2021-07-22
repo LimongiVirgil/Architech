@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef } from 'react'
 import Title from '../../atoms/title/title'
-import SensorsHistoryLineChart from "../../atoms/sensorsHistoryLineChart/sensorsHistoryLineChart";
+import SensorsHistoryLineChart from '../../atoms/sensorsHistoryLineChart/sensorsHistoryLineChart'
 
 const sensorsHistoryLineChart = ({nodeID, handleCloseGraph}) => {
   const [whichGraph, setWhichGraph] = useState("Température")

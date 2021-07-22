@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from 'axios';
-import { Line } from 'react-chartjs-2';
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { Line } from 'react-chartjs-2'
 
 const sensorsHistoryLineChart = ({ nodeID, graph }) => {
   const [dataSensors, setDataSensors] = useState(false)
@@ -22,21 +22,21 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
     setDynamicDatasForGraph();
   }, [graph, heatDataGraph, humidityDataGraph, windDataGraph])
 
-  const getSensorsDataByType = async () => {
-    Promise.all([
-      axios.get(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Pression`),
-      axios.get(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Humidité`),
-      axios.get(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Temperature`)
-    ]).then(responses => (
-      responses.map((response) => (
-        response.data
-      ))
-    )).then((result) => (
-      setDataSensors(result)
-    )).catch((error) => (
+  async function getSensorsDataByType () {
+    try {
+      const responses = await Promise.all([
+        await axios.get(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Pression`),
+        await axios.get(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Humidité`),
+        await axios.get(`${import.meta.env.VITE_API_URL}api/influx/graphSensor/${nodeID}/Temperature`)
+      ])
+
+      const sensorData = responses.map(response => response.data)
+      setDataSensors(sensorData)
+      
+    } catch (error) {
       console.log(error)
-    ));
-  };
+    }
+  }
 
   const sortGraphDatas = () => {
     let time = [];

@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
-import CellTable from '../../atoms/cellTable/cellTable';
+import React, {useEffect, useState} from 'react'
+import axios from 'axios'
+import CellTable from '../../atoms/cellTable/cellTable'
 
 const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
   const [sensorsData, setSensorsData] = useState(false)
@@ -21,12 +21,11 @@ const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
 
   const getSensors = async () => {
     try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}api/influx`
-      );
-      setSensorsData(hydratation(response.data));
-    } catch (err) {
-      console.log(err);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}api/influx`)
+      if (!response || !response.data) return
+      setSensorsData(hydratation(response.data))
+    } catch (error) {
+      console.log(error)
     }
   };
 
