@@ -19,6 +19,7 @@
 @import '../components/atoms/inputTextArea/inputTextArea.scss';
 @import '../components/atoms/datePicker/datePicker.scss';
 @import '../components/atoms/inputText/inputText.scss';
+@import '../components/atoms/cellTable/cellTable.scss';
 
 // Molecules
 @import '../components/molecules/issueInformation/issueInformation.scss';
@@ -28,6 +29,8 @@
 @import '../components/molecules/calendarContactCard/calendarContactCard.scss';
 @import '../components/molecules/inputAndLabel/inputAndLabel.scss';
 @import '../components/molecules/formRecap/formRecap.scss';
+@import '../components/molecules/sensorsTable/sensorsTable.scss';
+@import '../components/molecules/lineChartCard/lineChartCard.scss';
 
 // Organismes
 @import '../components/organisms/incidentsOfTheMonth/incidentsOfTheMonth.scss';
