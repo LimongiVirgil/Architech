@@ -7,7 +7,7 @@ import IssueDate from '../../atoms/issueDate/issueDate'
 const tagTitle = {
   assign: 'Intervention programmée',
   in_progress: 'Nouvel incident',
-  finish: 'Intervention termminée',
+  finish: 'Intervention terminée',
 };
 
 const ListIssuesTypes = ({ incidents, type }) => {
