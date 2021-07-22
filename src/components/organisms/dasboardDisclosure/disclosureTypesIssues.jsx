@@ -12,7 +12,7 @@ const DisclosureTypesIssues = ({ incidents, isOpen, type, setter, initialState }
   const showDisclosure = () => {
     setter({
       ...initialState,
-      [type]: true
+      [type]: !isOpen
     })
   }
 
@@ -47,7 +47,7 @@ const DisclosureTypesIssues = ({ incidents, isOpen, type, setter, initialState }
             <span className="status-incidents">Statut</span>
           </div>
 
-          <Transition show={ type === 'high_humidity' ? !isOpen : isOpen}>
+          <Transition show={isOpen}>
             <Transition.Child
               enter="transition ease-out duration-100"
               enterFrom="transform opacity-0 scale-95"

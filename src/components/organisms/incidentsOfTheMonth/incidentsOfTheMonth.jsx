@@ -52,8 +52,8 @@ function IncidentsOfTheMonth() {
     }
   }
   return (
-    <div>
-      <div className="statistics-header">
+    <div className="month-incidents-chart">
+      <div className="month-incidents-chart__header">
         <MainStat amount={numberIncidentThisMonth}/>
         <VariationStat variation={variationWithPrevMonth} variationText={variationText}/>
       </div>

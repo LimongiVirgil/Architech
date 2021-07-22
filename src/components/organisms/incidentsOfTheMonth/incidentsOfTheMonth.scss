@@ -1,4 +1,9 @@
-.statistics-header {
-  display: flex;
-  justify-content: space-between;
+.month-incidents-chart {
+  min-width: 28em;
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
 }
+
