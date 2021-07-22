@@ -13,13 +13,13 @@
 @import '../components/atoms/issueDate/issueDate.scss';
 @import '../components/atoms/variationStat/variationStat.scss';
 @import '../components/atoms/mainStat/mainStat.scss';
-@import '../components/atoms/tagsIncidents/tagsIncidents.scss';
-@import '../components/atoms/localisationIncidents/localisationnIncidents.scss';
 @import '../components/atoms/button/button.scss';
 @import '../components/atoms/inputTextArea/inputTextArea.scss';
 @import '../components/atoms/datePicker/datePicker.scss';
 @import '../components/atoms/inputText/inputText.scss';
 @import '../components/atoms/cellTable/cellTable.scss';
+@import '../components/atoms/tagIssues/tagIssues.scss';
+@import '../components/atoms/localisationIssues/localisationIssues.scss';
 
 // Molecules
 @import '../components/molecules/issueInformation/issueInformation.scss';
@@ -35,7 +35,8 @@
 // Organismes
 @import '../components/organisms/incidentsOfTheMonth/incidentsOfTheMonth.scss';
 @import '../components/organisms/establishmentInfo/establishmentInfo.scss';
-@import '../components/organisms/DropDownIncidentsTypes/dropdownIncidentsTypese.scss';
+@import '../components/organisms/dasboardDisclosure/disclosureTypesIssues.scss';
+@import '../components/organisms/calendarList/calendarList.scss';
 @import '../components/organisms/sidebar/sidebar.scss';
 @import '../components/organisms/calendarDisclosure/calendarDisclosure.scss';
 @import '../components/organisms/newInterventionForm/newInterventionForm.scss';

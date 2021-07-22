@@ -1,6 +1,6 @@
 import React from 'react'
 import { Disclosure } from '@headlessui/react'
-import LocalisationIncidents from '../../atoms/localisationIncidents/LocalisationIncidents'
+import LocalisationIncidents from '../../atoms/localisationIssues/localisationIssues'
 
 const AgendaListIssues = () => {
   return(
