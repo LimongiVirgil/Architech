@@ -11,14 +11,15 @@ const tagTitle = {
 };
 
 const ListIssuesTypes = ({ incidents, type }) => {
-
+console.log('listIssue type: ', type)
+console.log('listIssue incidents ', incidents)
 return (
   <Disclosure.Panel
     static
     className="list-issues relative focus:outline-none"
   >
   <div>
-    {incidents[type].map((item, key) => (
+    {incidents[type] && incidents[type].map((item, key) => (
       <div className="issues" key={key}>
         <IssueDate size="small" date={item.incident_date} />
         <LocalisationIncidents 
