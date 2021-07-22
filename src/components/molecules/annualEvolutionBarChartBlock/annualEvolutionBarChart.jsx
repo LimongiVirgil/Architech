@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
-import Card from '../../templates/card';
+import Card from '../../templates/card/Card';
 
 const annualEvolutionBarChart = () => {
   const months = {

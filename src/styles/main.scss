@@ -15,7 +15,10 @@
 @import '../components/atoms/mainStat/mainStat.scss';
 @import '../components/atoms/tagsIncidents/tagsIncidents.scss';
 @import '../components/atoms/localisationIncidents/localisationnIncidents.scss';
-@import '../components/atoms/actionButton/actionButton.scss';
+@import '../components/atoms/button/button.scss';
+@import '../components/atoms/inputTextArea/inputTextArea.scss';
+@import '../components/atoms/datePicker/datePicker.scss';
+@import '../components/atoms/inputText/inputText.scss';
 
 // Molecules
 @import '../components/molecules/issueInformation/issueInformation.scss';
@@ -23,17 +26,24 @@
 @import '../components/molecules/establishmentContact/establishmentContact.scss';
 @import '../components/molecules/calendarListMonth/calendarListMonth.scss';
 @import '../components/molecules/calendarContactCard/calendarContactCard.scss';
+@import '../components/molecules/inputAndLabel/inputAndLabel.scss';
+@import '../components/molecules/formRecap/formRecap.scss';
 
 // Organismes
 @import '../components/organisms/incidentsOfTheMonth/incidentsOfTheMonth.scss';
 @import '../components/organisms/establishmentInfo/establishmentInfo.scss';
 @import '../components/organisms/DropDownIncidentsTypes/dropdownIncidentsTypese.scss';
-@import '../components/organisms/calendarList/calendarList.scss';
 @import '../components/organisms/sidebar/sidebar.scss';
 @import '../components/organisms/calendarDisclosure/calendarDisclosure.scss';
+@import '../components/organisms/newInterventionForm/newInterventionForm.scss';
 
 // Templates
-@import '../components/templates/card.scss';
+@import '../components/templates/card/card.scss';
+@import '../components/templates/modal/modal.scss';
+@import '../components/templates/page/page.scss';
+
+// Pages
+@import '../components/pages/home/Home.scss';
 
 ////////
 
@@ -44,24 +54,5 @@ html {
 .App {
   display: flex;
   background-color: $gray-low;
-}
-
-.home {
-  display: flex;
-  flex: auto;
-  padding: $large-space;
-  justify-content: space-between;
-  .card {
-    flex: auto;
-  }
-  .card-container {
-    margin-left: $large-space;
-    & > div {
-      margin: $large-space 0;
-
-      &:first-child, &:last-child {
-        margin: 0;
-      }
-    }
-  }
+  padding-left: 250px;
 }

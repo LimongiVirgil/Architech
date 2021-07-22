@@ -145,3 +145,8 @@ $main-font: "Avenir Next";
   line-height: 120%;
   font-weight: normal;
 }
+
+@mixin contact-info {
+  @include important-disclosure-information;
+	color: $primary-dark-color;
+}
