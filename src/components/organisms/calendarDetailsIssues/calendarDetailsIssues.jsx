@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Card from '../../templates/card'
+import Card from '../../templates/card/Card'
 import CalendarDisclosure from '../calendarDisclosure/calendarDisclosure'
 import CalendarIssueHeader from '../../atoms/calendarIssueHeader/calendarIssueHeader'
 

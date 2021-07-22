@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Title from '../../atoms/title/title'
 import EstablishmentManagerContact from '../../molecules/establishmentContact/establishmentManagerContact';
 import EstablishmentBuildingContact from '../../molecules/establishmentContact/establishmentBuildingContact';
-import Card from '../../templates/card';
+import Card from '../../templates/card/Card';
 
 const EstablishmentInfo = () => {
   const [establishmentData, setEstablishmentData] = useState(false)
