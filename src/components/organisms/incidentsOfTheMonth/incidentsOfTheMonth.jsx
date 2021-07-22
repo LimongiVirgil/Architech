@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { formatPercentage } from "../../../utils"
 import MonthlySensorChart from "../../molecules/currentMonthChart/currentMonthChart"
-import Card from '../../templates/card'
 import VariationStat from '../../atoms/variationStat/variationStat'
 import MainStat from '../../atoms/mainStat/mainStat'
 
@@ -53,13 +52,13 @@ function IncidentsOfTheMonth() {
     }
   }
   return (
-    <Card>
+    <div>
       <div className="statistics-header">
         <MainStat amount={numberIncidentThisMonth}/>
         <VariationStat variation={variationWithPrevMonth} variationText={variationText}/>
       </div>
       <MonthlySensorChart chartData={chartData} numberIncident={numberIncidentThisMonth}/>
-    </Card>
+    </div>
   );
 }
 
