@@ -3,7 +3,7 @@ import IncidentsOfTheMonth from '../../organisms/incidentsOfTheMonth/incidentsOf
 import CommingIssue from '../../organisms/commingIssue/commingIssue'
 import EstablishmentInfo from '../../organisms/establishmentInfo/establishmentInfo'
 import DropdownContainer from '../../organisms/DropDownIncidentsTypes/DropdownContainer'
-import AnnualEvolutionBarChart from '../../molecules/annualEvolutionBarChartBlock/annualEvolutionBarChart'
+import AnnualEvolutionBarChart from '../../organisms/annualEvolutionBarChartBlock/annualEvolutionBarChart'
 import Card from '../../templates/card/Card'
 import Page from '../../templates/page/Page'
 
