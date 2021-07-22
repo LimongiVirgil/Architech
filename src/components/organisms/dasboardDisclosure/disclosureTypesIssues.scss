@@ -47,8 +47,8 @@
 
   .list-issues {
     .issues {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 33% 30% 32%;
       width: 31.5em;
       border-bottom: solid 1px $gray-low;
       padding-left: $x-small-space;
