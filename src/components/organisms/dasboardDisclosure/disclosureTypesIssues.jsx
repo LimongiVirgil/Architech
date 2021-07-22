@@ -3,9 +3,9 @@ import ListIncidentsTypes from '../../molecules/listIssuesTypes/listIssuesTypes'
 import { Disclosure, Transition } from '@headlessui/react'
 
 const incidentTitle = {
-  high_humidity: 'Haute humidité',
+  high_humidity: 'Humidité élevée',
   heat_leak: 'Fuite de châleur',
-  defective_air_conditioning: 'Air conditionnée',
+  defective_air_conditioning: 'Climatisation défectueuse',
 };
 
 const DisclosureTypesIssues = ({ incidents, isOpen, type, setter, initialState }) => {
@@ -35,7 +35,7 @@ const DisclosureTypesIssues = ({ incidents, isOpen, type, setter, initialState }
             </p>
           </div>
           <Disclosure.Button className="button-disclosure">
-            {isOpen ? "Fermer le volet" : "Ouvrir le volet"}
+            {isOpen ? "Fermer le détail" : "Voir le détail"}
           </Disclosure.Button>
         </div>
         <div className="detailed-informations">

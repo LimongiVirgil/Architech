@@ -14,7 +14,7 @@ const EstablishmentBuildingContact = ({address, mail, phone, nbRooms}) => {
       </div>
       <div className="importantData">
         <p>{nbRooms}</p>
-        <p>salles</p>
+        <p>{ nbRooms > 1 ? 'salles' : 'salle'}</p>
       </div>
     </div>
   )

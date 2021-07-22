@@ -32,7 +32,7 @@ const sensorsHistoryLineChart = ({nodeID, handleCloseGraph}) => {
             <p>Vent</p>
           </div>
         </div>
-        <span onClick={() => handleCloseGraph()}>Fermer le volet</span>
+        <span onClick={() => handleCloseGraph()}>Fermer</span>
       </div>
       <SensorsHistoryLineChart nodeID={nodeID} graph={whichGraph}/>
     </div>
