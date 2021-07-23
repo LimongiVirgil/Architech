@@ -11,13 +11,13 @@ const Sidebar = () => {
       <nav>
         <ul>
           <li>
-            <NavLink exact={true} to="/">Tableau de bord</NavLink>
+            <NavLink className="dashboard-link" exact={true} to="/">Tableau de bord</NavLink>
           </li>
           <li>
-            <NavLink to="/monitoring">Surveillance en temps réel</NavLink>
+            <NavLink className="monitoring-link" to="/monitoring">Surveillance en temps réel</NavLink>
           </li>
           <li>
-            <NavLink to="/agenda">Agenda</NavLink>
+            <NavLink className="agenda-link" to="/agenda">Agenda</NavLink>
           </li>
           <li>
             <NavLink to="/settings">Paramètres</NavLink>

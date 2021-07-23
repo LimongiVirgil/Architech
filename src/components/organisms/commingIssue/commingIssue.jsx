@@ -23,7 +23,7 @@ const CommingIssue = () => {
 
   return (
     <Card>
-      {issuesData && 
+      {/* {issuesData && 
         <Title cssClass="card-title">
           {`${issuesData.length} évènement${issuesData.length > 1 ? 's' : ''} à venir`}
         </Title>
@@ -31,7 +31,7 @@ const CommingIssue = () => {
       
       {issuesData && issuesData.map((issue, index) => (
         <IssueInformation issue={issue} key={index}/>
-      ))}
+      ))} */}
     </Card>
   );
 };

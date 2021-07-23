@@ -8,9 +8,7 @@
 
     span {
       @include text-information;
-      color: $primary-dark-color;
-      border-bottom: 2px solid  $primary-dark-color;
-      padding-bottom: $xx-small-space;
+      color: $secondary-utility-color;
     }
   }
 

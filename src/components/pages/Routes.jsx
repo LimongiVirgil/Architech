@@ -11,7 +11,7 @@ const Routes = () => {
       <Sidebar/>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/agenda" exact component={Agenda} />
+        {/* <Route path="/agenda" exact component={Agenda} /> */}
         <Route path="/monitoring" exact component={Monitoring} />
       </Switch>
     </>
