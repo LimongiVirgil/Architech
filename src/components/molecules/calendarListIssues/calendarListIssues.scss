@@ -1,0 +1,11 @@
+.disclosure-incidents .list-issues .issues {
+  &.issues--agenda {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .issues__issue:not(:last-child) {
+      margin-bottom: $medium-space;
+    }
+  }
+}

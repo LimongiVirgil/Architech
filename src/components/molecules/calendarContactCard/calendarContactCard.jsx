@@ -1,18 +1,22 @@
 import React from 'react'
 import CalendarIcon from '../../../assets/icons/calendar.svg'
 
-const CalendarContactCard = () => {
+const CalendarContactCard = ({company, actionCallback}) => {
+
+  function handleInterventionRequest () {
+    actionCallback()
+  }
 
 return (
   <div className="calendar-contact-card">
     <div className="company-infos">
       <span>Entreprise en charge de ce type d'incident</span>
-      <h3>Doolet LLC</h3>
-      <p>05 45 03 35 99</p>
-      <p>jp@doolet.com</p>
+      <h3>{company.name}</h3>
+      <p>{company.phone}</p>
+      <p>{company.mail}</p>
     </div>
-    <div className="intervention-program">
-    <img src={CalendarIcon} alt="Calendar icon"/>
+    <div className="intervention-program" onClick={handleInterventionRequest}>
+      <img src={CalendarIcon} alt="Calendar icon"/>
       <p>Programmer une intervention</p>
     </div>
   </div>
