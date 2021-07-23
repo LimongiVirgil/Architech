@@ -22,30 +22,27 @@ const DisclosureTypesIssues = ({ incidents, isOpen, type, setter, initialState }
         as="div"
         className="disclosure-issues relative inline-block text-left"
       >
-        <>
-          <div className="disclosure-header">
-            <div>
-              <h3>{incidentTitle[type]}</h3>
-              <p>
-                {incidents[type] &&
-                  `${
-                    incidents[type].length > 1
-                      ? `${incidents[type].length} incidents`
-                      : `${incidents[type].length} incident`
-                  }`}
-              </p>
-            </div>
-            <div onClick={showDisclosure} >
-              <Disclosure.Button className="button-disclosure">
-                {isOpen ? "Fermer le volet" : "Ouvrir le volet"}
-              </Disclosure.Button>
-            </div>
+        <div className="disclosure-header" onClick={showDisclosure}>
+          <div>
+            <h3>{incidentTitle[type]}</h3>
+            <p>
+              {incidents[type] &&
+                `${
+                  incidents[type].length > 1
+                    ? `${incidents[type].length} incidents`
+                    : `${incidents[type].length} incident`
+                }`}
+            </p>
           </div>
-          <div className="detailed-informations">
-            <span className="statement-date">Date de relevé</span>
-            <span className="localisation-incidents">Localisation</span>
-            <span className="status-incidents">Statut</span>
-          </div>
+          <Disclosure.Button className="button-disclosure">
+            {isOpen ? "Fermer le volet" : "Ouvrir le volet"}
+          </Disclosure.Button>
+        </div>
+        <div className="detailed-informations">
+          <span className="statement-date">Date de relevé</span>
+          <span className="localisation-incidents">Localisation</span>
+          <span className="status-incidents">Statut</span>
+        </div>
 
           <Transition show={isOpen}>
             <Transition.Child
@@ -59,7 +56,6 @@ const DisclosureTypesIssues = ({ incidents, isOpen, type, setter, initialState }
               <ListIncidentsTypes type={type} incidents={incidents} />
             </Transition.Child>
           </Transition>
-        </>
       </Disclosure>
     </>
   );

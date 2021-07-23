@@ -14,7 +14,7 @@ const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
   const showDisclosure = () => {
     setter({
       ...initialState,
-      [type]: true
+      [type]: !isOpen
     })
   }
   return (
@@ -24,16 +24,14 @@ const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
         className="disclosure-incidents relative inline-block text-left"
       >
           <>
-            <div className="disclosure-header">
+            <div className="disclosure-header" onClick={showDisclosure} >
               <div>
                 <h3>{incidentTitle[type]}</h3>
                 <p> 13 incidents </p>
               </div>
-              <div onClick={showDisclosure} >
-                <Disclosure.Button className="button-disclosure" >
-                  {isOpen ? "Fermer le détail" : "Voir les détail"}
-                </Disclosure.Button>
-              </div>
+              <Disclosure.Button className="button-disclosure" >
+                {isOpen ? "Fermer le détail" : "Voir les détail"}
+              </Disclosure.Button>
             </div>
 
             <Transition 

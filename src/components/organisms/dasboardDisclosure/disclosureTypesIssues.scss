@@ -4,6 +4,7 @@
   .disclosure-header {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
     width: 100%;
     padding-top: $small-space;
     padding-bottom: $small-space;
@@ -31,6 +32,7 @@
       padding-right: $x-small-space;
       color: $primary-dark-color;
       border: none;
+      cursor: pointer;
     }
   }
 
