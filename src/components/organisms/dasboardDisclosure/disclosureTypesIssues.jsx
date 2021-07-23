@@ -1,5 +1,6 @@
 import React from 'react'
 import ListIncidentsTypes from '../../molecules/listIssuesTypes/listIssuesTypes' 
+import ChevronIcon  from '../../../assets/icons/chevron.svg'
 import { Disclosure, Transition } from '@headlessui/react'
 
 const incidentTitle = {
@@ -36,6 +37,7 @@ const DisclosureTypesIssues = ({ incidents, isOpen, type, setter, initialState }
           </div>
           <Disclosure.Button className="button-disclosure">
             {isOpen ? "Fermer le détail" : "Voir le détail"}
+            <img src={ChevronIcon} alt="Calendar icon"/>
           </Disclosure.Button>
         </div>
         <div className="detailed-informations">
