@@ -11,7 +11,7 @@
   }
 
   .name {
-    @include important-disclosure-information;
+    @include detailed-information-title;
     color: $secondary-utility-color;
   }
 
@@ -30,8 +30,10 @@
 
     p {
       @include contact-information;
-      color: $gray-base;
       margin-bottom: 0;
+      .number {
+        color: $gray-base;
+      }
     }
 
     p:first-child {

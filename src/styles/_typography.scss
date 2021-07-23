@@ -41,8 +41,16 @@ $main-font: "Avenir Next";
   @return math.div($value, 16) + rem;
 }
 
+// Bold typo
+
 @mixin main-stat {
   font-size: pxToRem(69);
+  line-height: 120%;
+  font-weight: bold;
+}
+
+@mixin important-contact-information {
+  font-size: pxToRem(48);
   line-height: 120%;
   font-weight: bold;
 }
@@ -85,14 +93,17 @@ $main-font: "Avenir Next";
   color: $gray-base;
 }
 
+// Medium typo
+
 @mixin statistic-name {
   font-size: pxToRem(23);
   line-height: 120%;
   font-weight: 600;
 }
 
-@mixin text-information {
-  font-size: pxToRem(16);
+// Dropdown/table
+@mixin important-disclosure-information {
+  font-size: pxToRem(11);
   line-height: 120%;
   font-weight: 600;
 }
@@ -103,23 +114,19 @@ $main-font: "Avenir Next";
   font-weight: 600;
 }
 
+// Regular typo
+
 @mixin contact-information {
   font-size: pxToRem(19);
   line-height: 120%;
   font-weight: normal;
+  color: $gray-darker;
 }
 
-@mixin important-contact-information {
-  font-size: pxToRem(48);
+@mixin text-information {
+  font-size: pxToRem(16);
   line-height: 120%;
-  font-weight: bold;
-}
-
-// Dropdown/table
-@mixin important-disclosure-information {
-  font-size: pxToRem(11);
-  line-height: 120%;
-  font-weight: 600;
+  font-weight: normal;
 }
 
 @mixin table-information {
@@ -132,6 +139,13 @@ $main-font: "Avenir Next";
   font-size: pxToRem(16);
   line-height: 120%;
   font-weight: normal;
+  text-decoration: none;
+  color: $secondary-utility-color;
+  &.active {
+    font-weight: bold;
+    color: $primary-dark-color;
+    border-bottom: 2px solid $primary-dark-color;
+  }
 }
 
 @mixin description {
@@ -147,6 +161,6 @@ $main-font: "Avenir Next";
 }
 
 @mixin contact-info {
-  @include important-disclosure-information;
+  @include detailed-information-title;
 	color: $primary-dark-color;
 }

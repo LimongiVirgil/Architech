@@ -30,6 +30,7 @@
 
     ul {
       li {
+        padding: $medium-space $large-space;
         &:not(:last-child) {
           margin-bottom: $large-space;
         }
@@ -41,16 +42,7 @@
 
         a {
           @include menu-link;
-          text-decoration: none;
-          color: $secondary-utility-color;
-          padding: $medium-space $large-space;
-          display: list-item;
-        }
-
-        .active {
-          font-weight: bold;
-          color: $primary-dark-color;
-          border: 1px solid $secondary-color;
+          padding-bottom: $x-small-space;
         }
       }
     }

@@ -13,7 +13,7 @@ const EstablishmentBuildingContact = ({address, mail, phone, nbRooms}) => {
         <p className="contact">{phone}</p>
       </div>
       <div className="importantData">
-        <p>{nbRooms}</p>
+        <p className="number">{nbRooms}</p>
         <p>{ nbRooms > 1 ? 'salles' : 'salle'}</p>
       </div>
     </div>

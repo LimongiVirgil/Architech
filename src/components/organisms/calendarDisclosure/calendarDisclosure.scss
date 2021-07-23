@@ -18,7 +18,7 @@
       align-items: center;
       h3 {
         padding-left: $x-small-space;
-        @include text-information;
+        @include important-text-information;
         color: $secondary-utility-color;
       }
 
