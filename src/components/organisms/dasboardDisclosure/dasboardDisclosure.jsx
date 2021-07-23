@@ -32,12 +32,11 @@ const DasboardDisclosure = () => {
 
   const getIncindentsType = async () => {
     try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}api/dashboard/statsincidents/1`
-      );
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}api/dashboard/statsincidents/1`)
+      if (!response || !response.data) return
       setDataTypeIssues(response.data.incidents)
-    } catch (err) {
-      console.log(err)
+    } catch (error) {
+      console.log(error)
     }
   };
 

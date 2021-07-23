@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Bar } from 'react-chartjs-2';
-import axios from 'axios';
-import Card from '../../templates/card/Card';
-import Title from '../../atoms/title/title';
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { Bar } from 'react-chartjs-2'
+import Card from '../../templates/card/Card'
+import Title from '../../atoms/title/title'
 
 const annualEvolutionBarChart = () => {
   const months = {
@@ -86,36 +86,37 @@ const annualEvolutionBarChart = () => {
 
   async function getAnnualEvolutionData() {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}api/dashboard/annualEvolution/1`);
-      if (response && response.data) {
-        const issues = response.data;
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}api/dashboard/annualEvolution/1`)
+      
+      if (!response || !response.data) return
 
-        let numberOfDefectiveAirConditioningIssuesPerMonth = JSON.parse(JSON.stringify(months));
-        let numberOfHighHumidityIssuesPerMonth = JSON.parse(JSON.stringify(months));
-        let numberOfHeatLeakIssuesPerMonth = JSON.parse(JSON.stringify(months));
+      const issues = response.data
 
-        monthsOrder.map((month) => {
-          issues.map((issue) => {
-            if(handleDate(issue.incident_date.date) === parseInt(month)) {
-              if(issue.incident_type === 'defective_air_conditioning') {
-                numberOfDefectiveAirConditioningIssuesPerMonth[month].count += 1;
-              }
-              else if(issue.incident_type === 'high_humidity') {
-                numberOfHighHumidityIssuesPerMonth[month].count += 1;
-              }
-              else if(issue.incident_type === 'heat_leak') {
-                numberOfHeatLeakIssuesPerMonth[month].count += 1;
-              }
+      let numberOfDefectiveAirConditioningIssuesPerMonth = JSON.parse(JSON.stringify(months));
+      let numberOfHighHumidityIssuesPerMonth = JSON.parse(JSON.stringify(months));
+      let numberOfHeatLeakIssuesPerMonth = JSON.parse(JSON.stringify(months));
+
+      monthsOrder.map((month) => {
+        issues.map((issue) => {
+          if(handleDate(issue.incident_date.date) === parseInt(month)) {
+            if(issue.incident_type === 'defective_air_conditioning') {
+              numberOfDefectiveAirConditioningIssuesPerMonth[month].count += 1;
             }
-          });
+            else if(issue.incident_type === 'high_humidity') {
+              numberOfHighHumidityIssuesPerMonth[month].count += 1;
+            }
+            else if(issue.incident_type === 'heat_leak') {
+              numberOfHeatLeakIssuesPerMonth[month].count += 1;
+            }
+          }
         });
+      });
 
-        setIssueData(numberOfDefectiveAirConditioningIssuesPerMonth, setNumberOfDefectiveAirConditioningIssuesPerMonth);
-        setIssueData(numberOfHighHumidityIssuesPerMonth, setNumberOfHighHumidityIssuesPerMonth);
-        setIssueData(numberOfHeatLeakIssuesPerMonth, setNumberOfHeatLeakIssuesPerMonth);
-      }
-    } catch (err) {
-      console.error(err);
+      setIssueData(numberOfDefectiveAirConditioningIssuesPerMonth, setNumberOfDefectiveAirConditioningIssuesPerMonth);
+      setIssueData(numberOfHighHumidityIssuesPerMonth, setNumberOfHighHumidityIssuesPerMonth);
+      setIssueData(numberOfHeatLeakIssuesPerMonth, setNumberOfHeatLeakIssuesPerMonth);
+    } catch (error) {
+      console.error(error);
     }
   }
 

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import Card from '../../templates/card/Card'
-import SensorsTable from '../../molecules/sensorsTable/sensorsTable';
+import SensorsTable from '../../molecules/sensorsTable/sensorsTable'
 import LineChartCard from '../../molecules/lineChartCard/lineChartCard'
 
 const LiveSensorsData = () => {

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import SingleBarChart from "../../atoms/singleBarChart/singleBarChart";
-import { formatPercentage } from "../../../utils";
+import React, { useState, useEffect } from 'react'
+import SingleBarChart from '../../atoms/singleBarChart/singleBarChart'
+import { formatPercentage } from '../../../utils'
 
 function MonthlySensorChart({chartData, numberIncident}) {
   const [numberHeatLeak, setNumberHeatLeak] = useState(0);
