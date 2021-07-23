@@ -1,18 +1,29 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import IssueMessage from '../../atoms/issueMessage/issueMessage'
 import IssueDate from '../../atoms/issueDate/issueDate'
 
 const IssueInformation = ({ issue }) => {
+  const [classrooms, setClassrooms] = useState(false)
+
+  useEffect(() => {
+    let listClassrooms = "";
+
+    issue.incidents.forEach(incident => {
+      listClassrooms += `${incident.classroom_zone}${incident.classroom_name} `;
+    })
+
+    setClassrooms(listClassrooms)
+  })
+
   return (
     <>
       {issue && (
         <div className="messageContainer">
-          <IssueDate date={issue.intervention_datetime.date} />
+          <IssueDate date={issue.intervention_datetime} />
           <IssueMessage 
-            incidentType={issue.incident_type}
+            incidentType={issue.intervention_type}
             company={issue.intervention_company}
-            classroomName={issue.classroom_name}
-            classroomZone={issue.classroom_zone}
+            classroomsList={classrooms}
           />
         </div>
       )}
