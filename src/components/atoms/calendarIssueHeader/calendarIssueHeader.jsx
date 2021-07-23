@@ -1,31 +1,15 @@
 import React from 'react'
 
-const issueHeaderAgenda = ({ cssClass }) => {
-const months = [
-  "Janvier", 
-  "Février", 
-  "Mars", 
-  "Avril", 
-  "Mai", 
-  "Juin", 
-  "Juillet", 
-  "Août", 
-  "Septembre", 
-  "Octobre", 
-  "Novembre",
-  "Décembre"
-]
+const issueHeaderAgenda = ({ cssClass, todayEventsNumber = 0 }) => {
+  const eventText = todayEventsNumber === 0 ? `pas d'évènement prévu` : todayEventsNumber > 1 ? `évènements prévus` : `évènement prévu`
 
-const today = new Date()
-const day = String(today.getDate()).padStart(2, '0')
-const monthName = months[today.getMonth()]
-const years = today.getFullYear()
-const date = day + ' ' + monthName + ' ' + years
+  const today = new Date()
+  const todayDate = today.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })
 
   return (
     <div className={cssClass}>
-      <p className="hearder-message">Aujourd'hui, <span>{date}</span> pas d'évènement prévu</p>
-      <span className="total-issues">6 incidents à examiner</span>
+      <p className="hearder-message">Aujourd'hui, <span>{todayDate}</span> {eventText}</p>
+      <span className="total-issues">{todayEventsNumber} {todayEventsNumber > 1 ? 'incidents à examiner' : 'incident à examiner'}</span>
     </div>
   )
 }

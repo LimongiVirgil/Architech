@@ -6,11 +6,15 @@ import Modal from '../templates/modal/Modal'
 import Page from '../templates/page/Page'
 
 const Agenda = () => {
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
+
+  function openModal () {
+    setShowModal(true)
+  }
 
   return (
     <Page>
-      <CalendarDetailsIssues />
+      <CalendarDetailsIssues modalCallback={openModal}/>
       <CalendarList/>
       <Modal showModal={showModal}>
         <NewInterventionForm cancelCallback={setShowModal} validateCallback={setShowModal}/>

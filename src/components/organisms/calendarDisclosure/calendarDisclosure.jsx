@@ -10,7 +10,9 @@ const incidentTitle = {
   defective_air_conditioning: 'Climatisation défectueuse',
 };
 
-const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
+const CalendarDisclosure = ({ issueTypeData, isOpen, type, setter, initialState, actionCallback }) => {
+
+  const numberIncidents = (issueTypeData && issueTypeData.incidents && issueTypeData.incidents.length) || 0
 
   const showDisclosure = () => {
     setter({
@@ -26,7 +28,7 @@ const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
       <div className="disclosure-header" onClick={showDisclosure} >
         <div>
           <h3>{incidentTitle[type]}</h3>
-          <p>13 incidents</p>
+          <p>{numberIncidents} {numberIncidents > 1 ? 'incidents' : 'incident'}</p>
         </div>
         <Disclosure.Button className="button-disclosure" >
           {isOpen ? "Fermer le détail" : "Voir le détail"}
@@ -45,8 +47,8 @@ const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <CalendarDetailsIssues />
-          <CalendarContactCard />
+          <CalendarDetailsIssues issues={issueTypeData.incidents}/>
+          <CalendarContactCard company={issueTypeData.company} actionCallback={actionCallback}/>
         </Transition.Child>
       </Transition>
     </Disclosure>
