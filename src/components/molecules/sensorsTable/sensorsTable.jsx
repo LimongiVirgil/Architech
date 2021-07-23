@@ -1,19 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import CellTable from '../../atoms/cellTable/cellTable'
+import { hydratation } from '../../../utils'
 
 const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
   const [sensorsData, setSensorsData] = useState(false)
-
-  const hydratation = (objectData) => {
-    const hydratedData = [];
-
-    for (const [key, value] of Object.entries(objectData)) {
-      hydratedData.push(value)
-    }
-
-    return hydratedData;
-  }
 
   useEffect(() => {
     getSensors()
