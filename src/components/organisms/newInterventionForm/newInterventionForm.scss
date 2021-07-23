@@ -25,6 +25,9 @@
     .input-label:not(:last-child) {
       margin-bottom: $large-space;
     }
+    &__container{
+      display: flex;
+    }
   }
 
   &__recap {

@@ -7,7 +7,7 @@ import Page from '../templates/page/Page'
 
 const Agenda = () => {
   const [showModal, setShowModal] = useState(false)
-  const [summaryCompanyInfos, setSummaryCompanyInfos] = useState()
+  const [summaryCompanyInfos, setSummaryCompanyInfos] = useState({})
   function openModal () {
     setShowModal(true)
   }

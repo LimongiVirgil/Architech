@@ -5,8 +5,8 @@ const CalendarContactCard = ({company, actionCallback, callBackDataCompany}) => 
   
   function handleInterventionRequest () {
     actionCallback()
+    callBackDataCompany(company)
   }
-  callBackDataCompany(company)
 
 
 return (

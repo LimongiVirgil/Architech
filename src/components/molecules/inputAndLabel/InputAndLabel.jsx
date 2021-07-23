@@ -3,9 +3,10 @@ import InputTextArea from '../../atoms/inputTextArea/InputTextArea'
 import DatePicker from '../../atoms/datePicker/DatePicker'
 import Label from '../../atoms/label/Label'
 import InputText from '../../atoms/inputText/InputText'
+import InputTime from '../../atoms/inputTime/inputTime'
 
 function InputAndLabel ({ 
-  inputType = 'text', 
+  inputType = 'text',  
   label = '', id,  
   placeholder = '', 
   className, 
@@ -21,6 +22,9 @@ function InputAndLabel ({
       } 
       { inputType === 'date' &&
         <DatePicker id={id} />
+      } 
+      { inputType === 'time' &&
+        <InputTime id={id} />
       } 
     </div>
   )
