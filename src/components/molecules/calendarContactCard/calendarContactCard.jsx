@@ -1,11 +1,13 @@
 import React from 'react'
 import CalendarIcon from '../../../assets/icons/calendar.svg'
 
-const CalendarContactCard = ({company, actionCallback}) => {
-
+const CalendarContactCard = ({company, actionCallback, callBackDataCompany}) => {
+  
   function handleInterventionRequest () {
     actionCallback()
   }
+  callBackDataCompany(company)
+
 
 return (
   <div className="calendar-contact-card">

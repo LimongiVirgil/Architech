@@ -10,16 +10,16 @@ const incidentTitle = {
   defective_air_conditioning: 'Climatisation défectueuse',
 };
 
-const CalendarDisclosure = ({ issueTypeData, isOpen, type, setter, initialState, actionCallback }) => {
+const CalendarDisclosure = ({ issueTypeData, isOpen, type, setter, initialState, actionCallback, callBackDataCompany }) => {
 
   const numberIncidents = (issueTypeData && issueTypeData.incidents && issueTypeData.incidents.length) || 0
-
   const showDisclosure = () => {
     setter({
       ...initialState,
       [type]: !isOpen
     })
   }
+
   return (
     <Disclosure
       as="div"
@@ -48,7 +48,7 @@ const CalendarDisclosure = ({ issueTypeData, isOpen, type, setter, initialState,
           leaveTo="transform opacity-0 scale-95"
         >
           <CalendarDetailsIssues issues={issueTypeData.incidents}/>
-          <CalendarContactCard company={issueTypeData.company} actionCallback={actionCallback}/>
+          <CalendarContactCard company={issueTypeData.company} actionCallback={actionCallback} callBackDataCompany={callBackDataCompany}/>
         </Transition.Child>
       </Transition>
     </Disclosure>

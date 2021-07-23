@@ -4,7 +4,7 @@ import InputAndLabel from '../../molecules/inputAndLabel/InputAndLabel'
 import Title from '../../atoms/title/title'
 import FormRecap from '../../molecules/formRecap/FormRecap'
 
-function NewInterventionForm ({cancelCallback, validateCallback}) {
+function NewInterventionForm ({cancelCallback, validateCallback, callBackDataCompany}) {
 
   function handleCancel () {
     cancelCallback(false)
@@ -23,7 +23,7 @@ function NewInterventionForm ({cancelCallback, validateCallback}) {
           <InputAndLabel inputType="date" label="Date de l'intervention" id="date-intervention" />
           <InputAndLabel fullWidth={true} inputType="textarea" label="Commentaire (facultatif)" id="commentaire" placeholder="Votre commentaire" />
         </div>
-        <FormRecap className="form-fields__recap"/>
+        <FormRecap className="form-fields__recap" recapCompany={callBackDataCompany}/>
       </div>
       
       <div className="new-intervention-form__buttons">

@@ -15,7 +15,7 @@ const initialOpeningState = SENSOR_TYPES.reduce((accu, sensor) => ({
   [sensor] : false
 }), {}) 
 
-const CalendarDetailsIssues = ({modalCallback}) => {
+const CalendarDetailsIssues = ({ modalCallback, callBackDataCompany }) => {
   const [disclosureIds, setDisclosureIds] = useState(initialOpeningState)
   const [issuesByType, setIssuesByType] = useState(null)
 
@@ -53,6 +53,7 @@ const CalendarDetailsIssues = ({modalCallback}) => {
               initialState={initialOpeningState}
               issueTypeData={value}
               actionCallback={modalCallback}
+              callBackDataCompany={callBackDataCompany}
             />
           )
         )}
