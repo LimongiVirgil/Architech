@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IssueMessage = ({incidentType, company, classroomsList}) => {
+const InterventionMessage = ({incidentType, company, classroomsList}) => {
   let text;
 
   if (incidentType === "heat_leak" ) {
@@ -12,10 +12,10 @@ const IssueMessage = ({incidentType, company, classroomsList}) => {
   }
 
   return (
-    <p className="issueMessage">
+    <p className="interventionMessage">
       {text}
     </p>
   )
 }
 
-export default IssueMessage;
+export default InterventionMessage;

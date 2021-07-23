@@ -9,8 +9,8 @@
 
 // Atoms
 @import '../components/atoms/title/title.scss';
-@import '../components/atoms/issueMessage/issueMessage.scss';
-@import '../components/atoms/issueDate/issueDate.scss';
+@import '../components/atoms/interventionMessage/interventionMessage.scss';
+@import '../components/atoms/eventDate/eventDate.scss';
 @import '../components/atoms/variationStat/variationStat.scss';
 @import '../components/atoms/mainStat/mainStat.scss';
 @import '../components/atoms/button/button.scss';
@@ -23,7 +23,7 @@
 @import '../components/atoms/calendarIssueHeader/calendarIssueHeader.scss';
 
 // Molecules
-@import '../components/molecules/issueInformation/issueInformation.scss';
+@import '../components/molecules/interventionDescription/interventionDescription.scss';
 @import '../components/molecules/currentMonthChart/currentMonthChart.scss';
 @import '../components/molecules/establishmentContact/establishmentContact.scss';
 @import '../components/molecules/calendarListMonth/calendarListMonth.scss';
@@ -42,7 +42,7 @@
 @import '../components/organisms/calendarDisclosure/calendarDisclosure.scss';
 @import '../components/organisms/newInterventionForm/newInterventionForm.scss';
 @import '../components/organisms/liveSensorsData/liveSensorsData.scss';
-@import '../components/organisms/commingIssue/commingIssue.scss';
+@import '../components/organisms/commingInterventions/commingInterventions.scss';
 
 // Templates
 @import '../components/templates/card/card.scss';
