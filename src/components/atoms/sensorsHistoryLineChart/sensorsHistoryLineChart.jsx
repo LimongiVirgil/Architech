@@ -34,9 +34,6 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
     setDynamicDatasForGraph();
   }, [graph, heatDataGraph, humidityDataGraph, windDataGraph])
 
-  useEffect(() => {
-  }, [heatDataGraph])
-
   async function getSensorsDataByType () {
     try {
       const responses = await Promise.all([
