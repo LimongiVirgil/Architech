@@ -1,4 +1,4 @@
-/** Transform a number between 0 and 1 into a pourcentage number (0.8 => 80%)
+/** Transform a number between 0 and 1 into a percentage number (0.8 => 80%)
  * @param { Number{0..1} } number
  * @return { String }
 */

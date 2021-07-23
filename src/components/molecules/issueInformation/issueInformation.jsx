@@ -8,7 +8,7 @@ const IssueInformation = ({ issue }) => {
   useEffect(() => {
     let listClassrooms = "";
 
-    issue.incidents.map(incident => {
+    issue.incidents.forEach(incident => {
       listClassrooms += `${incident.classroom_zone}${incident.classroom_name} `;
     })
 
@@ -23,7 +23,7 @@ const IssueInformation = ({ issue }) => {
           <IssueMessage 
             incidentType={issue.intervention_type}
             company={issue.intervention_company}
-            classroomZone={classrooms}
+            classroomsList={classrooms}
           />
         </div>
       )}
