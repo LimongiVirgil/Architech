@@ -1,5 +1,5 @@
 import React from 'react'
-import CalendarIcon  from '../../../assets/icons/calendar.svg'
+import CalendarIcon from '../../../assets/icons/calendar.svg'
 
 const CalendarContactCard = () => {
 

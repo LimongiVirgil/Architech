@@ -33,11 +33,14 @@
       }
     }
 
-    span {
-      @include disclosure-information;
-      color: $secondary-utility-color;
-      padding: $x-small-space;
+    div {
       cursor: pointer;
+      
+      span {
+        @include disclosure-information;
+        color: $secondary-utility-color;
+        padding: $x-small-space;
+      }
     }
   }
 }

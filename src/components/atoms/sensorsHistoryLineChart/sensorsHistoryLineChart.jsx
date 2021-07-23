@@ -10,8 +10,20 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
   const [windDataGraph, setWindDataGraph] = useState(false)
   const [dataGraph, setDataGraph] = useState([])
 
+  const dataGraphObject = {
+    labels: timeXAxe,
+    datasets: [{
+      label: graph,
+      data: [],
+      fill: true,
+      backgroundColor: '',
+      borderColor: '',
+    }],
+  };
+
   useEffect(() => {
     getSensorsDataByType();
+    setDataGraph(dataGraphObject);
   }, [nodeID]);
 
   useEffect(() => {
@@ -44,7 +56,7 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
     let heatDataArray = [];
     let windDataArray = [];
 
-    if (dataSensors[0]) {
+    if (dataSensors[0] && dataSensors[0][`${nodeID}`]) {
       dataSensors[0][`${nodeID}`].map(item => {
         let splitedDate = item.date.indexOf(" ");
         let dateTime = item.date.substr(splitedDate + 1);
@@ -65,17 +77,6 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
       setWindDataGraph(windDataArray)
     }
   }
-
-  const dataGraphObject = {
-    labels: timeXAxe,
-    datasets: [{
-      label: graph,
-      data: '',
-      fill: true,
-      backgroundColor: '',
-      borderColor: '',
-    }],
-  };
 
   const setDynamicDatasForGraph = () => {
     if (graph === "Température") {
