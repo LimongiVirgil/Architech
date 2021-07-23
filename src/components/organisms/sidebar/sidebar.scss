@@ -48,36 +48,10 @@
           display: list-item;
         }
         
-        .dashboard-link {
-          &.active {
-            @include text-information;
-            color: $primary-dark-color;
-            border-bottom: 2px solid  $primary-dark-color;
-            margin-left: $large-space;
-            padding: 0px 0px $xx-small-space 0px;
-            width: 60%;
-          }
-        }
-
-        .monitoring-link {
-          &.active {
-            @include text-information;
-            color: $primary-dark-color;
-            border-bottom: 2px solid  $primary-dark-color;
-            margin-left: $large-space;
-            padding: 0px 0px $xx-small-space 0px;
-            width: 54%;
-          }
-        }
-        .agenda-link {
-          &.active {
-            @include text-information;
-            color: $primary-dark-color;
-            border-bottom: 2px solid  $primary-dark-color;
-            margin-left: $large-space;
-            padding: 0px 0px $xx-small-space 0px;
-            width: 30%;
-          }
+        .active {
+          @include text-information;
+          color: $primary-dark-color;
+          border: 1px solid $secondary-color;
         }
       }
     }

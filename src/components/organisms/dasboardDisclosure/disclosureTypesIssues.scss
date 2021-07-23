@@ -29,10 +29,17 @@
 
     .button-disclosure {
       @include disclosure-information;
+      display: flex;
+      align-items: center;
       padding-right: $x-small-space;
+      background-color: transparent;
       color: $primary-dark-color;
       border: none;
       cursor: pointer;
+
+      img {
+        margin-left: $x-small-space;
+      }
     }
   }
 

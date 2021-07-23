@@ -1,5 +1,6 @@
 import React from 'react'
 import { Disclosure, Transition } from '@headlessui/react'
+import ChevronIcon from '../../../assets/icons/chevron.svg'
 import CalendarDetailsIssues from '../../molecules/calendarListIssues/calendarListIssues'
 import CalendarContactCard from '../../molecules/calendarContactCard/calendarContactCard'
 
@@ -31,6 +32,7 @@ const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
               </div>
               <Disclosure.Button className="button-disclosure" >
                 {isOpen ? "Fermer le détail" : "Voir le détail"}
+                <img src={ChevronIcon} alt="chevron icon" />
               </Disclosure.Button>
             </div>
 
