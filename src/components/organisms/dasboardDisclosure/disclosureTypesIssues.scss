@@ -36,7 +36,7 @@
 
   .detailed-informations {
     display: flex;
-    width: 21em;
+    width: 19em;
     justify-content: space-between;
     padding-left: $x-small-space;
     margin-top: 10px;
@@ -49,7 +49,7 @@
     .issues {
       display: grid;
       grid-template-columns: 33% 30% 32%;
-      width: 31.5em;
+      width: 28em;
       border-bottom: solid 1px $gray-low;
       padding-left: $x-small-space;
       padding: $large-space $large-space $large-space $x-small-space;

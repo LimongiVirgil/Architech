@@ -8,9 +8,14 @@ const SENSOR_TYPES = [
   'defective_air_conditioning',
 ]
 
-const initialOpeningState = SENSOR_TYPES.reduce((accu, sensor) => ({
+const neutralOpeningState = SENSOR_TYPES.reduce((accu, sensor) => ({
   ...accu,
   [sensor] : false
+}), {}) 
+
+const initialOpeningState = SENSOR_TYPES.reduce((accu, sensor) => ({
+  ...accu,
+  [sensor] : sensor === 'high_humidity' ? true : false
 }), {}) 
 
 const DasboardDisclosure = () => {
@@ -46,7 +51,7 @@ const DasboardDisclosure = () => {
               type={key}
               isOpen={value}
               setter={disclosureCallback}
-              initialState={initialOpeningState}
+              initialState={neutralOpeningState}
               incidents={dataTypeIssues}
             />
           )
