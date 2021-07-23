@@ -4,11 +4,11 @@ const IssueMessage = ({incidentType, company, classroomName, classroomZone}) => 
   let text;
 
   if (incidentType === "heat_leak" ) {
-    text = `Intervention salle ${classroomZone}${classroomName} par l’entreprise ${company}, pour consultation suite à des différences de températures importantes`;
+    text = `Intervention salle ${classroomZone}${classroomName} par l’entreprise ${company} pour consultation suite à une différence de température importante`;
   } else if (incidentType === "defective_air_conditioning" ) {
-    text = `Intervention salle ${classroomZone}${classroomName} par l’entreprise ${company}, pour consultation de la climatisation défectueuse`;
+    text = `Intervention salle ${classroomZone}${classroomName} par l’entreprise ${company} pour consultation de la climatisation défectueuse`;
   } else if (incidentType === "high_humidity" ) {
-    text = `Intervention salle ${classroomZone}${classroomName} par l’entreprise ${company}, pour consultation suite à un taux d’humidité élevé`;
+    text = `Intervention salle ${classroomZone}${classroomName} par l’entreprise ${company} pour consultation suite à un taux d’humidité élevé`;
   }
 
   return (

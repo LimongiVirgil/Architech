@@ -35,7 +35,7 @@ const annualEvolutionBarChart = () => {
       count: 0,
     },
     7: {
-      name: 'Aout',
+      name: 'Août',
       count: 0,
     },
     8: {
@@ -51,7 +51,7 @@ const annualEvolutionBarChart = () => {
       count: 0,
     },
     11: {
-      name: 'Decembre',
+      name: 'Décembre',
       count: 0,
     },
   }
@@ -135,7 +135,7 @@ const annualEvolutionBarChart = () => {
     labels: monthsNames,
     datasets: [
       {
-        label: 'Climatisation defectueuse',
+        label: 'Climatisation défectueuse',
         data: numberOfDefectiveAirConditioningIssuesPerMonth,
         backgroundColor: '#9AABC0',
       },

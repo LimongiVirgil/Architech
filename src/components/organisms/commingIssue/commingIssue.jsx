@@ -23,7 +23,12 @@ const CommingIssue = () => {
 
   return (
     <Card>
-      <Title cssClass="card-title">2 évènements à venir</Title>
+      {issuesData && 
+        <Title cssClass="card-title">
+          {`${issuesData.length} évènement${issuesData.length > 1 ? 's' : ''} à venir`}
+        </Title>
+      }
+      
       {issuesData && issuesData.map((issue, index) => (
         <IssueInformation issue={issue} key={index}/>
       ))}

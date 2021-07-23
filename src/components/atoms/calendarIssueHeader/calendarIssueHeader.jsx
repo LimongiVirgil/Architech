@@ -24,8 +24,8 @@ const date = day + ' ' + monthName + ' ' + years
 
   return (
     <div className={cssClass}>
-      <p className="hearder-message">Aujourd'hui, <span>{date}</span> pas d'évènements prévus </p>
-      <span className="total-issues"> 6 incidents à examiner</span>
+      <p className="hearder-message">Aujourd'hui, <span>{date}</span> pas d'évènement prévu</p>
+      <span className="total-issues">6 incidents à examiner</span>
     </div>
   )
 }

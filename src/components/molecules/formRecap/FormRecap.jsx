@@ -7,7 +7,7 @@ function FormRecap ({className}) {
 
       <div className="recap__item recap-item">
         <p className="recap-item__title">Type d'incident</p>
-        <p className="recap-item__info">Fuite de chaleur</p>
+        <p className="recap-item__info">Fuite de châleur</p>
       </div>
 
       <div className="recap__item item">

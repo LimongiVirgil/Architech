@@ -29,7 +29,7 @@ function CalendarListMonth({issues}) {
   return (
     <div className="month-events">
       {month && <Title cssClass="card-title">{month}</Title>}
-      {numberIssues && <p className="month-events__subtitle">{numberIssues} évènements à venir</p>}
+      {numberIssues && <p className="month-events__subtitle">{numberIssues > 1 ? `${numberIssues} évènements à venir` : `${numberIssues} évènement à venir`}</p>}
 
       {issues && issues.map((issue, index) => (
         <IssueInformation issue={issue} key={index}/>

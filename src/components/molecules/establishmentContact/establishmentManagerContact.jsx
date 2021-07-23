@@ -14,7 +14,7 @@ const EstablishmentManagerContact = ({firstName, lastName, mail, phone, nbSensor
       </div>
       <div className="importantData">
         <p>{nbSensors}</p>
-        <p>capteurs</p>
+        <p>{nbSensors > 1 ? 'capteurs' : 'capteur'}</p>
       </div>
     </div>
   )

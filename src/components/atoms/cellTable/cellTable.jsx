@@ -39,7 +39,7 @@ const CellTable = ({node, cssClass, handleClick, nodeID}) => {
       }}
     >
       <td>{classRoom}</td>
-      <td>{heat}°</td>
+      <td>{heat}°C</td>
       <td>{humidity} %</td>
       <td>{wind} hPa</td>
     </tr>

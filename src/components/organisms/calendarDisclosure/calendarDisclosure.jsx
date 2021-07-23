@@ -4,9 +4,9 @@ import CalendarDetailsIssues from '../../molecules/calendarListIssues/calendarLi
 import CalendarContactCard from '../../molecules/calendarContactCard/calendarContactCard';
 
 const incidentTitle = {
-  high_humidity: 'Haute humidité',
+  high_humidity: 'Humidité élevée',
   heat_leak: 'Fuite de châleur',
-  defective_air_conditioning: 'Air conditionnée',
+  defective_air_conditioning: 'Climatisation défectueuse',
 };
 
 const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
@@ -27,10 +27,10 @@ const CalendarDisclosure = ({ isOpen,  type, setter, initialState }) => {
             <div className="disclosure-header" onClick={showDisclosure} >
               <div>
                 <h3>{incidentTitle[type]}</h3>
-                <p> 13 incidents </p>
+                <p>13 incidents</p>
               </div>
               <Disclosure.Button className="button-disclosure" >
-                {isOpen ? "Fermer le détail" : "Voir les détail"}
+                {isOpen ? "Fermer le détail" : "Voir le détail"}
               </Disclosure.Button>
             </div>
 

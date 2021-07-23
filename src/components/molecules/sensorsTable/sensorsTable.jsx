@@ -54,7 +54,7 @@ const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
         }
         {(!sensorsData || typeof sensorsData[0] === 'string') && 
           <tr className="noDataFound">
-            <td colSpan="4">Aucune donnée trouvé</td>
+            <td colSpan="4">Aucune donnée trouvée</td>
           </tr>
         }
       </tbody>
