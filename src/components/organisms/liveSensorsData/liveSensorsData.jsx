@@ -19,7 +19,7 @@ const LiveSensorsData = () => {
 
   return(
     <>
-      <Card>
+      <Card className='sensorsCard'>
         <SensorsTable handleClick={handleCellClick} graphOpened={graphOpened} nodeID={node}/>
       </Card>
       {node && graphOpened &&

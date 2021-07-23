@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import Title from '../../atoms/title/title'
 import SensorsHistoryLineChart from '../../atoms/sensorsHistoryLineChart/sensorsHistoryLineChart'
+import CrossCloseIcon from '../../../assets/icons/crossClose.svg'
 
 const sensorsHistoryLineChart = ({nodeID, handleCloseGraph}) => {
   const [whichGraph, setWhichGraph] = useState("Température")
@@ -32,7 +33,10 @@ const sensorsHistoryLineChart = ({nodeID, handleCloseGraph}) => {
             <p>Vent</p>
           </div>
         </div>
-        <span onClick={() => handleCloseGraph()}>Fermer</span>
+        <div onClick={() => handleCloseGraph()}>
+          <span>Fermer le volet</span>
+          <img src={CrossCloseIcon} alt="cross close icon"/>
+        </div>
       </div>
       <SensorsHistoryLineChart nodeID={nodeID} graph={whichGraph}/>
     </div>
