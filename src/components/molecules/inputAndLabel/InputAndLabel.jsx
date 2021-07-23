@@ -6,7 +6,7 @@ import InputText from '../../atoms/inputText/InputText'
 import InputTime from '../../atoms/inputTime/inputTime'
 
 function InputAndLabel ({ 
-  inputType = 'text',  
+  inputType = 'text', 
   label = '', id,  
   placeholder = '', 
   className, 

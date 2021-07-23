@@ -1,8 +1,8 @@
 import React from 'react'
 
-function InputTime ({ id, placeholder }) {
+function InputTime ({ id }) {
   return (
-    <input type="time" id={id} placeholder={placeholder} name="appt-time" />
+    <input type="time" id={id} value="10:30" name="appt-time" />
   )
 }
 

@@ -7,24 +7,22 @@ import Page from '../templates/page/Page'
 
 const Agenda = () => {
   const [showModal, setShowModal] = useState(false)
-  const [summaryCompanyInfos, setSummaryCompanyInfos] = useState({})
-  function openModal () {
-    setShowModal(true)
-  }
+  const [companyInfo , setCompanyInfo] = useState({})
 
-  function callBackDataCompany (values) {
-    setSummaryCompanyInfos(values)
+  function openModalCompany(companyInfo){
+    setShowModal(true)
+    setCompanyInfo(companyInfo)
   }
 
   return (
     <Page>
-      <CalendarDetailsIssues modalCallback={openModal} callBackDataCompany={callBackDataCompany} />
+      <CalendarDetailsIssues modalCallback={openModalCompany} />
       <CalendarList/>
       <Modal showModal={showModal}>
         <NewInterventionForm 
           cancelCallback={setShowModal} 
           validateCallback={setShowModal} 
-          callBackDataCompany={summaryCompanyInfos} 
+          companyInfo ={companyInfo} 
         />
       </Modal>
     </Page>

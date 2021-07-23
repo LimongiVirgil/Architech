@@ -25,8 +25,13 @@
     .input-label:not(:last-child) {
       margin-bottom: $large-space;
     }
-    &__container{
-      display: flex;
+  }
+
+  &__container{
+    display: flex;
+
+    .input-label:nth-child(2){
+      margin-left: $small-space;
     }
   }
 

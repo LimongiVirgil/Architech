@@ -4,7 +4,7 @@ import InputAndLabel from '../../molecules/inputAndLabel/InputAndLabel'
 import Title from '../../atoms/title/title'
 import FormRecap from '../../molecules/formRecap/FormRecap'
 
-function NewInterventionForm ({cancelCallback, validateCallback, callBackDataCompany}) {
+function NewInterventionForm ({ cancelCallback, validateCallback, companyInfo }) {
 
   function handleCancel () {
     cancelCallback(false)
@@ -26,7 +26,7 @@ function NewInterventionForm ({cancelCallback, validateCallback, callBackDataCom
           </div>
           <InputAndLabel fullWidth={true} inputType="textarea" label="Commentaire (facultatif)" id="commentaire" placeholder="Votre commentaire" />
         </div>
-        <FormRecap className="form-fields__recap" recapCompany={callBackDataCompany}/>
+        <FormRecap className="form-fields__recap" companyInfo={companyInfo}/>
       </div>
       
       <div className="new-intervention-form__buttons">
