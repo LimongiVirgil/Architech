@@ -48,7 +48,7 @@
         }
 
         .active {
-          @include text-information;
+          font-weight: bold;
           color: $primary-dark-color;
           border: 1px solid $secondary-color;
         }

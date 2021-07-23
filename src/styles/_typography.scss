@@ -13,22 +13,22 @@
   "Avenir Next",
   "../assets/fonts/Avenir-Next-Light/metropolis-medium-webfont.woff2",
   "../assets/fonts/Avenir-Next-Light/metropolis-medium-webfont.woff",
-  "normal",
+  normal,
   600
 );
 @include fontface(
   "Avenir Next",
   "../assets/fonts/Avenir-Next-Light/metropolis-regular-webfont.woff2",
   "../assets/fonts/Avenir-Next-Light/metropolis-regular-webfont.woff",
-  "normal",
-  "normal"
+  normal,
+  normal
 );
 @include fontface(
   "Avenir Next",
   "../assets/fonts/Avenir-Next-Light/metropolis-semibold-webfont.woff2",
   "../assets/fonts/Avenir-Next-Light/metropolis-semibold-webfont.woff",
-  "normal",
-  "bold"
+  normal,
+  bold
 );
 
 $main-font: "Avenir Next";
