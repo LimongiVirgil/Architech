@@ -1,4 +1,4 @@
-.issueDate.big {
+.eventDate.big {
   color: $secondary-utility-color;
   @include table-information;
 
@@ -7,7 +7,7 @@
   }
 }
 
-.issueDate.small {
+.eventDate.small {
   color: $secondary-utility-color;
   @include disclosure-information;
 

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Title from '../../atoms/title/title'
-import IssueInformation from '../../molecules/issueInformation/issueInformation'
+import InterventionDescription from '../../molecules/interventionDescription/InterventionDescription'
 import Card from '../../templates/card/Card'
 import { hydratation } from '../../../utils'
 
-const CommingIssue = () => {
+const CommingInterventions = () => {
   const [issuesData, setIssuesData] = useState(false)
 
   useEffect(() => {
@@ -31,9 +31,9 @@ const CommingIssue = () => {
       }
       
       {issuesData && issuesData.map((issue, index) => (
-        <IssueInformation issue={issue} key={index}/>
+        <InterventionDescription issue={issue} key={index}/>
       ))}
     </Card>
   );
 };
-export default CommingIssue
+export default CommingInterventions

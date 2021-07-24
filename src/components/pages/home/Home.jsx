@@ -1,6 +1,6 @@
 import React from 'react'
 import IncidentsOfTheMonth from '../../organisms/incidentsOfTheMonth/incidentsOfTheMonth'
-import CommingIssue from '../../organisms/commingIssue/commingIssue'
+import CommingInterventions from '../../organisms/commingInterventions/CommingInterventions'
 import EstablishmentInfo from '../../organisms/establishmentInfo/establishmentInfo'
 import AnnualEvolutionBarChart from '../../organisms/annualEvolutionBarChartBlock/annualEvolutionBarChart'
 import DasboardDisclosure from '../../organisms/dasboardDisclosure/dasboardDisclosure'
@@ -15,7 +15,7 @@ const Home = () => {
         <DasboardDisclosure />
       </Card>
       <div className="card-container">
-        <CommingIssue />
+        <CommingInterventions />
         <AnnualEvolutionBarChart/>
         <EstablishmentInfo />
       </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Disclosure } from '@headlessui/react'
 import TagsIncidents from '../../atoms/tagIssues/tagIssues'
 import LocalisationIncidents from '../../atoms/localisationIssues/localisationIssues'
-import IssueDate from '../../atoms/issueDate/issueDate'
+import EventDate from '../../atoms/eventDate/EventDate'
 
 const tagTitle = {
   assign: 'Intervention programmée',
@@ -19,7 +19,7 @@ return (
   <div>
     {incidents[type] && incidents[type].map((item, key) => (
       <div className="issues" key={key}>
-        <IssueDate size="small" date={item.incident_date} />
+        <EventDate size="small" date={item.incident_date} />
         <LocalisationIncidents 
           cssClass="localisation-issues" 
           text={item.classroom_zone + item.classroom_floor} 

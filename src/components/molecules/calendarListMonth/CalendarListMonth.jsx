@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import IssueInformation from '../issueInformation/issueInformation'
+import InterventionDescription from '../interventionDescription/InterventionDescription'
 import Title from '../../atoms/title/title'
 
-function CalendarListMonth({issues}) {
-  const [month, setMonth] = useState('')
-  const [numberIssues, setNumberIssues] = useState(0)
+function CalendarListMonth({ monthYear, interventions }) {
+  const monthIndex = monthYear.split('-')[0]
+  const year = monthYear.split('-')[1]
+  const monthDate = new Date().setMonth(parseInt(monthIndex) - 1)
+  const month = new Date(monthDate).toLocaleString('fr-FR', { month: 'long' })
+  const monthName = capitalizeFirstLetter(month)
+
+  const [numberInterventions, setNumberInterventions] = useState(0)
 
   useEffect(() => {
-    getIssueMonthName()
-    getNumberIssues()
+    getNumberInterventions()
   }, [])
 
-  function getIssueMonthName() {
-    const issueMonth = new Date(issues[0].intervention_datetime.date).toLocaleString('fr-FR', { month: 'long' })
-    const issueMonthCapitalized = capitalizeFirstLetter(issueMonth)
-    setMonth(issueMonthCapitalized)
-  }
-
-  function getNumberIssues() {
-    const numberIssues = issues.length
-    setNumberIssues(numberIssues)
+  function getNumberInterventions() {
+    const numberInterventions = interventions.length
+    setNumberInterventions(numberInterventions)
   }
 
   function capitalizeFirstLetter(string) {
@@ -28,11 +26,16 @@ function CalendarListMonth({issues}) {
 
   return (
     <div className="month-events">
-      {month && <Title cssClass="card-title">{month}</Title>}
-      {numberIssues && <p className="month-events__subtitle">{numberIssues > 1 ? `${numberIssues} évènements à venir` : `${numberIssues} évènement à venir`}</p>}
+      {monthName && <Title cssClass="card-title">{monthName} {year}</Title>}
+      {numberInterventions && 
+        <p className="month-events__subtitle">
+          {numberInterventions > 1 ?
+          `${numberInterventions} interventions à venir` :
+          `${numberInterventions} intervention à venir`}
+        </p>}
 
-      {issues && issues.map((issue, index) => (
-        <IssueInformation issue={issue} key={index}/>
+      {interventions && interventions.map((intervention, index) => (
+        <InterventionDescription issue={intervention} key={index}/>
       ))}
     </div>
   )
