@@ -34,6 +34,7 @@ const CommingInterventions = () => {
       {issuesData && issuesData.map((issue, index) => (
         <InterventionDescription issue={issue} key={index}/>
       ))}
+      {!issuesData && <div className="loader"></div>}
     </Card>
   );
 };

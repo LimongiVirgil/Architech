@@ -23,31 +23,30 @@ const EstablishmentInfo = () => {
   }
 
   return (
-    <Card>
-      <div className="establishmentInfo">
-        <Title cssClass="card-title">
-          Fiche de l’établissement
-        </Title>
-        <div>
-          {establishmentData && 
-            <EstablishmentBuildingContact
-            address={establishmentData.building.address}
-            mail={establishmentData.building.mail}
-            phone={establishmentData.building.phone_building}
-              nbRooms={establishmentData.stats.number_rooms}
-              />
-            }
-          {establishmentData && 
-            <EstablishmentManagerContact
-              firstName={establishmentData.manager.first_name}
-              lastName={establishmentData.manager.last_name}
-              mail={establishmentData.manager.manager_mail}
-              phone={establishmentData.manager.phone_manager}
-              nbSensors={establishmentData.stats.number_sensors}
-              />
-            }
-        </div>
+    <Card className="establishmentInfo">
+      <Title cssClass="card-title">
+        Fiche de l’établissement
+      </Title>
+      <div>
+        {establishmentData && 
+          <EstablishmentBuildingContact
+          address={establishmentData.building.address}
+          mail={establishmentData.building.mail}
+          phone={establishmentData.building.phone_building}
+            nbRooms={establishmentData.stats.number_rooms}
+            />
+          }
+        {establishmentData && 
+          <EstablishmentManagerContact
+            firstName={establishmentData.manager.first_name}
+            lastName={establishmentData.manager.last_name}
+            mail={establishmentData.manager.manager_mail}
+            phone={establishmentData.manager.phone_manager}
+            nbSensors={establishmentData.stats.number_sensors}
+            />
+          }
       </div>
+      {!establishmentData && <div className="loader"></div>}
     </Card>
   )
 }

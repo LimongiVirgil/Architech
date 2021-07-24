@@ -8,4 +8,8 @@
   &--scroll {
     overflow-y: scroll;
   }
+
+  .loader {
+    @include loader;
+  }
 }
