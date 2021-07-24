@@ -4,6 +4,7 @@ import Chart from 'chart.js/auto'
 import { capitalizeFirstLetter } from '../../../utils'
 import Card from '../../templates/card/Card'
 import Title from '../../atoms/title/title'
+import Loader from '../../atoms/loader/loader'
 
 const months = {
   0: 0, // monthIndex: numberIssues
@@ -130,7 +131,8 @@ const annualEvolutionBarChart = () => {
       if (!response || !response.data) return false
       return response.data
     } catch (error) {
-      console.log(error)
+      console.error(error);
+      setDataError(true)
       return false
     }
   }
@@ -159,7 +161,7 @@ const annualEvolutionBarChart = () => {
     <Card>
       <Title cssClass="card-title">Évolution annuelle des incidents</Title>
       {numberOfHeatLeakIssuesPerMonth && <canvas ref={ctx} />}
-      {!numberOfHeatLeakIssuesPerMonth && <div className="loader"></div>}
+      {!numberOfHeatLeakIssuesPerMonth && <Loader error={dataError}/>}
     </Card>
   )
 }

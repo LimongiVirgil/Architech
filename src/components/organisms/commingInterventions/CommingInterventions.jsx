@@ -3,10 +3,17 @@ import axios from 'axios'
 import Title from '../../atoms/title/title'
 import InterventionDescription from '../../molecules/interventionDescription/InterventionDescription'
 import Card from '../../templates/card/Card'
+import Loader from '../../atoms/loader/loader'
 import { hydratation } from '../../../utils'
 
+<<<<<<< HEAD:src/components/organisms/commingInterventions/CommingInterventions.jsx
 const CommingInterventions = () => {
   const [issuesData, setIssuesData] = useState([])
+=======
+const CommingIssue = () => {
+  const [issuesData, setIssuesData] = useState(false)
+  const [dataError, setDataError] = useState(false)
+>>>>>>> d9d987e... creat component for loader and add message error:src/components/organisms/commingIssue/commingIssue.jsx
 
   useEffect(() => {
     getIssues()
@@ -20,6 +27,7 @@ const CommingInterventions = () => {
     } catch (error) {
       // maybe not a "real" 404, could be the case where no event was found for the month
       console.log(error)
+      setDataError(true)
     }
   }
 
@@ -34,7 +42,7 @@ const CommingInterventions = () => {
       {issuesData && issuesData.map((issue, index) => (
         <InterventionDescription issue={issue} key={index}/>
       ))}
-      {!issuesData && <div className="loader"></div>}
+      {!issuesData && <Loader error={dataError}/>}
     </Card>
   );
 };

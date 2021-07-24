@@ -4,9 +4,11 @@ import Title from '../../atoms/title/title'
 import EstablishmentManagerContact from '../../molecules/establishmentContact/establishmentManagerContact';
 import EstablishmentBuildingContact from '../../molecules/establishmentContact/establishmentBuildingContact';
 import Card from '../../templates/card/Card';
+import Loader from '../../atoms/loader/loader'
 
 const EstablishmentInfo = () => {
   const [establishmentData, setEstablishmentData] = useState(false)
+  const [dataError, setDataError] = useState(false)
 
   useEffect(() => {
     getEstablishmentData()
@@ -19,6 +21,7 @@ const EstablishmentInfo = () => {
       setEstablishmentData(response.data)
     } catch (error) {
       console.log(error)
+      setDataError(true)
     }
   }
 
@@ -46,7 +49,7 @@ const EstablishmentInfo = () => {
             />
           }
       </div>
-      {!establishmentData && <div className="loader"></div>}
+      {!establishmentData && <Loader error={dataError}/>}
     </Card>
   )
 }

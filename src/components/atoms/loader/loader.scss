@@ -1,0 +1,42 @@
+.loaderContainer {
+
+  p {
+    text-align: center;
+  }
+
+  .loader {
+    border: .3em solid transparent;
+    border-top-color: $gray-darker;
+    border-radius: 50%;
+    animation: 1s loader linear infinite;
+    position: relative;
+    width: 2em;
+    height: 2em;
+    color: inherit;
+    vertical-align: middle;
+    pointer-events: none;
+    margin: auto;
+  
+    &:before {
+      content: '';
+      display: block;
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      top: -.3em;
+      left: -.3em;
+      border: .3em solid $gray-darker;
+      border-radius: 50%;
+      opacity: .5;
+    }
+  
+    @keyframes loader {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
