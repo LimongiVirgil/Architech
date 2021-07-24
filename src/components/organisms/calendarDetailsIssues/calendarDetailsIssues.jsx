@@ -15,7 +15,7 @@ const initialOpeningState = SENSOR_TYPES.reduce((accu, sensor) => ({
   [sensor] : false
 }), {}) 
 
-const CalendarDetailsIssues = ({ modalCallback }) => {
+const CalendarDetailsIssues = ({ modalCallback, todayInterventions }) => {
   const [disclosureIds, setDisclosureIds] = useState(initialOpeningState)
   const [issuesByType, setIssuesByType] = useState(null)
   const [numberIssuesToInspect, setNumberIssuesToInspect] = useState(null)
@@ -52,6 +52,7 @@ const CalendarDetailsIssues = ({ modalCallback }) => {
       <CalendarIssueHeader 
         cssClass="issue-header-agenda"
         todayEventsNumber={numberIssuesToInspect}
+        interventionsNumber={todayInterventions}
       />
       { issuesByType &&
         Object.entries(issuesByType).map(
