@@ -18,6 +18,7 @@ const initialOpeningState = SENSOR_TYPES.reduce((accu, sensor) => ({
 const CalendarDetailsIssues = ({ modalCallback }) => {
   const [disclosureIds, setDisclosureIds] = useState(initialOpeningState)
   const [issuesByType, setIssuesByType] = useState(null)
+  const [numberIssuesToInspect, setNumberIssuesToInspect] = useState(null)
 
   useEffect(() => {
     getCalendarData()
@@ -28,9 +29,18 @@ const CalendarDetailsIssues = ({ modalCallback }) => {
       const response = await axios.get(`${import.meta.env.VITE_API_URL}api/agenda/1`)
       if (!response || !response.data) return
       setIssuesByType(response.data)
+      const issuesToInspect = getNumberIssuesToInspect(response.data)
+      setNumberIssuesToInspect(issuesToInspect)
     } catch (error) {
       console.log(error)
     }
+  }
+
+  function getNumberIssuesToInspect (data) {
+    const count = Object.values(data).reduce((acc, currIncidentType) => (
+      acc + currIncidentType.incidents.length
+    ), 0)
+    return count
   }
 
   const disclosureCallback = (value) => {
@@ -41,6 +51,7 @@ const CalendarDetailsIssues = ({ modalCallback }) => {
     <Card>
       <CalendarIssueHeader 
         cssClass="issue-header-agenda"
+        todayEventsNumber={numberIssuesToInspect}
       />
       { issuesByType &&
         Object.entries(issuesByType).map(
