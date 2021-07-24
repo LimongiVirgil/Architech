@@ -27,6 +27,14 @@
     }
   }
 
+  &__container{
+    display: flex;
+
+    .input-label:nth-child(2){
+      margin-left: $small-space;
+    }
+  }
+
   &__recap {
     width: 50%;
   }

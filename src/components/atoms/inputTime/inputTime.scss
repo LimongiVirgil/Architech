@@ -1,0 +1,11 @@
+input[type=time] {
+    padding: $small-space;
+    border: 1px solid $gray-light;
+    border-radius: 2px;
+}
+
+
+input[type=time]::-webkit-calendar-picker-indicator {
+  background-color: $secondary-utility-color;
+  background: url("../../../../public/icons/chevron.svg") no-repeat center;
+}

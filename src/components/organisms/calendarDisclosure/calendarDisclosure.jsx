@@ -13,13 +13,13 @@ const incidentTitle = {
 const CalendarDisclosure = ({ issueTypeData, isOpen, type, setter, initialState, actionCallback }) => {
 
   const numberIncidents = (issueTypeData && issueTypeData.incidents && issueTypeData.incidents.length) || 0
-
   const showDisclosure = () => {
     setter({
       ...initialState,
       [type]: !isOpen
     })
   }
+
   return (
     <Disclosure
       as="div"
@@ -48,7 +48,7 @@ const CalendarDisclosure = ({ issueTypeData, isOpen, type, setter, initialState,
           leaveTo="transform opacity-0 scale-95"
         >
           <CalendarDetailsIssues issues={issueTypeData.incidents}/>
-          <CalendarContactCard company={issueTypeData.company} actionCallback={actionCallback}/>
+          <CalendarContactCard company={issueTypeData.company} actionCallback={actionCallback} />
         </Transition.Child>
       </Transition>
     </Disclosure>

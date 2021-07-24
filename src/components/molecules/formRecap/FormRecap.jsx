@@ -1,6 +1,6 @@
 import React from 'react'
 
-function FormRecap ({className}) {
+function FormRecap ({ className, companyInfo }) {
   return (
     <div className={`recap${className ? ' ' + className : ''}`}>
       <p className="recap__title">Récapitulatif</p>
@@ -12,9 +12,9 @@ function FormRecap ({className}) {
 
       <div className="recap__item item">
         <p className="recap-item__title">Entreprise intervenante</p>
-        <p className="recap-item__info">Doolet LLC</p>
-        <p className="recap-item__contact-info">05 45 03 35 99</p>
-        <p className="recap-item__contact-info">jp@doolet.com</p>
+        <p className="recap-item__info">{companyInfo.name}</p>
+        <p className="recap-item__contact-info">{companyInfo.phone}</p>
+        <p className="recap-item__contact-info">{companyInfo.mail}</p>
       </div>
 
       <div className="recap__item item">
