@@ -1,181 +1,166 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import axios from 'axios'
-import { Bar } from 'react-chartjs-2'
+import Chart from 'chart.js/auto'
+import { capitalizeFirstLetter } from '../../../utils'
 import Card from '../../templates/card/Card'
 import Title from '../../atoms/title/title'
 
+const months = {
+  0: 0, // monthIndex: numberIssues
+  1: 0,
+  2: 0,
+  3: 0,
+  4: 0,
+  5: 0,
+  6: 0,
+  7: 0,
+  8: 0,
+  9: 0,
+  10: 0,
+  11: 0,
+}
+
 const annualEvolutionBarChart = () => {
-  const months = {
-    0: {
-      name :'Janvier',
-      count: 0,
-    },
-    1: {
-      name: 'Février',
-      count: 0,
-    },
-    2: {
-      name: 'Mars',
-      count: 0,
-    },
-    3: {
-      name: 'Avril',
-      count: 0,
-    },
-    4: {
-      name: 'Mai',
-      count: 0,
-    },
-    5: {
-      name: 'Juin',
-      count: 0,
-    },
-    6: {
-      name: 'Juillet',
-      count: 0,
-    },
-    7: {
-      name: 'Août',
-      count: 0,
-    },
-    8: {
-      name: 'Septembre',
-      count: 0,
-    },
-    9: {
-      name: 'Octobre',
-      count: 0,
-    },
-    10: {
-      name: 'Novembre',
-      count: 0,
-    },
-    11: {
-      name: 'Décembre',
-      count: 0,
-    },
-  }
-  const [numberOfDefectiveAirConditioningIssuesPerMonth, setNumberOfDefectiveAirConditioningIssuesPerMonth] = useState();
-  const [numberOfHighHumidityIssuesPerMonth, setNumberOfHighHumidityIssuesPerMonth] = useState();
-  const [numberOfHeatLeakIssuesPerMonth, setNumberOfHeatLeakIssuesPerMonth] = useState();
-  const [monthsNames, setMonthNames] = useState();
-  const [monthsOrder, setMonthsOrder] = useState(Object.keys(months));
+  const ctx = useRef(null)
 
   useEffect(() => {
-    orderMonths();
-  }, []);
-  
-  useEffect(() => {
-    sortMonthsNames();
-    getAnnualEvolutionData();
-  }, [monthsOrder]);
-  
-  function orderMonths() {
-    const curentMonth = handleDate(Date.now());
-    const dateToMove = monthsOrder.splice(curentMonth + 1);
-    monthsOrder.unshift(...dateToMove);
+    const orderedMonths = orderMonths(Object.keys(months))
+    createChart(orderedMonths)
+  }, [])
+
+  function orderMonths(monthIndexes) {
+    const curentMonth = getMonthFromDate(Date.now())
+    const monthsToDisplayFirst = monthIndexes.splice(curentMonth + 1)
+    monthIndexes.unshift(...monthsToDisplayFirst)
+    return monthIndexes
   }
 
-  function sortMonthsNames() {
-    const sortedMonths = monthsOrder.reduce((accumulator, monthIndex) => {
-      accumulator.push(months[monthIndex].name);
-      return accumulator;
-    }, []);
-    setMonthNames(sortedMonths);
+  async function createChart(orderedMonths) {
+    const monthsNames = getMonthsNames(orderedMonths)
+
+    const issues = await getChartData()
+    if (!issues) return
+    
+    const numberOfDefectiveAirConditioningIssuesPerMonth = JSON.parse(JSON.stringify(months))
+    const numberOfHighHumidityIssuesPerMonth = JSON.parse(JSON.stringify(months))
+    const numberOfHeatLeakIssuesPerMonth = JSON.parse(JSON.stringify(months))
+
+    orderedMonths.map(month => {
+      issues.map(issue => {
+        if (getMonthFromDate(issue.incident_date.date) === parseInt(month)) {
+          incrementIssuesCount(
+            issue.incident_type, 
+            month,
+            numberOfDefectiveAirConditioningIssuesPerMonth, 
+            numberOfHighHumidityIssuesPerMonth, 
+            numberOfHeatLeakIssuesPerMonth
+          )
+        }
+      })
+    })
+
+    const chartDataAir = getTotalIssuesByMonth(numberOfDefectiveAirConditioningIssuesPerMonth, orderedMonths)
+    const chartDataHumidity = getTotalIssuesByMonth(numberOfHighHumidityIssuesPerMonth, orderedMonths)
+    const chartDataHeat = getTotalIssuesByMonth(numberOfHeatLeakIssuesPerMonth, orderedMonths)
+
+    const data = {
+      labels: monthsNames,
+      datasets: [
+        {
+          label: 'Climatisation défectueuse',
+          data: chartDataAir,
+          backgroundColor: '#9AABC0',
+        },
+        {
+          label: 'Humidité élevée',
+          data: chartDataHumidity,
+          backgroundColor: '#6881A0',
+        },
+        {
+        label: 'Fuites de chaleur',
+        data: chartDataHeat,
+        backgroundColor: '#465970',
+      },
+      ],
+    }
+  
+    const options = {
+      plugins: {
+        legend: {
+          position: 'bottom',
+        }
+      },
+      responsive: true,
+      scales: {
+        y: {
+          stacked: true,
+        },
+        x: {
+          stacked: true,
+        },
+      },
+    }
+
+    var myChart = new Chart(ctx.current, {
+      type: "bar",
+      data: data,
+      options: options
+    })
   }
 
-  async function getAnnualEvolutionData() {
+  
+  function getMonthsNames(orderedMonths) {
+    // returns ['monthName',  ... x 12]
+    const monthsNames = orderedMonths.reduce((accumulator, monthIndex) => {
+      const date = new Date()
+      date.setMonth(monthIndex)
+
+      const monthName = date.toLocaleString('fr-FR', { month: 'long' })
+      const formattedMonthName = capitalizeFirstLetter(monthName)
+      accumulator.push(formattedMonthName)
+      return accumulator
+    }, [])
+
+    return monthsNames
+  }
+
+  async function getChartData () {
     try {
       const response = await axios.get(`${import.meta.env.VITE_API_URL}api/dashboard/annualEvolution/1`)
-      
-      if (!response || !response.data) return
-
-      const issues = response.data
-
-      let numberOfDefectiveAirConditioningIssuesPerMonth = JSON.parse(JSON.stringify(months));
-      let numberOfHighHumidityIssuesPerMonth = JSON.parse(JSON.stringify(months));
-      let numberOfHeatLeakIssuesPerMonth = JSON.parse(JSON.stringify(months));
-
-      monthsOrder.map((month) => {
-        issues.map((issue) => {
-          if(handleDate(issue.incident_date.date) === parseInt(month)) {
-            if(issue.incident_type === 'defective_air_conditioning') {
-              numberOfDefectiveAirConditioningIssuesPerMonth[month].count += 1;
-            }
-            else if(issue.incident_type === 'high_humidity') {
-              numberOfHighHumidityIssuesPerMonth[month].count += 1;
-            }
-            else if(issue.incident_type === 'heat_leak') {
-              numberOfHeatLeakIssuesPerMonth[month].count += 1;
-            }
-          }
-        });
-      });
-
-      setIssueData(numberOfDefectiveAirConditioningIssuesPerMonth, setNumberOfDefectiveAirConditioningIssuesPerMonth);
-      setIssueData(numberOfHighHumidityIssuesPerMonth, setNumberOfHighHumidityIssuesPerMonth);
-      setIssueData(numberOfHeatLeakIssuesPerMonth, setNumberOfHeatLeakIssuesPerMonth);
+      if (!response || !response.data) return false
+      return response.data
     } catch (error) {
-      console.error(error);
+      console.log(error)
+      return false
     }
   }
 
-  function handleDate(date) {
-    return new Date(date).getMonth();
+  function incrementIssuesCount (issueType, month, airConditioningIssues, humidityIssues, heatIssues) {
+    if (issueType === 'defective_air_conditioning') airConditioningIssues[month] += 1
+    else if (issueType === 'high_humidity') humidityIssues[month] += 1
+    else if (issueType === 'heat_leak') heatIssues[month] += 1
+  }
+  
+
+  function getMonthFromDate(date) {
+    return new Date(date).getMonth()
   }
 
-  function setIssueData(issueType, setIssueType) {
-    issueType = monthsOrder.reduce((accumulator, current) => {
-      accumulator.push(issueType[current].count);
-      return accumulator;
-    }, []);
-    setIssueType(issueType);
-  };
-
-  const data = {
-    labels: monthsNames,
-    datasets: [
-      {
-        label: 'Climatisation défectueuse',
-        data: numberOfDefectiveAirConditioningIssuesPerMonth,
-        backgroundColor: '#9AABC0',
-      },
-      {
-        label: 'Humidité élevée',
-        data: numberOfHighHumidityIssuesPerMonth,
-        backgroundColor: '#6881A0',
-      },
-      {
-      label: 'Fuites de chaleur',
-      data: numberOfHeatLeakIssuesPerMonth,
-      backgroundColor: '#465970',
-    },
-    ],
-  };
-
-  const options = {
-    plugins: {
-      legend: {
-        position: 'bottom',
-      }
-    },
-    responsive: true,
-    scales: {
-      y: {
-        stacked: true,
-      },
-      x: {
-        stacked: true,
-      },
-    },
-  };
+  function getTotalIssuesByMonth(issuesByMonth, orderedMonths) {
+    // returns [23, 33, 67, 89, 12, 90, 3, 2, 5, 78, 23, 21]
+    const formattedIssuesByMonth = orderedMonths.reduce((accumulator, currentMonth) => {
+      accumulator.push(issuesByMonth[currentMonth])
+      return accumulator
+    }, [])
+    return formattedIssuesByMonth
+  }
 
   return (
     <Card>
       <Title cssClass="card-title">Évolution annuelle des incidents</Title>
-      <Bar data={data} options={options} />
+      <canvas ref={ctx}/>
     </Card>
   )
 }
 
-export default annualEvolutionBarChart;
+export default annualEvolutionBarChart
