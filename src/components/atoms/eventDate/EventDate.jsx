@@ -1,9 +1,10 @@
 import React from 'react'
+import { capitalizeFirstLetter } from '../../../utils'
 
 const EventDate = ({ date, size = "big" }) => {
   const day = new Date(date)
   const formatedDay = day.toLocaleDateString('fr-FR', {weekday: 'short', day: 'numeric', month: 'short'})
-  const capitalizeDay = formatedDay.charAt(0).toUpperCase() + formatedDay.slice(1);
+  const capitalizeDay = capitalizeFirstLetter(formatedDay)
   const formatedTime = day.getHours().toString().padStart(2, '0') + 'h' + day.getMinutes().toString().padStart(2, '0')
 
   return (

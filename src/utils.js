@@ -16,6 +16,14 @@ export function hydratation(obj) {
   for (const [key, value] of Object.entries(obj)) {
     hydratedData.push(value)
   }
-
   return hydratedData;
+}
+
+/** Capitalize the first letter of a string
+ * @param { String } string
+ * @return { String }
+*/
+
+export function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { capitalizeFirstLetter } from '../../../utils'
 import InterventionDescription from '../interventionDescription/InterventionDescription'
 import Title from '../../atoms/title/title'
 
@@ -18,10 +19,6 @@ function CalendarListMonth({ monthYear, interventions }) {
   function getNumberInterventions() {
     const numberInterventions = interventions.length
     setNumberInterventions(numberInterventions)
-  }
-
-  function capitalizeFirstLetter(string) {
-    return string[0].toUpperCase() + string.slice(1);
   }
 
   return (

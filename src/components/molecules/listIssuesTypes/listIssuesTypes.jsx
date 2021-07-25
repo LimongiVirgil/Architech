@@ -22,7 +22,7 @@ return (
         <EventDate size="small" date={item.incident_date} />
         <LocalisationIncidents 
           cssClass="localisation-issues" 
-          text={item.classroom_zone + item.classroom_floor} 
+          text={item.classroom_zone + item.classroom_name} 
         />
           <TagsIncidents 
             cssClass={`tag-status ${item.incident_status}`} 
