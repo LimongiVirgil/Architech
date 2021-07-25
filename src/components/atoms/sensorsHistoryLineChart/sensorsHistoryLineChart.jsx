@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Line } from 'react-chartjs-2'
+import Loader from '../loader'
 
 const sensorsHistoryLineChart = ({ nodeID, graph }) => {
   const [dataSensors, setDataSensors] = useState(false)
@@ -9,6 +10,7 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
   const [heatDataGraph, setHeatDataGraph] = useState(false)
   const [windDataGraph, setWindDataGraph] = useState(false)
   const [dataGraph, setDataGraph] = useState([])
+  const [dataError, setDataError] = useState(false)
 
   const dataGraphObject = {
     labels: timeXAxe,
@@ -47,6 +49,7 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
       
     } catch (error) {
       console.log(error)
+      setDataError(true)
     }
   }
 
@@ -144,7 +147,8 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
 
   return (
     <>
-      <Line height={120} data={dataGraph} options={options} />
+      {dataSensors && <Line height={120} data={dataGraph} options={options} />}
+      {!dataSensors && <Loader error={dataError}/>}
     </>
   );
 };

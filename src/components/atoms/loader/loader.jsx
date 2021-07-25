@@ -4,7 +4,7 @@ const Loader = ({error}) => {
 
   return (
     <div className="loaderContainer">
-      {error && <p>Aucune donnée trouvé</p>}
+      {error && <p>Aucune donnée trouvée</p>}
       {!error && <div className="loader"></div>}
     </div>
   )

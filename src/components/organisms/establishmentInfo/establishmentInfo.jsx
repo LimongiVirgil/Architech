@@ -26,11 +26,11 @@ const EstablishmentInfo = () => {
   }
 
   return (
-    <Card className="establishmentInfo">
+    <Card>
       <Title cssClass="card-title">
         Fiche de l’établissement
       </Title>
-      <div>
+      <div className="establishmentInfo">
         {establishmentData && 
           <EstablishmentBuildingContact
           address={establishmentData.building.address}
