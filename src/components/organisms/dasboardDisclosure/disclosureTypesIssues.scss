@@ -63,5 +63,10 @@
       padding-left: $x-small-space;
       padding: $large-space $large-space $large-space $x-small-space;
     }
+    .issues-messages{
+      color: $secondary-utility-color;
+      @include disclosure-information;
+      padding: $large-space $large-space $large-space $x-small-space;
+    }
   }
 }
