@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Sidebar from '../organisms/sidebar/Sidebar'
 import Home from './home/Home'
-import Agenda from './Agenda'
+import Agenda from './agenda/Agenda'
 import Monitoring from './Monitoring'
 
 const Routes = () => {

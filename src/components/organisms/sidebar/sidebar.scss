@@ -1,6 +1,5 @@
 .sidebar {
   position: fixed;
-  left: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -18,7 +17,7 @@
       margin-bottom: $medium-space;
     }
     .school-title {
-      @include statistic-name; 
+      @include statistic-name;
       color: $secondary-utility-color;
     }
   }
@@ -47,7 +46,7 @@
           padding: $medium-space $large-space;
           display: list-item;
         }
-        
+
         .active {
           @include text-information;
           color: $primary-dark-color;
@@ -57,4 +56,3 @@
     }
   }
 }
-

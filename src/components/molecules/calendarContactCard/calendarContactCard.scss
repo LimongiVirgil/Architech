@@ -1,19 +1,14 @@
 .calendar-contact-card {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 31em;
-  padding: 0px $medium-space 0px $medium-space;
   border: 1px solid $gray-lighter;
+  background-color: $primary-utility-color;
 
   .company-infos {
-    width: 70%;
     border-right: 1px solid $gray-lighter;
-    padding-top: $medium-space;
-    padding-bottom: $medium-space;
+    padding: $medium-space;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    flex: auto;
     span {
       @include disclosure-information;
       color: $secondary-utility-color;

@@ -7,3 +7,8 @@
   @include detailed-information-title;
   margin-bottom: $medium-space;
 }
+
+.title-component.page-title {
+  @include card-title;
+  margin: $medium-space 0 $xx-large-space $xxxx-large-space;
+}
