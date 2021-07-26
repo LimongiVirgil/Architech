@@ -1,15 +1,9 @@
 .calendar-contact-card {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 31em;
+  border: 1px solid $gray-lighter;
+  background-color: $primary-utility-color;
 
   .company-infos {
-    width: 70%;
-    border-left: 1px solid $gray-lighter;
-    border-right: none;
-    border-top: 1px solid $gray-lighter;
-    border-bottom: 1px solid $gray-lighter;
     padding: $medium-space;
     display: flex;
     flex-direction: column;
@@ -35,30 +29,13 @@
     }
   }
 
-  .intervention-wrapper { 
-    height: 8em;
-    box-shadow: inset 1px 0px 1px $gray-lighter;
-    background-color: #FFFFFF;
+  .intervention-wrapper {
+    padding: $x-small-space;
+    box-shadow: $input-shadow;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     &:hover {
       background-color: $gray-low;
-      border-radius: $regular-radius;
-    }
-
-    &:focus {
-      background-color: $gray-low;
-      border-radius: $regular-radius;
-      border: 2px solid $gray-lighter;
-    }
-
-    &:active {
-      background-color: $gray-lighter;
-      border-radius: $regular-radius;
-      border: 2px solid $gray-lighter;
     }
 
     .intervention-program {

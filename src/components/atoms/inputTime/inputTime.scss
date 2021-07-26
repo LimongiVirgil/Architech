@@ -1,9 +1,19 @@
 input[type=time] {
+    cursor: pointer;
     padding: $small-space;
-    border: 1px solid $gray-light;
-    border-radius: 2px;
-}
+    border: 1px solid transparent;
+    border-radius: $regular-radius;
+    
+    &:hover {
+      background-color: $primary-utility-color;
+      border: 1px solid $primary-dark-color;
+    }
 
+    &:focus {
+      border: 2px solid $primary-dark-color;
+      outline: none;
+    }
+}
 
 input[type=time]::-webkit-calendar-picker-indicator {
   background-color: $secondary-utility-color;

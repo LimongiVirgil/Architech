@@ -34,27 +34,17 @@
       padding-right: $x-small-space;
       background-color: transparent;
       color: $primary-dark-color;
-      border: none;
+      border: 1px solid transparent;
       cursor: pointer;
 
       &:hover {
         background-color: $gray-low;
-        border: 1 solid $gray-light;
-        border-radius: $regular-radius;
+        border: 1px solid $gray-light;
       }
 
       &:focus {
         background-color: $gray-lighter;
-        border: 1 solid $gray-light;
-        border-radius: $regular-radius;
-        box-shadow: $xx-small-space $gray-light;
-      }
-
-      &:active {
-        background-color: $gray-light;
-        border: 1 solid $gray-light;
-        border-radius: $regular-radius;
-        box-shadow: $xx-small-space $gray-light;
+        border: 2px solid $gray-light;
       }
 
       img {

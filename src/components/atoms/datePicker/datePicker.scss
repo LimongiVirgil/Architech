@@ -1,5 +1,18 @@
 input[type="date"] {
+  cursor: pointer;
   padding: $small-space;
-  border: 1px solid $gray-light;
+  border: 1px solid transparent;
   border-radius: $regular-radius;
+
+  &:hover {
+    background-color: $primary-utility-color;
+    border: 1px solid $primary-dark-color;
+    border-radius: $regular-radius;
+  }
+
+  &:focus {
+    border: 2px solid $primary-dark-color;
+    outline: none;
+    border-radius: $regular-radius;
+  }
 }
