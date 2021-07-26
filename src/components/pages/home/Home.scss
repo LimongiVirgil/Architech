@@ -8,6 +8,7 @@
   }
   .card-container {
     margin-left: $large-space;
+    min-width: 50%;
 
     & > div {
       margin: $large-space 0;
