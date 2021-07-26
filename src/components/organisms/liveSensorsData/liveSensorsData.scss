@@ -1,3 +1,11 @@
 .sensorsCard {
   margin-bottom: $large-space;
+
+  &.card {
+    padding: $large-space;
+  }
+
+  .sortButtonSensors {
+    margin-bottom: $large-space;
+  }
 }

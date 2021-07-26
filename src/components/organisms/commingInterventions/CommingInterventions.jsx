@@ -33,7 +33,6 @@ const CommingInterventions = () => {
         issuesData.length > 1 ? `${issuesData.length} interventions ce mois-ci` :
         `${issuesData.length} intervention ce mois-ci`}
       </Title>
-      
       {issuesData && issuesData.map((issue, index) => (
         <InterventionDescription issue={issue} key={index}/>
       ))}
