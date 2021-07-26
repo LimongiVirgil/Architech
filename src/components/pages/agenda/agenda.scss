@@ -1,0 +1,15 @@
+.agenda {
+  display: flex;
+  .details-issues {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  & > div {
+    &:last-child {
+      flex: 1;
+      margin-left: $large-space;
+    }
+  }
+}

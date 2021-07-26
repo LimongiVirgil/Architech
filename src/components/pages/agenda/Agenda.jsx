@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import CalendarDetailsIssues from '../organisms/calendarDetailsIssues/calendarDetailsIssues'
-import CalendarList from '../organisms/calendarList/CalendarList'
-import NewInterventionForm from '../organisms/newInterventionForm/NewInterventionForm'
-import Modal from '../templates/modal/Modal'
-import Page from '../templates/page/Page'
-import Loader from '../atoms/loader/loader'
+import CalendarDetailsIssues from '../../organisms/calendarDetailsIssues/calendarDetailsIssues'
+import CalendarList from '../../organisms/calendarList/CalendarList'
+import NewInterventionForm from '../../organisms/newInterventionForm/NewInterventionForm'
+import Modal from '../../templates/modal/Modal'
+import Page from '../../templates/page/Page'
+import Loader from '../../atoms/loader/loader'
+import Title from '../../atoms/title/title'
 
 const Agenda = () => {
   const [showModal, setShowModal] = useState(false)
@@ -53,10 +54,13 @@ const Agenda = () => {
   }
 
   return (
-    <Page>
+    <Page className="agenda">
       {interventionsByMonth &&
         <>
-          <CalendarDetailsIssues modalCallback={openModalCompany} todayInterventions={todayInterventions} />
+          <div className="details-issues">
+            <Title cssClass="page-title">Agenda</Title>
+            <CalendarDetailsIssues modalCallback={openModalCompany} todayInterventions={todayInterventions} />
+          </div>
           <CalendarList interventionsByMonth={interventionsByMonth} />
           <Modal showModal={showModal}>
             <NewInterventionForm 

@@ -53,6 +53,7 @@
 
 // Pages
 @import '../components/pages/home/Home.scss';
+@import '../components/pages/agenda/agenda.scss';
 
 ////////
 
@@ -61,7 +62,5 @@ html {
 }
 
 .App {
-  display: flex;
   background-color: $gray-low;
-  padding-left: 250px;
 }

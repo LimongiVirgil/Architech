@@ -1,20 +1,20 @@
 .home {
   display: flex;
-  flex: auto;
-  justify-content: space-between;
 
   .card {
-    flex: auto;
+    flex: 1;
   }
   .card-container {
     margin-left: $large-space;
-    min-width: 50%;
+    // min-width: 50%;
+    flex: 1;
 
     & > div {
       margin: $large-space 0;
 
       &:first-child, &:last-child {
         margin: 0;
+        flex: none;
       }
     }
   }

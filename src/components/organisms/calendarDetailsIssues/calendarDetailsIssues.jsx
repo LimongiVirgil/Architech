@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Card from '../../templates/card/Card'
 import CalendarDisclosure from '../calendarDisclosure/calendarDisclosure'
 import CalendarIssueHeader from '../../atoms/calendarIssueHeader/calendarIssueHeader'
 
@@ -48,7 +47,7 @@ const CalendarDetailsIssues = ({ modalCallback, todayInterventions }) => {
   }
 
   return (
-    <Card>
+    <>
       <CalendarIssueHeader 
         cssClass="issue-header-agenda"
         todayEventsNumber={numberIssuesToInspect}
@@ -57,9 +56,9 @@ const CalendarDetailsIssues = ({ modalCallback, todayInterventions }) => {
       { issuesByType &&
         Object.entries(issuesByType).map(
           ([key, value]) => (
-            <CalendarDisclosure 
-              key={key} 
-              type={key} 
+            <CalendarDisclosure
+              key={key}
+              type={key}
               isOpen={disclosureIds[key]}
               setter={disclosureCallback}
               initialState={initialOpeningState}
@@ -68,7 +67,7 @@ const CalendarDetailsIssues = ({ modalCallback, todayInterventions }) => {
             />
           )
         )}
-    </Card>
+    </>
   );
 };
 
