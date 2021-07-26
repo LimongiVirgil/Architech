@@ -7,6 +7,8 @@ import AnnualEvolutionBarChart from '../../organisms/annualEvolutionBarChartBloc
 import DasboardDisclosure from '../../organisms/dasboardDisclosure/dasboardDisclosure'
 import Card from '../../templates/card/Card'
 import Page from '../../templates/page/Page'
+import Loader from '../../atoms/loader/loader'
+import Title from '../../atoms/title/title'
 
 const Home = () => {
   // api incident data = incidents of all time.
@@ -18,6 +20,7 @@ const Home = () => {
   const [incidentsOfTheMonth, setIncidentsOfTheMonth] = useState(null)
   const [incidentsPrevMonth, setIncidentsPrevMonth] = useState(0)
   const [incidentsThisMonth, setIncidentsThisMonth] = useState(0)
+  const [dataError, setDataError] = useState(false)
 
   useEffect(() => {
     getIncidentsOfAllTime()
@@ -39,6 +42,7 @@ const Home = () => {
       setIncidentsInfo(response.data.info)
     } catch (error) {
       console.log(error)
+      setDataError(true)
     }
   }
 
@@ -64,12 +68,20 @@ const Home = () => {
   return (
     <Page className="home">
       <Card>
-        <IncidentsOfTheMonth incidentsOfTheMonth={incidentsOfTheMonth} numberIncidentsPrevMonth={incidentsPrevMonth} numberIncidentsThisMonth={incidentsThisMonth} />
-       
-        {/* TODO: confirm that we should display the current month data only in the disclosure
-        if yes, change the displayed data to only show current month data
-        if no, everything is fine */}
-        <DasboardDisclosure incidentsOfAllTime={incidentsOfAllTime} />
+        {incidentsOfAllTime &&
+          <>
+            <IncidentsOfTheMonth incidentsOfTheMonth={incidentsOfTheMonth} numberIncidentsPrevMonth={incidentsPrevMonth} numberIncidentsThisMonth={incidentsThisMonth} />
+            <DasboardDisclosure incidentsOfAllTime={incidentsOfAllTime} />
+          </>
+        }
+        {!incidentsOfAllTime &&
+          <>
+            <Title cssClass='titleIncidentsOfAllTimeLoader'>
+              Pas d'intervention au cours de ce mois
+            </Title>
+            <Loader error={dataError}/>
+          </>
+        }
       </Card>
       <div className="card-container">
         <CommingInterventions />

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import { formatPercentage } from '../../../utils'
 import MonthlySensorChart from '../../molecules/currentMonthChart/currentMonthChart'
 import VariationStat from '../../atoms/variationStat/variationStat'

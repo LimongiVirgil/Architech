@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Line } from 'react-chartjs-2'
-import Loader from '../loader'
+import Loader from '../loader/loader'
 
 const sensorsHistoryLineChart = ({ nodeID, graph }) => {
   const [dataSensors, setDataSensors] = useState(false)
@@ -26,6 +26,7 @@ const sensorsHistoryLineChart = ({ nodeID, graph }) => {
   useEffect(() => {
     getSensorsDataByType();
     setDataGraph(dataGraphObject);
+    setDataSensors(false)
   }, [nodeID]);
 
   useEffect(() => {

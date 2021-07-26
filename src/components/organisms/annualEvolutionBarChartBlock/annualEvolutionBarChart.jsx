@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import Chart from 'chart.js/auto'
 import { capitalizeFirstLetter } from '../../../utils'
@@ -22,6 +22,9 @@ const months = {
 }
 
 const annualEvolutionBarChart = () => {
+  const [numberOfHeatLeakIssuesPerMonthState, setNumberOfHeatLeakIssuesPerMonthState] = useState(false)
+  const [dataError, setDataError] = useState(false)
+
   const ctx = useRef(null)
 
   useEffect(() => {
@@ -45,6 +48,7 @@ const annualEvolutionBarChart = () => {
     const numberOfDefectiveAirConditioningIssuesPerMonth = JSON.parse(JSON.stringify(months))
     const numberOfHighHumidityIssuesPerMonth = JSON.parse(JSON.stringify(months))
     const numberOfHeatLeakIssuesPerMonth = JSON.parse(JSON.stringify(months))
+    setNumberOfHeatLeakIssuesPerMonthState(numberOfHeatLeakIssuesPerMonth)
 
     orderedMonths.map(month => {
       issues.map(issue => {
@@ -160,8 +164,8 @@ const annualEvolutionBarChart = () => {
   return (
     <Card>
       <Title cssClass="card-title">Évolution annuelle des incidents</Title>
-      {numberOfHeatLeakIssuesPerMonth && <canvas ref={ctx} />}
-      {!numberOfHeatLeakIssuesPerMonth && <Loader error={dataError}/>}
+      {numberOfHeatLeakIssuesPerMonthState && <canvas ref={ctx} />}
+      {!numberOfHeatLeakIssuesPerMonthState && <Loader error={dataError}/>}
     </Card>
   )
 }
