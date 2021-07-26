@@ -48,7 +48,13 @@ const CalendarDisclosure = ({ issueTypeData, isOpen, type, setter, initialState,
           leaveTo="transform opacity-0 scale-95"
         >
           <CalendarDetailsIssues issues={issueTypeData.incidents}/>
-          <CalendarContactCard company={issueTypeData.company} actionCallback={actionCallback} />
+          <CalendarContactCard
+            company={issueTypeData.company}
+            issues={issueTypeData.incidents}
+            incidentTypeText={incidentTitle[type]}
+            actionCallback={actionCallback}
+            showButton={numberIncidents > 0}
+          />
         </Transition.Child>
       </Transition>
     </Disclosure>

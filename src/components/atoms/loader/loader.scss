@@ -16,6 +16,10 @@
     vertical-align: middle;
     pointer-events: none;
     margin: auto;
+
+    &--light {
+      border-top-color: $primary-utility-color;
+    }
   
     &:before {
       content: '';

@@ -16,4 +16,8 @@
     padding: $xxxxx-large-space $xxxxxx-large-space;
     background: $primary-utility-color;
   }
+
+  &__container--loader {
+    background: none;
+  }
 }

@@ -18,7 +18,7 @@ const InterventionDescription = ({ issue }) => {
 
   return (
     <>
-      {issue && (
+      {issue && 
         <div className="messageContainer">
           <EventDate date={issue.intervention_datetime.date ? issue.intervention_datetime.date : issue.intervention_datetime} />
           <InterventionMessage 
@@ -27,7 +27,7 @@ const InterventionDescription = ({ issue }) => {
             classroomsList={classrooms}
           />
         </div>
-      )}
+      }
     </>
   )
 }

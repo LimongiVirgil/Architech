@@ -1,8 +1,8 @@
 import React from 'react'
 
 const issueHeaderAgenda = ({ cssClass, todayEventsNumber = 0, interventionsNumber = 0 }) => {
-  const eventText = interventionsNumber === 0 ? `pas d'évènement prévu` : 
-    interventionsNumber > 1 ? `${interventionsNumber} évènements prévus` : `${interventionsNumber} évènement prévu`
+  const eventText = interventionsNumber === 0 ? `pas d'intervention prévue` : 
+    interventionsNumber > 1 ? `${interventionsNumber} interventions prévues` : `${interventionsNumber} intervention prévue`
 
   const today = new Date()
   const todayDate = today.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })

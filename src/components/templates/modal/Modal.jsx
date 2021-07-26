@@ -1,16 +1,16 @@
 
 import React from 'react'
 
-function Modal ({children, showModal}) {
+function Modal ({children, showModal, isloaderModal}) {
   return ( 
     <>
-    {showModal && (
+    {showModal && 
       <div className="modal">
-        <div className="modal__container">
+        <div className={`modal__container${isloaderModal ? ' modal__container--loader' : ''}`}>
           {children}
         </div>
       </div>
-    )}
+    }
     </>
   )
 }
