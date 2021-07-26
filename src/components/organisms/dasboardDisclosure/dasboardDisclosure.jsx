@@ -18,7 +18,7 @@ const initialOpeningState = SENSOR_TYPES.reduce((accu, sensor) => ({
   [sensor] : sensor === 'high_humidity' ? true : false
 }), {}) 
 
-const DasboardDisclosure = ({ incidentsOfAllTime }) => {
+const DasboardDisclosure = ({ incidentsOfTheMonth }) => {
   const [disclosureIds, setDisclosureIds] = useState(initialOpeningState)
 
   const disclosureCallback = (value) => {
@@ -27,7 +27,7 @@ const DasboardDisclosure = ({ incidentsOfAllTime }) => {
 
   return (
     <div>
-      {incidentsOfAllTime &&
+      {incidentsOfTheMonth &&
         Object.entries(disclosureIds).map(
           ([key, value]) => (
             <DisclosureTypesIssues
@@ -36,7 +36,7 @@ const DasboardDisclosure = ({ incidentsOfAllTime }) => {
               isOpen={value}
               setter={disclosureCallback}
               initialState={neutralOpeningState}
-              incidents={incidentsOfAllTime}
+              incidents={incidentsOfTheMonth}
             />
           )
         )}

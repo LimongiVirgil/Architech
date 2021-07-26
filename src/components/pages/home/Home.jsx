@@ -70,8 +70,14 @@ const Home = () => {
       <Card>
         {incidentsOfAllTime &&
           <>
-            <IncidentsOfTheMonth incidentsOfTheMonth={incidentsOfTheMonth} numberIncidentsPrevMonth={incidentsPrevMonth} numberIncidentsThisMonth={incidentsThisMonth} />
-            <DasboardDisclosure incidentsOfAllTime={incidentsOfAllTime} />
+            <IncidentsOfTheMonth 
+              incidentsOfTheMonth={incidentsOfTheMonth} 
+              numberIncidentsPrevMonth={incidentsPrevMonth} 
+              numberIncidentsThisMonth={incidentsThisMonth} 
+            />
+            <DasboardDisclosure 
+              incidentsOfTheMonth={incidentsOfTheMonth} 
+            />
           </>
         }
         {!incidentsOfAllTime &&

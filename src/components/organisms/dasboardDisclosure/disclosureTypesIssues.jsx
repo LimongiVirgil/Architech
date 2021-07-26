@@ -40,12 +40,6 @@ const DisclosureTypesIssues = ({ incidents, isOpen, type, setter, initialState }
             <img src={ChevronIcon} alt="Calendar icon"/>
           </Disclosure.Button>
         </div>
-        <div className="detailed-informations">
-          <span className="statement-date">Date de relevé</span>
-          <span className="localisation-incidents">Localisation</span>
-          <span className="status-incidents">Statut</span>
-        </div>
-
           <Transition show={isOpen}>
             <Transition.Child
               enter="transition ease-out duration-100"
@@ -55,6 +49,11 @@ const DisclosureTypesIssues = ({ incidents, isOpen, type, setter, initialState }
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
+              <div className="detailed-informations">
+                <span className="statement-date">Date de relevé</span>
+                <span className="localisation-incidents">Localisation</span>
+                <span className="status-incidents">Statut</span>
+              </div>
               <ListIncidentsTypes type={type} incidents={incidents} />
             </Transition.Child>
           </Transition>

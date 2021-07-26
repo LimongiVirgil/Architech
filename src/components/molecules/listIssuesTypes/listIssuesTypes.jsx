@@ -11,25 +11,29 @@ const tagTitle = {
 };
 
 const ListIssuesTypes = ({ incidents, type }) => {
+
 return (
   <Disclosure.Panel
     static
     className="list-issues relative focus:outline-none"
   >
   <div>
-    {incidents[type] && incidents[type].map((item, key) => (
-      <div className="issues" key={key}>
-        <EventDate size="small" date={item.incident_date} />
-        <LocalisationIncidents 
-          cssClass="localisation-issues" 
-          text={item.classroom_zone + item.classroom_name} 
-        />
+    {incidents[type].length === 0 
+      ? <p className="issues-messages"> Aucun incident relevé </p>
+      : incidents[type].map((item, key) => (
+        <div className="issues" key={key}>
+          <EventDate size="small" date={item.incident_date} />
+          <LocalisationIncidents 
+            cssClass="localisation-issues" 
+            text={item.classroom_zone + item.classroom_name} 
+          />
           <TagsIncidents 
             cssClass={`tag-status ${item.incident_status}`} 
             text={tagTitle[item.incident_status]} 
           />
-      </div>
-    ))}
+        </div>
+      ))
+    }
     </div>
   </Disclosure.Panel>
   )
