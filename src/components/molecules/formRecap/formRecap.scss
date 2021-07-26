@@ -1,10 +1,11 @@
 .recap {
   background: $gray-low;
-  padding: $xx-large-space;
+  padding: $xxxx-large-space $xxxxx-large-space $xxxxx-large-space $xxxxx-large-space;
 
   &__title {
-    @include contact-information;
+    @include useful-details;
     margin-bottom: $large-space;
+    color: $secondary-utility-color;
   }
 
   &__item:not(:last-child) {
@@ -14,16 +15,18 @@
 
 .recap-item {
   &__title {
-    @include detailed-information-title;
+    @include disclosure-information;
+    color: $gray-dark;
     margin-bottom: $x-small-space;
   }
 
   &__info {
-    @include text-information;
+    @include important-text-information;
   }
 
-  &__contact-info {
-    @include contact-info;
+  &__contact-informations {
+    @include contact-informations;
+    color: $primary-dark-color;
     margin-top: $x-small-space;
   }
 }

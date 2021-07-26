@@ -16,7 +16,7 @@
       align-items: center;
       h3 {
         padding-left: $x-small-space;
-        @include text-information;
+        @include disclosure-information-title;
         color: $secondary-utility-color;
       }
 
@@ -28,7 +28,7 @@
     }
 
     .button-disclosure {
-      @include disclosure-information;
+      @include important-disclosure-information;
       display: flex;
       align-items: center;
       padding-right: $x-small-space;

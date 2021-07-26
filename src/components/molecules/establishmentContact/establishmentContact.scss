@@ -21,7 +21,8 @@
   }
 
   .contact {
-    @include contact-info;
+    @include contact-informations;
+    color: $primary-dark-color;
   }
 
   .importantData {
@@ -29,15 +30,15 @@
     text-align: right;
 
     p {
-      @include contact-information;
+      @include useful-details;
       margin-bottom: 0;
-      .number {
-        color: $gray-base;
-      }
+    }
+    .number {
+      color: $gray-base;
     }
 
     p:first-child {
-      @include important-contact-information;
+      @include important-useful-details;
       margin-bottom: $x-small-space;
     }
   }
