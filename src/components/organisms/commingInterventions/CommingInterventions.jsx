@@ -3,10 +3,12 @@ import axios from 'axios'
 import Title from '../../atoms/title/title'
 import InterventionDescription from '../../molecules/interventionDescription/InterventionDescription'
 import Card from '../../templates/card/Card'
+import Loader from '../../atoms/loader/loader'
 import { hydratation } from '../../../utils'
 
 const CommingInterventions = () => {
   const [issuesData, setIssuesData] = useState([])
+  const [dataError, setDataError] = useState(false)
 
   useEffect(() => {
     getIssues()
@@ -20,6 +22,7 @@ const CommingInterventions = () => {
     } catch (error) {
       // maybe not a "real" 404, could be the case where no event was found for the month
       console.log(error)
+      setDataError(true)
     }
   }
 
@@ -34,6 +37,7 @@ const CommingInterventions = () => {
       {issuesData && issuesData.map((issue, index) => (
         <InterventionDescription issue={issue} key={index}/>
       ))}
+      {!issuesData.length && <Loader error={dataError}/>}
     </Card>
   );
 };
