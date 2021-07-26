@@ -5,12 +5,14 @@ import CalendarList from '../organisms/calendarList/CalendarList'
 import NewInterventionForm from '../organisms/newInterventionForm/NewInterventionForm'
 import Modal from '../templates/modal/Modal'
 import Page from '../templates/page/Page'
+import Loader from '../atoms/loader/loader'
 
 const Agenda = () => {
   const [showModal, setShowModal] = useState(false)
   const [companyInfo , setCompanyInfo] = useState({})
   const [interventionsByMonth, setInterventionsByMonth] = useState(null)
   const [todayInterventions, setTodayInterventions] = useState(0)
+  const [dataError, setDataError] = useState(false)
 
   useEffect(() => {
     getinterventionsByMonth()
@@ -24,6 +26,7 @@ const Agenda = () => {
       getNumberInterventionsToday(response.data)
     } catch (error) {
       console.log(error)
+      setDataError(true)
     }
   }
   function getNumberInterventionsToday (interventionsByMonth) {
@@ -51,15 +54,22 @@ const Agenda = () => {
 
   return (
     <Page>
-      <CalendarDetailsIssues modalCallback={openModalCompany} todayInterventions={todayInterventions} />
-      <CalendarList interventionsByMonth={interventionsByMonth} />
-      <Modal showModal={showModal}>
-        <NewInterventionForm 
-          cancelCallback={setShowModal} 
-          validateCallback={setShowModal} 
-          companyInfo ={companyInfo} 
-        />
-      </Modal>
+      {interventionsByMonth &&
+        <>
+          <CalendarDetailsIssues modalCallback={openModalCompany} todayInterventions={todayInterventions} />
+          <CalendarList interventionsByMonth={interventionsByMonth} />
+          <Modal showModal={showModal}>
+            <NewInterventionForm 
+              cancelCallback={setShowModal} 
+              validateCallback={setShowModal} 
+              companyInfo ={companyInfo} 
+            />
+          </Modal>
+        </>
+      }
+      {!interventionsByMonth &&
+        <Loader error={dataError} />
+      }
     </Page>
   );
 }
