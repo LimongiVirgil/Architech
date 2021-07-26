@@ -1,10 +1,15 @@
 .calendar-contact-card {
   display: flex;
-  border: 1px solid $gray-lighter;
-  background-color: $primary-utility-color;
+  justify-content: center;
+  align-items: center;
+  width: 31em;
 
   .company-infos {
-    border-right: 1px solid $gray-lighter;
+    width: 70%;
+    border-left: 1px solid $gray-lighter;
+    border-right: none;
+    border-top: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
     padding: $medium-space;
     display: flex;
     flex-direction: column;
@@ -30,18 +35,46 @@
     }
   }
 
-  .intervention-program {
-    width :30%;
+  .intervention-wrapper { 
+    height: 8em;
+    box-shadow: inset 1px 0px 1px $gray-lighter;
+    background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    p {
-      margin-top: $medium-space;
-      color: $secondary-utility-color;
-      @include important-disclosure-information;
-      text-align: center;
-      font-weight: bold;
+
+    &:hover {
+      background-color: $gray-low;
+      border-radius: $regular-radius;
+    }
+
+    &:focus {
+      background-color: $gray-low;
+      border-radius: $regular-radius;
+      border: 2px solid $gray-lighter;
+    }
+
+    &:active {
+      background-color: $gray-lighter;
+      border-radius: $regular-radius;
+      border: 2px solid $gray-lighter;
+    }
+
+    .intervention-program {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        margin-top: $medium-space;
+        color: $secondary-utility-color;
+        @include important-disclosure-information;
+        font-weight: bold;
+        text-align: center;
+      }
     }
   }
 }

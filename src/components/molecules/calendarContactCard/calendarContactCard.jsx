@@ -15,9 +15,11 @@ return (
       <p>{company.phone}</p>
       <p>{company.mail}</p>
     </div>
-    <div className="intervention-program" onClick={handleInterventionRequest}>
-      <img src={CalendarIcon} alt="Calendar icon"/>
-      <p>Programmer une intervention</p>
+    <div className="intervention-wrapper">
+      <div className="intervention-program" onClick={handleInterventionRequest}>
+        <img src={CalendarIcon} alt="Calendar icon"/>
+        <p>Programmer une intervention</p>
+      </div>
     </div>
   </div>
     )
