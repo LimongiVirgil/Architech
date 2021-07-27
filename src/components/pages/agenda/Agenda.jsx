@@ -6,9 +6,11 @@ import NewInterventionForm from '../../organisms/newInterventionForm/NewInterven
 import Modal from '../../templates/modal/Modal'
 import Page from '../../templates/page/Page'
 import Title from '../../atoms/title/title'
+import SuccessNotif from '../../atoms/successNotif/SuccessNotif'
 
 const Agenda = () => {
   const [showModal, setShowModal] = useState(false)
+  const [showNotif, setShowNotif] = useState(false)
 
   // intervention calendar
   const [interventionsByMonth, setInterventionsByMonth] = useState(null)
@@ -26,19 +28,19 @@ const Agenda = () => {
   const [incidentTypeText, setIncidentTypeText] = useState('')
   const [issuesIds, setIssuesIds] = useState([])
 
-
   useEffect(() => {
     getinterventionsByMonth()
     getIssuesToInspect()
   }, [])
 
-  async function getinterventionsByMonth () {
+  async function getinterventionsByMonth (isUpdate) {
     try {
       setInterventionDataError(false)
       const response = await axios.get(`${import.meta.env.VITE_API_URL}api/agenda/allFutureEvent/1`)
       if (!response || !response.data) return
       setInterventionsByMonth(response.data)
       getNumberInterventionsToday(response.data)
+      if (isUpdate) setShowNotif(true)
     } catch (error) {
       console.log(error)
       setInterventionDataError(true)
@@ -98,22 +100,24 @@ const Agenda = () => {
     setShowModal(false)
 
     // refresh data
-    getinterventionsByMonth()
+    getinterventionsByMonth(true)
     getIssuesToInspect()
   }
 
   return (
+  <>
+    <Modal showModal={showModal}>
+      <NewInterventionForm 
+        cancelCallback={setShowModal} 
+        validateCallback={handleFormValidation} 
+        companyInfo ={companyInfo} 
+        classRooms={classRooms}
+        incidentTypeText={incidentTypeText}
+        issuesIds={issuesIds}
+      />
+    </Modal>
     <Page className="agenda">
-      <Modal showModal={showModal}>
-        <NewInterventionForm 
-          cancelCallback={setShowModal} 
-          validateCallback={handleFormValidation} 
-          companyInfo ={companyInfo} 
-          classRooms={classRooms}
-          incidentTypeText={incidentTypeText}
-          issuesIds={issuesIds}
-        />
-      </Modal>
+      <SuccessNotif show={showNotif} updateShow={setShowNotif} message="Intervention programmée avec succès !"/>
       <div className="details-issues">
         <Title cssClass="page-title">Agenda</Title>
         <CalendarDetailsIssues 
@@ -126,6 +130,7 @@ const Agenda = () => {
       </div>
       <CalendarList interventionsByMonth={interventionsByMonth} dataError={interventionDataError}/>
     </Page>
+  </>
   );
 }
 

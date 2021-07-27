@@ -35,8 +35,6 @@
     }
   }
 
-    
-
   .intervention-program {
     padding: $x-small-space;
     box-shadow: $input-shadow;
@@ -45,14 +43,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     max-width: 145px;
-
 
     &:hover {
       background-color: $gray-low;
     }
-
 
     p {
       margin-top: $medium-space;
