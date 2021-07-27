@@ -5,7 +5,7 @@ const CellTable = ({node, cssClass, handleClick, nodeID}) => {
 
   useEffect(() => {
     customSelectedSensor();
-  }, [nodeID])
+  }, [nodeID, node])
 
   const customSelectedSensor = () => {
     if (nodeID === node[0].node_id) {

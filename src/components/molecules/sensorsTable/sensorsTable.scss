@@ -5,6 +5,15 @@
   overflow-y: scroll;
   transition: max-height 0.5s ease;
 
+  thead th {
+    cursor: pointer;
+    
+    img {
+      margin: -2px 0 0 $x-small-space;
+      vertical-align: top;
+    }
+  }
+
   thead, tbody {
     width: 100%;
     display: block;
