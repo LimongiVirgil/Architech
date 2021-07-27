@@ -30,7 +30,7 @@ const sensorsHistoryLineChart = ({nodeID, handleCloseGraph}) => {
             <p>Humidité</p>
           </div>
           <div ref={windButton} onClick={() => changeGraph('Vent', windButton.current)}>
-            <p>Vent</p>
+            <p>Pression</p>
           </div>
         </div>
         <div onClick={() => handleCloseGraph()}>
