@@ -8,4 +8,9 @@
       margin-bottom: $medium-space;
     }
   }
+  .issues-messages{
+    color: $secondary-utility-color;
+    @include disclosure-information;
+    padding: $x-small-space;
+  }
 }
