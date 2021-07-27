@@ -25,6 +25,7 @@
     p {
       @include contact-informations;
       color: $primary-dark-color;
+
       &:last-child {
         margin-top: $xx-small-space;
       }

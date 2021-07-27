@@ -10,10 +10,10 @@ function Modal ({children, showModal, isloaderModal}) {
 
   useEffect(() => {
     if (shouldScroll) {
-      document.documentElement.style.overflow = 'scroll'
+      document.documentElement.style.overflowY = 'scroll'
       document.body.scroll = "yes"
     } else {
-      document.documentElement.style.overflow = 'hidden'
+      document.documentElement.style.overflowY = 'hidden'
       document.body.scroll = "no"
     }
   }, [shouldScroll])

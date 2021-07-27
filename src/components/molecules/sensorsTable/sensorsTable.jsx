@@ -106,7 +106,7 @@ const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
               <img ref={humidityIcon} src={SwapInactive} alt='icone trie'/>
             </th>
             <th onClick={() => handleSortTable('Pression', windIcon.current)}>
-              Vent
+              Pression
               <img ref={windIcon} src={SwapInactive} alt='icone trie'/>
             </th>
           </tr>

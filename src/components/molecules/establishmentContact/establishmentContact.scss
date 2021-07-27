@@ -2,8 +2,12 @@
   display: flex;
   flex-direction: column;
 
-  p {
+  p, .contact-info {
     margin-bottom: $x-small-space;
+  }
+
+  .contact-info {
+    display: block;
   }
 
   .commonData {
@@ -18,11 +22,6 @@
   .address {
     @include disclosure-information;
     color: $secondary-utility-color;
-  }
-
-  .contact {
-    @include contact-informations;
-    color: $primary-dark-color;
   }
 
   .importantData {

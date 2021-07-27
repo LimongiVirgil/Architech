@@ -1,0 +1,6 @@
+.contact-info {
+  @include contact-informations;
+  color: $primary-dark-color;
+  text-decoration: none;
+  cursor: pointer;
+}

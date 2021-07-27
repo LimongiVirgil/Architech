@@ -1,5 +1,6 @@
 import React from 'react'
 import Title from '../../atoms/title/title'
+import ContactInfo from '../../atoms/contactInfo/ContactInfo'
 
 const EstablishmentBuildingContact = ({address, mail, phone, nbRooms}) => {
   return (
@@ -9,8 +10,8 @@ const EstablishmentBuildingContact = ({address, mail, phone, nbRooms}) => {
       </Title>
       <div className="commonData">
         <p className="address">{address}</p>
-        <p className="contact">{mail}</p>
-        <p className="contact">{phone}</p>
+        <ContactInfo type="mail" contactInfo={mail}/>
+        <ContactInfo type="tel" contactInfo={phone}/>
       </div>
       <div className="importantData">
         <p className="number">{nbRooms}</p>

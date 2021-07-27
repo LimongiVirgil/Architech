@@ -1,5 +1,6 @@
 import React from 'react'
 import CalendarIcon from '../../../assets/icons/calendar.svg'
+import ContactInfo from '../../atoms/contactInfo/ContactInfo'
 
 const CalendarContactCard = ({ company, issues, incidentTypeText, actionCallback, showButton }) => {
   function handleInterventionRequest () {
@@ -17,8 +18,8 @@ return (
     <div className={`company-infos${showButton ? ' company-infos--with-button' : ''}`}>
       <span>Entreprise en charge de ce type d'incident</span>
       <h3>{company.name}</h3>
-      <p>{company.phone}</p>
-      <p>{company.mail}</p>
+      <ContactInfo type="tel" contactInfo={company.phone}/>
+      <ContactInfo type="mail" contactInfo={company.mail}/>
     </div>
     
     { showButton && 

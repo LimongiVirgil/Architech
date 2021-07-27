@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ContactInfo from '../../atoms/contactInfo/ContactInfo'
 
 function FormRecap ({ className, companyInfo, classRooms, incidentTypeText }) {
   const [classRoomsText, setClassRoomsText] = useState('')
@@ -27,9 +28,8 @@ function FormRecap ({ className, companyInfo, classRooms, incidentTypeText }) {
 
       <div className="recap__item item">
         <p className="recap-item__title">Entreprise intervenante</p>
-        <p className="recap-item__info">{companyInfo.name}</p>
-        <p className="recap-item__contact-informations">{companyInfo.phone}</p>
-        <p className="recap-item__contact-informations">{companyInfo.mail}</p>
+        <ContactInfo type="tel" contactInfo={companyInfo.phone}/>
+        <ContactInfo type="mail" contactInfo={companyInfo.mail}/>
       </div>
 
       <div className="recap__item item">

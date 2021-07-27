@@ -8,6 +8,13 @@
     color: $secondary-utility-color;
   }
 
+  &__item {
+    .contact-info {
+      margin-top: $x-small-space;
+      display: block;
+    }
+  }
+
   &__item:not(:last-child) {
     margin-bottom: $large-space;
   }
@@ -22,11 +29,5 @@
 
   &__info {
     @include important-text-information;
-  }
-
-  &__contact-informations {
-    @include contact-informations;
-    color: $primary-dark-color;
-    margin-top: $x-small-space;
   }
 }
