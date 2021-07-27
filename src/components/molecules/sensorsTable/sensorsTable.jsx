@@ -17,6 +17,9 @@ const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
   const humidityIcon = useRef();
   const windIcon = useRef();
 
+  // let orderdBy;
+  // let prevOrderedType = "";
+
   useEffect(() => {
     getSensors()
   }, [])
@@ -77,8 +80,11 @@ const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
       if (prevOrderedType === "" || prevOrderedType !== type) {
         setPrevOrderedType(type);
         setOrderdBy(true);
+        // prevOrderedType = type;
+        // orderdBy = true
       } else {
         setOrderdBy(!orderdBy)
+        // orderdBy = !orderdBy
       }
 
       if (orderdBy) {
