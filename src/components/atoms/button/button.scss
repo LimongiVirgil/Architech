@@ -43,4 +43,8 @@
       box-sizing: border-box;
     }
   }
+
+  &:disabled {
+    background-color: $gray-light;
+  }
 }

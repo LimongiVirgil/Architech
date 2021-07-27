@@ -6,6 +6,8 @@ import InputText from '../../atoms/inputText/InputText'
 import InputTime from '../../atoms/inputTime/inputTime'
 
 function InputAndLabel ({ 
+  data, 
+  updateInput,
   inputType = 'text', 
   label = '', id,  
   placeholder = '', 
@@ -15,16 +17,16 @@ function InputAndLabel ({
     <div className={`input-label${fullWidth ? '' : ' input-label--unstretched'}${className ? ' ' + className : ''}`}>
       <Label id={id} label={label}/>
       { inputType === 'textarea' &&
-        <InputTextArea id={id} placeholder={placeholder} />
+        <InputTextArea id={id} placeholder={placeholder} data={data} updateInput={updateInput}/>
       } 
       { inputType === 'text' &&
         <InputText id={id} placeholder={placeholder} />
       } 
       { inputType === 'date' &&
-        <DatePicker id={id} />
+        <DatePicker id={id} data={data} updateInput={updateInput} />
       } 
       { inputType === 'time' &&
-        <InputTime id={id} />
+        <InputTime id={id} data={data} updateInput={updateInput} />
       } 
     </div>
   )

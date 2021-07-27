@@ -1,5 +1,7 @@
 .calendar-contact-card {
   display: flex;
+  align-items: center;
+  padding: 0px 0px 0px $medium-space;
   border: 1px solid $gray-lighter;
   background-color: $primary-utility-color;
 
@@ -27,30 +29,38 @@
         margin-top: $xx-small-space;
       }
     }
+
+    &--with-button {
+      border-right: 1px solid $gray-lighter;
+    }
   }
 
   .intervention-wrapper {
     padding: $x-small-space;
     box-shadow: $input-shadow;
-    display: flex;
-
-    &:hover {
-      background-color: $gray-low;
-    }
 
     .intervention-program {
       cursor: pointer;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
 
-      p {
-        margin-top: $medium-space;
-        color: $secondary-utility-color;
-        @include important-disclosure-information;
-        font-weight: bold;
-        text-align: center;
+      &:hover {
+        background-color: $gray-low;
+      }
+
+      .intervention-program {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          margin-top: $medium-space;
+          color: $secondary-utility-color;
+          @include important-disclosure-information;
+          font-weight: bold;
+          text-align: center;
+        }
       }
     }
   }

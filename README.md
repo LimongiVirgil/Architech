@@ -59,7 +59,7 @@ graphique
 
 ### Ce qui sera prototypé :
 - une liste des incidents à examiner (en vue d’une réparation)
-- ajouter une date de réparation à un calendrier pour un évènement
+- ajouter une date de réparation à un calendrier pour une intervention
 
 
 ### Ce qui ne sera pas traité :

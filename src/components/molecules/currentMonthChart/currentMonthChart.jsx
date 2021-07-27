@@ -19,13 +19,13 @@ function MonthlySensorChart({chartData, numberIncident}) {
       <div className="current-month-chart__chart-wrapper">
         <SingleBarChart chartData={chartData} />
       </div>
-      {chartData && (
+      {chartData && 
         <div className="current-month-chart__statistics-details">
           <p>{formatPercentage(numberHeatLeak / numberIncident)} Fuite de châleur</p>
           <p>{formatPercentage(numberHighHumidity / numberIncident)} Humidité élevée</p>
           <p>{formatPercentage(numberDefectiveAirConditioning / numberIncident)} Climatisation défectueuse</p>
         </div>
-      )}
+      }
     </div>
   );
 }
