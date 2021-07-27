@@ -21,7 +21,7 @@ const sensorsHistoryLineChart = ({nodeID, handleCloseGraph}) => {
   return (
     <div className="chartLine">
       <div className="headChart">
-        <Title cssClass="card-title">Salle {nodeID.substring(nodeID.length - 3)}</Title>
+        <Title tage="h2" cssClass="card-title">Salle {nodeID.substring(nodeID.length - 3)}</Title>
         <div className="chartButtons">
           <div ref={heatButton} className="active" onClick={() => changeGraph('Température', heatButton.current)}>
             <p>Température</p>

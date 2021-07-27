@@ -6,7 +6,7 @@ import Title from '../atoms/title/title'
 const Monitoring = () => {
   return (
     <Page>
-      <Title cssClass="page-title">Surveillance en temps réel</Title>
+      <Title tag="h1" cssClass="page-title">Surveillance en temps réel</Title>
       <LiveSensorsData/>
     </Page>
   );

@@ -163,7 +163,7 @@ const annualEvolutionBarChart = () => {
 
   return (
     <Card>
-      <Title cssClass="card-title">Évolution annuelle des incidents</Title>
+      <Title tag="h2" cssClass="card-title">Évolution annuelle des incidents</Title>
       {numberOfHeatLeakIssuesPerMonthState && <canvas ref={ctx} />}
       {!numberOfHeatLeakIssuesPerMonthState && <Loader error={dataError}/>}
     </Card>

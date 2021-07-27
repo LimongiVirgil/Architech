@@ -82,7 +82,7 @@ const Home = () => {
         }
         {!incidentsOfAllTime &&
           <>
-            <Title cssClass='titleIncidentsOfAllTimeLoader'>
+            <Title tag="h2" cssClass='titleIncidentsOfAllTimeLoader'>
               Pas d'intervention au cours de ce mois
             </Title>
             <Loader error={dataError}/>

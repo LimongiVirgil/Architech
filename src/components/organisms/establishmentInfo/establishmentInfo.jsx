@@ -27,7 +27,7 @@ const EstablishmentInfo = () => {
 
   return (
     <Card>
-      <Title cssClass="card-title">
+      <Title tag="h2" cssClass="card-title">
         Fiche de l’établissement
       </Title>
       <div className="establishmentInfo">

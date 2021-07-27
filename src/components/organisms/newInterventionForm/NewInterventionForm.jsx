@@ -55,7 +55,7 @@ function NewInterventionForm ({ cancelCallback, validateCallback, companyInfo, c
 
   return (
     <div className="new-intervention-form">
-      <Title cssClass="card-title">Programmer une intervention</Title>
+      <Title tag="h3" cssClass="card-title">Programmer une intervention</Title>
 
       <div className="new-intervention-form__fields form-fields">
         <div className="form-fields__inputs">

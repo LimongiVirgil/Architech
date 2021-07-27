@@ -119,7 +119,7 @@ const Agenda = () => {
     <Page className="agenda">
       <SuccessNotif show={showNotif} updateShow={setShowNotif} message="Intervention programmée avec succès !"/>
       <div className="details-issues">
-        <Title cssClass="page-title">Agenda</Title>
+        <Title cssClass="page-title" tag="h1">Agenda</Title>
         <CalendarDetailsIssues 
           modalCallback={openModalCompany} 
           todayInterventions={todayInterventions} 
