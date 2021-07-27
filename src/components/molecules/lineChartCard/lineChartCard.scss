@@ -22,7 +22,7 @@
           border-bottom: 4px solid $primary-dark-color;
     
           p {
-            @include text-information;
+            @include important-text-information;
             color: $primary-dark-color;
           }
         }
@@ -37,7 +37,7 @@
       cursor: pointer;
       
       span {
-        @include disclosure-information;
+        @include important-disclosure-information;
         color: $secondary-utility-color;
         padding: $x-small-space;
       }

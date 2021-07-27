@@ -13,8 +13,8 @@ function FormRecap ({ className, companyInfo }) {
       <div className="recap__item item">
         <p className="recap-item__title">Entreprise intervenante</p>
         <p className="recap-item__info">{companyInfo.name}</p>
-        <p className="recap-item__contact-info">{companyInfo.phone}</p>
-        <p className="recap-item__contact-info">{companyInfo.mail}</p>
+        <p className="recap-item__contact-informations">{companyInfo.phone}</p>
+        <p className="recap-item__contact-informations">{companyInfo.mail}</p>
       </div>
 
       <div className="recap__item item">

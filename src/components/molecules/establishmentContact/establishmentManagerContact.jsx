@@ -13,7 +13,7 @@ const EstablishmentManagerContact = ({firstName, lastName, mail, phone, nbSensor
         <p className="contact">{phone}</p>
       </div>
       <div className="importantData">
-        <p>{nbSensors}</p>
+        <p className="number">{nbSensors}</p>
         <p>{nbSensors > 1 ? 'capteurs' : 'capteur'}</p>
       </div>
     </div>

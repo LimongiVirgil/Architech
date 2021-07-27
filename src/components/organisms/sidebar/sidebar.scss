@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 250px;
+  width: 296px;
   border-right: 1px solid $gray-lighter;
   padding: $xx-large-space $medium-space;
   background-color: $primary-utility-color;
@@ -30,6 +30,7 @@
 
     ul {
       li {
+        padding: $medium-space $large-space;
         &:not(:last-child) {
           margin-bottom: $large-space;
         }
@@ -41,16 +42,7 @@
 
         a {
           @include menu-link;
-          text-decoration: none;
-          color: $secondary-utility-color;
-          padding: $medium-space $large-space;
-          display: list-item;
-        }
-
-        .active {
-          @include text-information;
-          color: $primary-dark-color;
-          border: 1px solid $secondary-color;
+          padding-bottom: $x-small-space;
         }
       }
     }

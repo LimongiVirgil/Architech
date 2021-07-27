@@ -16,13 +16,17 @@
     }
 
     h3 {
-      @include contact-information;
+      @include useful-details;
       margin-bottom: $medium-space;
+      color: $secondary-utility-color;
     }
 
     p {
-      @include important-disclosure-information;
+      @include contact-informations;
       color: $primary-dark-color;
+      &:last-child {
+        margin-top: $xx-small-space;
+      }
     }
   }
 
@@ -32,11 +36,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    p{
+    p {
       margin-top: $medium-space;
       color: $secondary-utility-color;
       @include important-disclosure-information;
       text-align: center;
+      font-weight: bold;
     }
   }
 }

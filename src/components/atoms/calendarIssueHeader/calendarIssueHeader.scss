@@ -7,13 +7,15 @@
     margin-bottom: $x-large-space;
 
     span {
-      @include text-information;
-      color: $secondary-utility-color;
+      @include important-text-information;
+      color: $primary-dark-color;
+      border-bottom: 2px solid  $primary-dark-color;
+      padding-bottom: $xx-small-space;
     }
   }
 
   .total-issues {
-    @include detailed-information;
+    @include important-detailed-information;
     color: $secondary-utility-color;
   }
 }
