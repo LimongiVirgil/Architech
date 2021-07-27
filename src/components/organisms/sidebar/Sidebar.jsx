@@ -19,9 +19,6 @@ const Sidebar = () => {
           <li>
             <NavLink to="/agenda">Agenda</NavLink>
           </li>
-          <li>
-            <NavLink to="/settings">Paramètres</NavLink>
-          </li>
         </ul>
       </nav>
     </div>
