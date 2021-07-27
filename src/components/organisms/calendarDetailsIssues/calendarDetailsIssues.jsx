@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import CalendarDisclosure from '../calendarDisclosure/calendarDisclosure'
 import CalendarIssueHeader from '../../atoms/calendarIssueHeader/calendarIssueHeader'
+import Loader from '../../atoms/loader/loader'
 
 const SENSOR_TYPES = [
   'high_humidity',
@@ -13,7 +14,7 @@ const initialOpeningState = SENSOR_TYPES.reduce((accu, sensor) => ({
   [sensor] : false
 }), {}) 
 
-const CalendarDetailsIssues = ({ modalCallback, todayInterventions, numberIssuesToInspect, issuesByType }) => {
+const CalendarDetailsIssues = ({ modalCallback, todayInterventions, numberIssuesToInspect, issuesByType, dataError }) => {
   const [disclosureIds, setDisclosureIds] = useState(initialOpeningState)
 
   const disclosureCallback = (value) => {
@@ -40,7 +41,11 @@ const CalendarDetailsIssues = ({ modalCallback, todayInterventions, numberIssues
               actionCallback={modalCallback}
             />
           )
-        )}
+        )
+      }
+      {!issuesByType &&
+        <Loader error={dataError} />
+      }
     </>
   );
 };
