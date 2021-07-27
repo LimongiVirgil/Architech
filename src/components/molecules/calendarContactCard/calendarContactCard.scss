@@ -1,6 +1,6 @@
 .calendar-contact-card {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   padding: 0px 0px 0px $medium-space;
   border: 1px solid $gray-lighter;
   background-color: $primary-utility-color;
@@ -35,33 +35,36 @@
     }
   }
 
-  .intervention-wrapper {
+    
+
+  .intervention-program {
     padding: $x-small-space;
     box-shadow: $input-shadow;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    max-width: 145px;
 
-    .intervention-program {
-      cursor: pointer;
-      display: flex;
 
-      &:hover {
-        background-color: $gray-low;
-      }
+    &:hover {
+      background-color: $gray-low;
+    }
 
-      .intervention-program {
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
-        p {
-          margin-top: $medium-space;
-          color: $secondary-utility-color;
-          @include important-disclosure-information;
-          font-weight: bold;
-          text-align: center;
-        }
-      }
+    p {
+      margin-top: $medium-space;
+      color: $secondary-utility-color;
+      @include important-disclosure-information;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
     }
   }
 }
