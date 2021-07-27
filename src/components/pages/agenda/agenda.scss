@@ -1,6 +1,7 @@
 .agenda {
   display: flex;
   position: relative;
+  overflow-x: hidden;
   
   .details-issues {
     display: flex;
