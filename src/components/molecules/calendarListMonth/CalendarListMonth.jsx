@@ -23,7 +23,7 @@ function CalendarListMonth({ monthYear, interventions }) {
 
   return (
     <div className="month-events">
-      {monthName && <Title cssClass="card-title">{monthName} {year}</Title>}
+      {monthName && <Title tag="h2" cssClass="card-title">{monthName} {year}</Title>}
       {numberInterventions && 
         <p className="month-events__subtitle">
           {numberInterventions > 1 ?

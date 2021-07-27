@@ -5,7 +5,7 @@ import ContactInfo from '../../atoms/contactInfo/ContactInfo'
 const EstablishmentManagerContact = ({firstName, lastName, mail, phone, nbSensors}) => {
   return (
     <div className="establishmentContact">
-      <Title cssClass="detailed-information-title">
+      <Title tag="h3" cssClass="detailed-information-title">
         Représentant de l’établissement
       </Title>
       <div className="commonData">

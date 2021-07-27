@@ -28,7 +28,7 @@ const CommingInterventions = () => {
 
   return (
     <Card className="commingIssueCard">
-      <Title cssClass="card-title">
+      <Title tag="h2" cssClass="card-title">
         {issuesData.length === 0 ? `Pas d'intervention ce mois-ci` :
         issuesData.length > 1 ? `${issuesData.length} interventions ce mois-ci` :
         `${issuesData.length} intervention ce mois-ci`}

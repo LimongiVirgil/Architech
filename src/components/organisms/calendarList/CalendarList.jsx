@@ -13,7 +13,7 @@ function CalendarList({ interventionsByMonth, dataError }) {
       ))}
       {!interventionsByMonth &&
         <>
-          <Title cssClass="card-title">Interventions à venir</Title>
+          <Title tag="h2" cssClass="card-title">Interventions à venir</Title>
           <Loader error={dataError} />
         </>
       }
