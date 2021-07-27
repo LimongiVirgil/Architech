@@ -17,10 +17,6 @@ const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
   const humidityIcon = useRef();
   const windIcon = useRef();
 
-  // orderBy = true => croissant / orderBy = false => décroissant
-  //let orderdBy;
-  //let prevOrderedType = "";
-
   useEffect(() => {
     getSensors()
   }, [])
@@ -59,7 +55,6 @@ const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
 
   const sortTable = (type, orderBy) => {
     let sortedData = [];
-    console.log(orderBy)
 
     if (orderBy) {
       sortedData = sortData(type);
@@ -68,7 +63,6 @@ const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
       sortedData.reverse();
     }
 
-    console.log(sortedData)
     setSensorsData(sortedData)
     forceUpdate();
   }
@@ -79,8 +73,6 @@ const SensorsTable = ({handleClick, graphOpened, nodeID}) => {
       humidityIcon.current.src = SwapInactive;
       windIcon.current.src = SwapInactive;
       currRef.src = SwapActive
-
-      console.log(prevOrderedType)
 
       if (prevOrderedType === "" || prevOrderedType !== type) {
         setPrevOrderedType(type);
