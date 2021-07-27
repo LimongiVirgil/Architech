@@ -1,6 +1,17 @@
 textarea {
-  border: 1px solid $gray-light;
+  cursor: pointer;
+  border: 1px solid transparent;
   box-shadow: $input-shadow;
   border-radius: $regular-radius;
   min-height: 150px;
+
+  &:hover {
+    background-color: $primary-utility-color;
+    border: 1px solid $primary-dark-color;
+  }
+
+  &:focus {
+    border: 2px solid $primary-dark-color;
+    outline: none;
+  }
 }
