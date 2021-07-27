@@ -7,7 +7,7 @@ import Title from '../../atoms/title/title'
 
 function CalendarList({ interventionsByMonth, dataError }) {
   return (
-    <Card scroll={true}>
+    <Card>
       {interventionsByMonth && Object.entries(interventionsByMonth).map(([monthYear, interventions]) => (
         <CalendarListMonth key={monthYear} monthYear={monthYear} interventions={interventions}/>
       ))}
