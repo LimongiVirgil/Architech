@@ -1,0 +1,28 @@
+.success-notification {
+  position: absolute;
+  display: invisible;
+  top: $xx-large-space;
+  right: $xx-large-space;
+  transform: translateX(200%);
+  border: 1px solid $success;
+  border-radius: $card-radius;
+  background: $success-light;
+  padding: $x-small-space $large-space $x-small-space $xx-large-space;
+  transition: transform 1s;
+  
+  &--is-showing {
+    display: block;
+    transform: translateX(0);
+    transition: transform 0.8s;
+  }
+
+  p {
+    position: relative;
+  }
+
+  p::before {
+    content: url('../../../../icons/checkmark.svg');
+    position: absolute;
+    left: -20px;
+  }
+}

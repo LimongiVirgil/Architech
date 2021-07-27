@@ -22,11 +22,9 @@ return (
     </div>
     
     { showButton && 
-    <div className="intervention-wrapper">
-      <div className="intervention-program" onClick={handleInterventionRequest}>
-        <img src={CalendarIcon} alt="Calendar icon"/>
-        <p>Programmer une intervention</p>
-      </div>
+    <div className="intervention-program" onClick={handleInterventionRequest}>
+      <img src={CalendarIcon} alt="Calendar icon"/>
+      <p>Programmer une intervention</p>
     </div>
     }
   </div>

@@ -1,5 +1,7 @@
 .agenda {
   display: flex;
+  position: relative;
+  
   .details-issues {
     display: flex;
     flex-direction: column;

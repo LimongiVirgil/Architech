@@ -5,20 +5,22 @@ import CalendarList from '../../organisms/calendarList/CalendarList'
 import NewInterventionForm from '../../organisms/newInterventionForm/NewInterventionForm'
 import Modal from '../../templates/modal/Modal'
 import Page from '../../templates/page/Page'
-import Loader from '../../atoms/loader/loader'
 import Title from '../../atoms/title/title'
+import SuccessNotif from '../../atoms/successNotif/SuccessNotif'
 
 const Agenda = () => {
-  const [dataError, setDataError] = useState(false)
   const [showModal, setShowModal] = useState(false)
+  const [showNotif, setShowNotif] = useState(false)
 
   // intervention calendar
   const [interventionsByMonth, setInterventionsByMonth] = useState(null)
+  const [interventionDataError, setInterventionDataError] = useState(false)
   
   // issues disclosure
   const [todayInterventions, setTodayInterventions] = useState(0)
   const [issuesByType, setIssuesByType] = useState(null)
   const [numberIssuesToInspect, setNumberIssuesToInspect] = useState(0)
+  const [issuesDataError, setIssuesDataError] = useState(false)
 
   // new intervention form
   const [companyInfo , setCompanyInfo] = useState({})
@@ -31,20 +33,23 @@ const Agenda = () => {
     getIssuesToInspect()
   }, [])
 
-  async function getinterventionsByMonth () {
+  async function getinterventionsByMonth (isUpdate) {
     try {
+      setInterventionDataError(false)
       const response = await axios.get(`${import.meta.env.VITE_API_URL}api/agenda/allFutureEvent/1`)
       if (!response || !response.data) return
       setInterventionsByMonth(response.data)
       getNumberInterventionsToday(response.data)
+      if (isUpdate) setShowNotif(true)
     } catch (error) {
       console.log(error)
-      setDataError(true)
+      setInterventionDataError(true)
     }
   }
 
   async function getIssuesToInspect () {
     try {
+      setIssuesDataError(false)
       const response = await axios.get(`${import.meta.env.VITE_API_URL}api/agenda/1`)
       if (!response || !response.data) return
       setIssuesByType(response.data)
@@ -52,9 +57,9 @@ const Agenda = () => {
       setNumberIssuesToInspect(issuesToInspect)
     } catch (error) {
       console.log(error)
+      setIssuesDataError(true)
       setNumberIssuesToInspect(0)
       setIssuesByType(null)
-      // setDataError(true)
     }
   }
 
@@ -95,40 +100,37 @@ const Agenda = () => {
     setShowModal(false)
 
     // refresh data
-    getinterventionsByMonth()
+    getinterventionsByMonth(true)
     getIssuesToInspect()
   }
 
   return (
+  <>
+    <Modal showModal={showModal}>
+      <NewInterventionForm 
+        cancelCallback={setShowModal} 
+        validateCallback={handleFormValidation} 
+        companyInfo ={companyInfo} 
+        classRooms={classRooms}
+        incidentTypeText={incidentTypeText}
+        issuesIds={issuesIds}
+      />
+    </Modal>
     <Page className="agenda">
-      {interventionsByMonth &&
-        <>
-        <Modal showModal={showModal}>
-          <NewInterventionForm 
-            cancelCallback={setShowModal} 
-            validateCallback={handleFormValidation} 
-            companyInfo ={companyInfo} 
-            classRooms={classRooms}
-            incidentTypeText={incidentTypeText}
-            issuesIds={issuesIds}
-          />
-        </Modal>
-        <div className="details-issues">
-          <Title cssClass="page-title">Agenda</Title>
-          <CalendarDetailsIssues 
-            modalCallback={openModalCompany} 
-            todayInterventions={todayInterventions} 
-            numberIssuesToInspect={numberIssuesToInspect}
-            issuesByType={issuesByType}
-          />
-        </div>
-        <CalendarList interventionsByMonth={interventionsByMonth} />
-      </>
-      }
-      {/* {!interventionsByMonth &&
-        <Loader error={dataError} />
-      } */}
+      <SuccessNotif show={showNotif} updateShow={setShowNotif} message="Intervention programmée avec succès !"/>
+      <div className="details-issues">
+        <Title cssClass="page-title">Agenda</Title>
+        <CalendarDetailsIssues 
+          modalCallback={openModalCompany} 
+          todayInterventions={todayInterventions} 
+          numberIssuesToInspect={numberIssuesToInspect}
+          issuesByType={issuesByType}
+          dataError={issuesDataError}
+        />
+      </div>
+      <CalendarList interventionsByMonth={interventionsByMonth} dataError={interventionDataError}/>
     </Page>
+  </>
   );
 }
 
